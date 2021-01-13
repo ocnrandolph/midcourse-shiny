@@ -33,27 +33,32 @@ View(acs_08_3yr_vars)
     # B03002_018 = Hispanic, Other Race
     # B03002_019 = Hispanic, Multiracial
 
+# Isolate race variables of interest programmatically
+# STEP 1: split label components into multiple columns 
 race_by_eth_acs3_2008 <- acs_08_3yr_vars %>% 
-  filter(str_detect(name, 'B03002_\\d{3}')) %>% 
-  separate(label, into = c('A', 'B', 'C', 'D', 'E'), sep = "!!") %>% 
+  filter(str_detect(name, 'B03002_\\d{3}')) %>% # select race variable of interest only
+  separate(label, into = c('A', 'B', 'C', 'D', 'E'), sep = "!!") %>% # create columns A-E based on separators
   filter(!is.na(D)) %>% # Remove total columns
   filter(is.na(E)) # Remove "two or more races" detailed data
 
+# STEP 2: grab specific B03002 rows of interest based on the ones kept in the code above
 vars <- race_by_eth_acs3_2008 %>% 
   pull(name) # returns 'name' column as a vector
 
+# STEP 3: pull 2008 ACS data
 ex <- get_acs(
   geography = "county",
   year = 2008,
   survey = "acs3",
-  state = "MN",
+  state = c("ME", "MN", "OH", "WA"),
   variables = vars
 )
 
+# STEP 4: Create a data frame containing race variables of interest for counties within each state
 # merge ex with race_by_eth dataframe
 race_by_eth_acs3_2008 %>% 
   full_join(ex, by = c("name" = "variable")) %>% 
-  select(C, D, NAME, estimate) %>%  # select columns of interest only
+  select(C, D, NAME, estimate) %>%  # select columns of interest only, and in the order specified
   View()
 
 # edulevels_bygender <- v19 %>%
