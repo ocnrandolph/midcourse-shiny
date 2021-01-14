@@ -500,12 +500,12 @@ ME_crime_data <- ME_agg_assault %>%
 crime_merge <- function(state){ # curly braces specifies chunk of r code
   
   # reading in csv files and naming resulting tibbles appropriately
-  state_agg_assault <- read_csv(paste0("../../../mcp_data/Crime/", state, "-aggravated-assault.csv"))
-  state_homicide <- read_csv(paste0("../../../mcp_data/Crime/", state, "-homicide.csv"))
-  state_prop_crime <- read_csv(paste0("../../../mcp_data/Crime/", state, "-property-crime.csv"))
-  state_rape <- read_csv(paste0("../../../mcp_data/Crime/", state, "-rape.csv"))
-  state_robbery <- read_csv(paste0("../../../mcp_data/Crime/", state, "-robbery.csv"))
-  state_violent <- read_csv(paste0("../../../mcp_data/Crime/", state, "-violent-crime.csv"))
+  state_agg_assault <- read_csv(paste0("../../mcp_data/Crime/", state, "-aggravated-assault.csv"))
+  state_homicide <- read_csv(paste0("../../mcp_data/Crime/", state, "-homicide.csv"))
+  state_prop_crime <- read_csv(paste0("../../mcp_data/Crime/", state, "-property-crime.csv"))
+  state_rape <- read_csv(paste0("../../mcp_data/Crime/", state, "-rape.csv"))
+  state_robbery <- read_csv(paste0("../../mcp_data/Crime/", state, "-robbery.csv"))
+  state_violent <- read_csv(paste0("../../mcp_data/Crime/", state, "-violent-crime.csv"))
   
   # Merge all files into one data frame to report crime rates in the state per 100,000 people per year
   state_crime_data <- state_agg_assault %>% 
@@ -581,6 +581,14 @@ WA_prop_crime <- read_csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-pro
 WA_rape <- read_csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/mcp_data/Crime/washington-rape.csv")
 WA_robbery <- read_csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/mcp_data/Crime/washington-robbery.csv")
 WA_violent <- read_csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/mcp_data/Crime/washington-violent-crime.csv")
+
+## Refugee Data
+library(readxl)
+
+refugee_hist_data <- read_excel("../../mcp_data/Refugees/PRM Refugee Admissions Report as of November 30, 2020.xlsx",
+                                sheet = 1,
+                                range = 'A11:K59',
+                                col_names = T)
 
 ################## Advice for renaming variables ##################
 # See Michael's suggestion on programmatically generating variable vectors rather than manually creating them:
