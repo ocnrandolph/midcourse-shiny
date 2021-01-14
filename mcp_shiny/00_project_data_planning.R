@@ -35,44 +35,39 @@ View(acs_08_3yr_vars)
 
 # Isolate race variables of interest programmatically
 # STEP 1: split label components into multiple columns 
-race_by_eth_acs3_2008 <- acs_08_3yr_vars %>% 
+race_by_eth_acs3_2008_vars <- acs_08_3yr_vars %>% 
   filter(str_detect(name, 'B03002_\\d{3}')) %>% # select race variable of interest only
-  separate(label, into = c('A', 'B', 'C', 'D', 'E'), sep = "!!") %>% # create columns A-E based on separators
-  filter(!is.na(D)) %>% # Remove total columns
-  filter(is.na(E)) # Remove "two or more races" detailed data
+  separate(label, into = c('A', 'B', 'C', 'D', 'E'), sep = '!!') %>% # create columns A-E based on '!!' separators
+  filter(!is.na(D)) %>% # Remove total columns; exclusion criteria = NA in column D
+  filter(is.na(E)) # Remove "two or more races" detailed data by; inclusion criteria = NA in column E
 
 # STEP 2: grab specific B03002 rows of interest based on the ones kept in the code above
-vars <- race_by_eth_acs3_2008 %>% 
+race_vars_2008 <- race_by_eth_acs3_2008_vars %>% 
   pull(name) # returns 'name' column as a vector
 
 # STEP 3: pull 2008 ACS data
-ex <- get_acs(
-  geography = "county",
+race_acs3_2008_data <- get_acs(
+  geography = 'county',
   year = 2008,
-  survey = "acs3",
-  state = c("ME", "MN", "OH", "WA"),
-  variables = vars
+  survey = 'acs3',
+  state = c('ME', 'MN', 'OH', 'WA'),
+  variables = race_vars_2008
 )
 
 # STEP 4: Create a data frame containing race variables of interest for counties within each state
-# merge ex with race_by_eth dataframe
-race_by_eth_acs3_2008 %>% 
-  full_join(ex, by = c("name" = "variable")) %>% 
-  select(C, D, NAME, estimate) %>%  # select columns of interest only, and in the order specified
-  View()
+# merge race_acs3_2008_data with race_by_eth_acs3_2008_vars 
+ME_MN_OH_WA_2008_race <- race_by_eth_acs3_2008_vars %>% 
+  full_join(race_acs3_2008_data, by = c("name" = "variable")) %>% 
+  select(NAME, C, D, estimate) %>%  # select columns of interest only, and in the order specified
+  rename(ethnicity = C, # rename columns so that they make more sense
+         race = D) %>% 
+  separate(NAME, into = c('county', 'state'), sep = ',') # separate 'NAME' column into two parts
 
-# edulevels_bygender <- v19 %>%
-#   filter(str_detect(name, 'B15002_\\d{3}')) %>%    # Narrow it down to the education variables
-#   filter(!str_detect(label, 'grade')) %>%     # Remove the unwanted ones
-#   separate(label, into = c('A', 'B', 'C', 'D'), sep = "!!") %>%   # Split into multiple columns
-#   mutate(C = str_remove(C, ':')) %>%      # Do some formatting
-#   mutate(D = str_replace_all(D, ' ', '_')) %>%
-#   mutate_at(c('C', 'D'), ~str_to_lower(.)) %>%
-#   mutate(C = replace_na(C, 'all')) %>%
-#   mutate(D = replace_na(D, 'total')) %>%
-#   unite(label, C, D, na.rm = TRUE) %>%     # Glue the labels back together
-#   select(label, name) %>%      # Pull out the pieces we need
-#   deframe()               # Covert to a named vector
+# STEP 5: (Optional) Filter so that only 6 counties within 4 states are included in the final product
+# Hennepin County, MN (Minneapolis); Stearns County, MN (St. Cloud)
+# Franklin County, OH (Columbus)
+# King County, WA (Seattle)
+# Cumberland County, ME (Portland); Androscoggin County, ME (Lewiston)
 
 #### Economic/employment opportunity data ####
 # [NON-HISPANIC WHITE]
@@ -175,6 +170,61 @@ race_by_eth_acs3_2008 %>%
     # Unemployment rate for HISPANIC women aged 65+ yrs: (C23002I_026/C23002I_024) * 100
     # Overall unemployment rate for HISPANIC labor force aged 65+ yrs: (C23002I_013 + C23002I_026)/(C23002I_011 + C23002I_024) * 100
 
+# Isolate employment variables of interest (C23002 B-D,H-I) programmatically
+# STEP 1: split label components into multiple columns 
+# empl_by_race_acs3_2008_vars <- 
+
+acs_08_3yr_vars %>% 
+  filter(str_detect(name, 'C23002[B-D, H-I]')) %>% # select employment variable of interest only
+  filter(str_extract(name, 'C23002\\D{1}')) %>% # put letters at the end of each variable in a separate column; translate into racial groups later
+  View()
+
+  separate(label, into = c('A', 'B', 'C', 'D', 'E', 'G', 'H'), sep = '!!') %>% # create columns A-H based on '!!' separators; skip 'F' since it typically means 'False'
+  filter(!is.na(D)) %>% # Remove total columns; exclusion criteria = NA in column D
+  filter(E == 'In labor force') %>% # focus on people in labor force
+  filter(G == 'Civilian' | G == 'Employed' | G == 'Unemployed' | is.na(G)) %>% # remove estimates of people employed in the armed forces
+  filter(str_detect(name, 'C23002\\w_004', negate = TRUE)) %>% # drop all rows ending in 004 (total male labor force including armed forces) from each group  
+  filter(str_detect(name, 'C23002\\w_017', negate = TRUE)) # drop all rows ending in 017 (total female labor force including armed forces) from each group
+
+# STEP 2: grab specific B03002 rows of interest based on the ones kept in the code above
+empl_vars_2008 <- empl_by_race_acs3_2008_vars %>% 
+  pull(name) # returns 'name' column as a vector
+
+# STEP 3: pull 2008 ACS data
+empl_acs3_2008_data <- get_acs(
+  geography = 'county',
+  year = 2008,
+  survey = 'acs3',
+  state = c('ME', 'MN', 'OH', 'WA'),
+  variables = empl_vars_2008
+)
+
+# STEP 4: Create a data frame containing race variables of interest for counties within each state
+# merge empl_acs3_2008_data with empl_by_race_acs3_2008_vars
+ME_MN_OH_WA_2008_empl <- empl_acs3_2008_data %>% 
+  full_join(empl_by_race_acs3_2008_vars, by = c('variable' = 'name')) %>% 
+  select(NAME, C, D, H, G, estimate) %>%  # select columns of interest only, and in the order specified
+  rename(sex = C, # rename columns so that they make more sense
+         age_group = D,
+         empl_status_16_64 = H,
+         empl_status_65_up = G) %>% 
+  separate(NAME, into = c('county', 'state'), sep = ',')  # separate 'NAME' column into two parts
+
+# STEP 5: Consolidate employment status columns; source data in empl_status_65_up to replace NA columns in empl_status_16_64
+ME_MN_OH_WA_2008_empl <- within(ME_MN_OH_WA_2008_empl, {
+  empl_status_16_64 = as.character(empl_status_16_64) # column I want to keep with gaps in it
+  empl_status_65_up = as.character(empl_status_65_up) # reference column I'll use to complete the desired column
+  empl_status_16_64 = ifelse(is.na(empl_status_16_64), empl_status_65_up, empl_status_16_64) # fills gaps in desired column with specific values from reference column
+})
+
+# Next, rename empl_status so that it's by itself; and then drop the extra empl_status column
+
+# STEP 5: (Optional) Filter so that only 6 counties within 4 states are included in the final product
+# Hennepin County, MN (Minneapolis); Stearns County, MN (St. Cloud)
+# Franklin County, OH (Columbus)
+# King County, WA (Seattle)
+# Cumberland County, ME (Portland); Androscoggin County, ME (Lewiston)
+
 #### Co-ethnic and immigrant community data ####
   # ACS3yr2008 Foreign-born Population Variable(s)
     # Somali population data
@@ -184,14 +234,77 @@ race_by_eth_acs3_2008 %>%
       # Self-reported Somali Ancestry (B04006_082)
       # Percent of total pop identifying as Somali = (B04006_082/B04006_001) * 100
       # Percent of foreign-born pop identifying as Somali = (B04006_082/B05006_001) * 100
-  
+
+# Isolate foreign-born pop variables of interest programmatically
+# STEP 1: split label components into multiple columns 
+somali_acs3_2008_vars <- acs_08_3yr_vars %>% 
+  filter(str_detect(name, 'B04006')) %>% # select foreign-born variable of interest only
+  separate(label, into = c('A', 'B', 'C', 'D'), sep = '!!') %>% # create columns A-D based on '!!' separators
+  filter(name == 'B04006_001' | name == 'B04006_082')  # keep total foreign-born and Somali variables only
+
+# STEP 2: grab specific B03002 rows of interest based on the ones kept in the code above
+somali_vars_2008 <- somali_acs3_2008_vars %>% 
+  pull(name) # returns 'name' column as a vector
+
+# STEP 3: pull 2008 ACS data
+somali_acs3_2008_data <- get_acs(
+  geography = 'county',
+  year = 2008,
+  survey = 'acs3',
+  state = c('ME', 'MN', 'OH', 'WA'),
+  variables = somali_vars_2008
+)
+
+# STEP 4: Create a data frame containing race variables of interest for counties within each state
+# merge race_acs3_2008_data with race_by_eth_acs3_2008_vars 
+ME_MN_OH_WA_2008_somali <- somali_acs3_2008_vars %>% 
+  full_join(somali_acs3_2008_data, by = c("name" = "variable")) %>% 
+  select(NAME, D, estimate) %>%  # select columns of interest only, and in the order specified
+  rename(fb_nationality = D) %>% # rename columns
+  separate(NAME, into = c('county', 'state'), sep = ',') %>% # separate 'NAME' column into two parts
+  mutate(fb_nationality = replace_na(fb_nationality, 'Non-Somali Foreign-Born')) # replace 'NA' in nationality col with new value
+
+# STEP 5: (Optional) Filter so that only 6 counties within 4 states are included in the final product
+# Hennepin County, MN (Minneapolis); Stearns County, MN (St. Cloud)
+# Franklin County, OH (Columbus)
+# King County, WA (Seattle)
+# Cumberland County, ME (Portland); Androscoggin County, ME (Lewiston)
+
   # ACS3yr2008 Alternate if above data are missing for a community
     # Place of Birth by Nativity and Citizenship Status: (NA)
-      # Total foreign-born population (B05006_001)
-      # Total foreign-born (citizen and non-citizen) and native-born population (B05002_001)
-      # Total foreign-born population who identify as African (B05006_067)
-      # Percent of total pop identifying as African = (B05006_067/B05002_001) * 100
-      # Percent of foreign-born pop identifying as African = (B05006_067/B05006_001) * 100
+    # Total foreign-born population (B05006_001)
+    # Total foreign-born (citizen and non-citizen) and native-born population (B05002_001)
+    # Total foreign-born population who identify as African (B05006_067)
+    # Percent of total pop identifying as African = (B05006_067/B05002_001) * 100
+    # Percent of foreign-born pop identifying as African = (B05006_067/B05006_001) * 100
+
+# STEP 1: split label components into multiple columns 
+african_acs3_2008_vars <- acs_08_3yr_vars %>% 
+  filter(str_detect(name, 'B05006')) %>% # select foreign-born variables of interest only
+  separate(label, into = c('A', 'B', 'C', 'D'), sep = '!!') %>% # create columns A-D based on '!!' separators
+  filter(name == 'B04006_001' | name == 'B04006_082')  # keep total foreign-born and Somali variables only
+
+# STEP 2: grab specific B03002 rows of interest based on the ones kept in the code above
+somali_vars_2008 <- somali_acs3_2008_vars %>% 
+  pull(name) # returns 'name' column as a vector
+
+# STEP 3: pull 2008 ACS data
+somali_acs3_2008_data <- get_acs(
+  geography = 'county',
+  year = 2008,
+  survey = 'acs3',
+  state = c('ME', 'MN', 'OH', 'WA'),
+  variables = somali_vars_2008
+)
+
+# STEP 4: Create a data frame containing race variables of interest for counties within each state
+# merge race_acs3_2008_data with race_by_eth_acs3_2008_vars 
+ME_MN_OH_WA_2008_somali <- somali_acs3_2008_vars %>% 
+  full_join(somali_acs3_2008_data, by = c("name" = "variable")) %>% 
+  select(NAME, D, estimate) %>%  # select columns of interest only, and in the order specified
+  rename(fb_nationality = D) %>% # rename columns
+  separate(NAME, into = c('county', 'state'), sep = ',') %>% # separate 'NAME' column into two parts
+  mutate(fb_nationality = replace_na(fb_nationality, 'Non-Somali Foreign-Born')) # replace 'NA' in nationality col with new value
 
 ################## 2018 ACS 5-YR VOIs ##################
 # Examine variables in 2018 5-year ACS data set
@@ -398,7 +511,7 @@ WA_violent <- read_csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-projec
 # See Michael's suggestion on programmatically generating variable vectors rather than manually creating them:
 # Potentially, something like this could work. It does result in names that are a bit longer, and it's definitely debatable if it's worth the effort in this case to do it.:
 # 
-# edulevels_bygender <- acs_08_3yr_vars %>%
+# edulevels_bygender <- v19 %>%
 #   filter(str_detect(name, 'B15002_\\d{3}')) %>%    # Narrow it down to the education variables
 #   filter(!str_detect(label, 'grade')) %>%     # Remove the unwanted ones
 #   separate(label, into = c('A', 'B', 'C', 'D'), sep = "!!") %>%   # Split into multiple columns
