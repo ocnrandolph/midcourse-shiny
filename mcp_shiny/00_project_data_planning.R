@@ -468,10 +468,14 @@ ME_crime_data <- ME_agg_assault %>%
             by = c("Year", "Location")
   ) %>% 
   rename(prop_crime = Rate) %>% 
-  full_join(ME_rape,
+  full_join(ME_rape %>% 
+              mutate(type = str_match(Location, 'Rape\\s(\\w+)')[,2]) %>% 
+              mutate(Location = str_match(Location, '(.+)\\sRape')[,2]) %>% 
+              pivot_wider(names_from = type,
+                          values_from = Rate),
             by = c("Year", "Location")
   ) %>% 
-  rename(rape = Rate) %>%
+  #rename(rape = Rate) %>% # No longer needed
   full_join(ME_robbery,
             by = c("Year", "Location")
   ) %>% 
@@ -482,7 +486,80 @@ ME_crime_data <- ME_agg_assault %>%
   rename(violent_crime = Rate,
          year = Year,
          location = Location) %>% 
-  relocate(location, .before = aggr_assault)
+  relocate(location, .before = aggr_assault) 
+
+# 
+# ME_rape %>% 
+#   mutate(type = str_match(Location, 'Rape\\s(\\w+)')[,2]) %>% 
+#   mutate(Location = str_match(Location, '(.+)\\sRape')[,2]) %>% 
+#   pivot_wider(names_from = type,
+#               values_from = Rate) %>% 
+#   View()
+
+# Writing a function to merge and prepare all 6 data files for each state
+crime_merge <- function(state){ # curly braces specifies chunk of r code
+  
+  # reading in csv files and naming resulting tibbles appropriately
+  state_agg_assault <- read_csv(paste0("../../../mcp_data/Crime/", state, "-aggravated-assault.csv"))
+  state_homicide <- read_csv(paste0("../../../mcp_data/Crime/", state, "-homicide.csv"))
+  state_prop_crime <- read_csv(paste0("../../../mcp_data/Crime/", state, "-property-crime.csv"))
+  state_rape <- read_csv(paste0("../../../mcp_data/Crime/", state, "-rape.csv"))
+  state_robbery <- read_csv(paste0("../../../mcp_data/Crime/", state, "-robbery.csv"))
+  state_violent <- read_csv(paste0("../../../mcp_data/Crime/", state, "-violent-crime.csv"))
+  
+  # Merge all files into one data frame to report crime rates in the state per 100,000 people per year
+  state_crime_data <- state_agg_assault %>% 
+    full_join(state_homicide, 
+              by = c("Year", "Location"), 
+              suffix = c("_a", "_h")
+    ) %>% 
+    rename(aggr_assault = Rate_a,
+           homicide = Rate_h
+    ) %>% 
+    full_join(state_prop_crime,
+              by = c("Year", "Location")
+    ) %>% 
+    rename(prop_crime = Rate) %>% 
+    full_join(state_rape %>% 
+                mutate(type = str_match(Location, 'Rape\\s(\\w+)')[,2]) %>% 
+                mutate(Location = str_match(Location, '(.+)\\sRape')[,2]) %>% 
+                pivot_wider(names_from = type,
+                            values_from = Rate),
+              by = c("Year", "Location")
+    ) %>% 
+    full_join(state_robbery,
+              by = c("Year", "Location")
+    ) %>% 
+    rename(robbery = Rate) %>%
+    full_join(state_violent,
+              by = c("Year", "Location")
+    ) %>% 
+    rename(violent_crime = Rate,
+           year = Year,
+           location = Location) %>% 
+    relocate(location, .before = aggr_assault)
+  
+  # Return state crime data
+  return(state_crime_data)
+  
+  }
+
+# Creating a for loop to create and combine all crime data for states of interest
+
+for (state in c('maine', 'minnesota', 'ohio', 'washington')) {
+  
+  if (state == 'maine') {
+    
+    full_crime_data <- crime_merge(state)
+  }
+  
+  else {
+    
+    full_crime_data <- bind_rows(full_crime_data, crime_merge(state) %>% filter(location != 'United States'))
+    
+  }
+  
+}
 
 MN_agg_assault <- read_csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/mcp_data/Crime/minnesota-aggravated-assault.csv")
 MN_homicide <- read_csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/mcp_data/Crime/minnesota-homicide.csv")
