@@ -172,19 +172,17 @@ ME_MN_OH_WA_2008_race <- race_by_eth_acs3_2008_vars %>%
 
 # Isolate employment variables of interest (C23002 B-D,H-I) programmatically
 # STEP 1: split label components into multiple columns 
-# empl_by_race_acs3_2008_vars <- 
-
-acs_08_3yr_vars %>% 
+empl_by_race_acs3_2008_vars <- acs_08_3yr_vars %>% 
   filter(str_detect(name, 'C23002[B-D, H-I]')) %>% # select employment variable of interest only
-  filter(str_extract(name, 'C23002\\D{1}')) %>% # put letters at the end of each variable in a separate column; translate into racial groups later
-  View()
-
+  mutate(race = str_match(name, 'C23002(\\D{1})')[,2]) %>% # put letters at the end of each variable in a separate column; translate into racial groups later
   separate(label, into = c('A', 'B', 'C', 'D', 'E', 'G', 'H'), sep = '!!') %>% # create columns A-H based on '!!' separators; skip 'F' since it typically means 'False'
   filter(!is.na(D)) %>% # Remove total columns; exclusion criteria = NA in column D
   filter(E == 'In labor force') %>% # focus on people in labor force
   filter(G == 'Civilian' | G == 'Employed' | G == 'Unemployed' | is.na(G)) %>% # remove estimates of people employed in the armed forces
   filter(str_detect(name, 'C23002\\w_004', negate = TRUE)) %>% # drop all rows ending in 004 (total male labor force including armed forces) from each group  
   filter(str_detect(name, 'C23002\\w_017', negate = TRUE)) # drop all rows ending in 017 (total female labor force including armed forces) from each group
+
+str_match('This is a test C23002B_003', 'C23002(\\D{1})')[,2]
 
 # STEP 2: grab specific B03002 rows of interest based on the ones kept in the code above
 empl_vars_2008 <- empl_by_race_acs3_2008_vars %>% 
@@ -203,7 +201,7 @@ empl_acs3_2008_data <- get_acs(
 # merge empl_acs3_2008_data with empl_by_race_acs3_2008_vars
 ME_MN_OH_WA_2008_empl <- empl_acs3_2008_data %>% 
   full_join(empl_by_race_acs3_2008_vars, by = c('variable' = 'name')) %>% 
-  select(NAME, C, D, H, G, estimate) %>%  # select columns of interest only, and in the order specified
+  select(NAME, race, C, D, H, G, estimate) %>%  # select columns of interest only, and in the order specified
   rename(sex = C, # rename columns so that they make more sense
          age_group = D,
          empl_status_16_64 = H,
