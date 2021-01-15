@@ -1,79 +1,63 @@
+# This code is to replicate the analyses and figures from my Jan 2021
+# R shiny application. Code developed by Oluchi Nwosu Randolph, from a 
+# shiny app template created by Maeva Ralafi
+
 # All libraries are imported in global.R
 
-# Source codes that defines the Home Page
+# Source codes that define the 'Home Page'
 # homePage variable is defined here
-source("pages/homePage.r") # -> homePage
+#source("mcp_pages/homePage.R") # -> homePage
 
-# Source codes that defines the Analysis Page
-# analysisPage variable
-source("pages/analysisPage.r") # -> analysisPage
+# Source codes that define the 'The Issue' Page
+# issuePage variable
+#source("mcp_pages/issuePage.R") # -> issuePage
 
-# Source codes that defines the Age Page
-# agePage variable
-#source("pages/agePage.r") # -> agePage
+# Source codes that define the 'Key Players' Page
+# playersPage variable
+#source("mcp_pages/playersPage.R") # -> playersPage
 
-# Source codes that defines the Education Page
-# educationPage variable
-#source("pages/educationPage.r") # -> educationPage
+# Source codes that define the 'A Case Study' Page
+# casePage variable
+#source("mcp_pages/casePage.R") # -> casePage
 
-# Source codes that defines the Race and Ethnicity Page
-# racePage variable
-#source("pages/racePage.r") # -> racePage
+# Source codes that define the 'The Takeaway' Page
+# takeawayPage variable
+#source("mcp_pages/takeawayPage.R") # -> takeawayPage
 
-# Source codes that defines the Upload Data Page
-# uploadDataPage variable
-#source("pages/uploadDataPage.r") # -> uploadDataPage
-
-# Source codes that defines the DataSources Page
-# dataSourcesPage variable
-source("pages/creditsPage.r") # -> creditsPage
-
+# Source codes that define the 'Credits' Page
+# creditsPage variable
+#source("mcp_pages/creditsPage.R") # -> creditsPage
 
 # Putting the UI Together
 shinyUI(
     # Using Navbar with custom CSS
-    navbarPage(title=tags$a(href='https://people3.co',
-                            tags$img(src='img/people3logo.png', height='30', width='140')),
-               theme="styles.css", # Shiny will look in the www folder for this
-               homePage,
-               #agePage,
-               #educationPage,
-               #racePage,
-               analysisPage,
-               #uploadDataPage,
-               creditsPage)
-)
-
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-library(shiny)
-
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
+    navbarPage(title = 'Integration and Pathways to Belonging',
+               tabPanel('Home',
+                        fluidRow(
+                            column(5,
+                                   h3('Integration and Pathways to Belonging:', 
+                                      align = 'center'),
+                                   h4('Exploring How Location Matters for Refugee Resettlement in the U.S.',
+                                      align = 'center')
+                                   ),
+                            column(4,
+                                   img(src = 'home-collage.png', # add placeholder collage
+                                       height = 486, 
+                                       width = 798))
+                        )
+               ),
+               tabPanel('Credits',
+                        'Credits'),
+               navbarMenu('Explore',
+                          tabPanel('The Issue',
+                                   'The Issue'),
+                          tabPanel('Key Players',
+                                   'Key Players'),
+                          tabPanel('A Case Study',
+                                   'Case Study'),
+                          tabPanel('The Takeaway',
+                                   'Conclusion')
+               )
+               
     )
-))
+)
