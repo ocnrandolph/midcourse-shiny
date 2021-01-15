@@ -39,11 +39,22 @@ shinyUI(
                                       align = 'center'),
                                    h4('Exploring How Location Matters for Refugee Resettlement in the U.S.',
                                       align = 'center')
-                                   ),
+                            ),
                             column(4,
-                                   img(src = 'home-collage.png', # add placeholder collage
+                                   img(src = 'home-collage.png', # add image
                                        height = 486, 
-                                       width = 798))
+                                       width = 798),
+                                   p(
+                                       br(),
+                                       tags$small('Photo Credits:',
+                                                  a(href='https://www.flickr.com/photos/14214150@N02/26040247193', 'Turkana County and Kakuma Camp'),
+                                                  'by Marisol Grandon/UK DFID',
+                                                  br(),
+                                                  'All other photos were obtained from',
+                                                  a(href='https://www.shutterstock.com/discover/10-free-stock-images', 'Shutterstock.com')
+                                       )
+                                   )
+                            )
                         )
                ),
                tabPanel('Credits',
