@@ -35,10 +35,25 @@ shinyUI(
                tabPanel('Home',
                         fluidRow(
                             column(5,
-                                   h3('Integration and Pathways to Belonging:', 
+                                   h3(strong('Integration and Pathways to Belonging:'), 
                                       align = 'center'),
                                    h4('Exploring How Location Matters for Refugee Resettlement in the U.S.',
-                                      align = 'center')
+                                      align = 'center'),
+                                   br(),
+                                   p("Human migration is a common, yet often controversial phenomenon. Even when a newcomers' legal status is not a",
+                                   "point of contention, their presence can challenge a range of views on identity, place, and belonging. America",
+                                   "has been described as a cultural \"melting pot\", but what exactly does this mean? And how do we meaningfully",
+                                   "examine how individuals and communities experience, promote, and challenge this \"melting\" as it happens?",
+                                   "Countless books, documentaries, and dissertations have not exhausted all that there is to explore on this topic.",
+                                   "Therefore, it is unlikely that a single shiny app can do it justice either. What this app can do, however, is",
+                                   "function as a resource for others who care about these types of questions.", align = 'center'),
+                                   br(),
+                                   p(strong('Research Questions'),
+                                   br(),
+                                   "This project reflects one starting point for understanding this phenomenon. I focus on the experiences of a,",
+                                   "specific group of newcomers, refugee arrivals, to explore two general questions:",
+                                   em("1. What are the origins of people who are admitted to the U.S. as refugees?")
+                                   )
                             ),
                             column(4,
                                    img(src = 'home-collage.png', # add image
