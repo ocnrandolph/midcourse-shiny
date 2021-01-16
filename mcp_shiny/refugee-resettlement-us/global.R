@@ -12,7 +12,8 @@ library(plotly)
 library(shiny)
 library(shinydashboard)
 
-
+# specifying initial resettlement location options for casePage selectInput
+firstCountyLoc <- c("County 1", "County 2")
 
 
 

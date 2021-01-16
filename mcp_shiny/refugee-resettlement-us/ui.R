@@ -22,7 +22,7 @@ source("mcp_pages/creditsPage.R") # -> creditsPage
 
 # Source codes that define the 'A Case Study' Page
 # casePage variable
-#source("mcp_pages/casePage.R") # -> casePage
+source("mcp_pages/casePage.R") # -> casePage
 
 # Source codes that define the 'The Takeaway' Page
 # takeawayPage variable
@@ -39,8 +39,7 @@ shinyUI(
                                    'The Issue'),
                           tabPanel('Key Players',
                                    'Key Players'),
-                          tabPanel('A Case Study',
-                                   'Case Study'),
+                          casePage,
                           tabPanel('The Takeaway',
                                    'Conclusion')
                )
