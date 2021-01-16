@@ -1,10 +1,80 @@
 # This is the main interactive analysis page
 
 casePage <- tabPanel('A Case Study',
-                     column(width=3,
+                     column(width=2,
                             selectInput('firstCounty',
                                         label = 'Initial Resettlement Location',
                                         choices = firstCountyLoc),
+                            selectInput('secondCounty',
+                                        label = 'Secondary Migration Location',
+                                        choices = secondCountyLoc),
+                            radioButtons('year',
+                                         label = "Year",
+                                         choices = c("2008", "2018"))
+                     ),
+                     
+                     column(width = 10,
+                            tabsetPanel(type = "tabs",
+                                        # Race/Ethnicity Comparison tab layout
+                                        tabPanel("Race/Ethnicity",
+                                                 fluidRow(
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Initial Resettlement Location<br>Race and Ethnicity</h5>'),
+                                                          plotlyOutput('raceFirstLoc')
+                                                   ),
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Secondary Migration Location<br>Race and Ethnicity</h5>'),
+                                                          plotlyOutput('raceSecondLoc')
+                                                   )
+                                                 )
+                                        ),
+                                        # Employment Comparison tab layout
+                                        tabPanel("Employment Opportunities",
+                                                 fluidRow(
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Initial Resettlement Location<br>Employment Opportunities</h5>'),
+                                                          plotlyOutput('emplyFirstLoc')
+                                                   ),
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Secondary Migration Location<br>Employment Opportunities</h5>'),
+                                                          plotlyOutput('emplySecondLoc')
+                                                   )
+                                                 )
+                                        ),
+                                        # Co-ethnic Community Comparison tab layout
+                                        tabPanel("Co-ethnic Community",
+                                                 fluidRow(
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Initial Resettlement Location<br>Co-Ethnic Community</h5>'),
+                                                          plotlyOutput('coethFirstLoc')
+                                                   ),
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Secondary Migration Location<br>Co-Ethnic Community</h5>'),
+                                                          plotlyOutput('coethSecondLoc')
+                                                   ),
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Initial Resettlement Location<br>Somali Community</h5>'),
+                                                          plotlyOutput('somaliFirstLoc')
+                                                   ),
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Secondary Migration Location<br>Somali Community</h5>'),
+                                                          plotlyOutput('somaliSecondLoc')
+                                                   )
+                                                 )
+                                        ),
+                                        tabPanel("Crime",
+                                                 fluidRow(
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Initial Resettlement Location<br>Crime Statistics</h5>'),
+                                                          plotlyOutput('crimeFirstLoc')
+                                                   ),
+                                                   column(6,
+                                                          HTML('<h5 class="plotTitle">Secondary Migration Location<br>Crime Community</h5>'),
+                                                          plotlyOutput('crimeSecondLoc')
+                                                   )
+                                                 )
+                                        )
+                            )
                      )
 )
                          # #A column of width 9 to contain the plots

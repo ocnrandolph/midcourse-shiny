@@ -14,6 +14,7 @@ library(shinydashboard)
 
 # specifying initial resettlement location options for casePage selectInput
 firstCountyLoc <- c("County 1", "County 2")
+secondCountyLoc <- c("County 3", "County 4")
 
 
 
