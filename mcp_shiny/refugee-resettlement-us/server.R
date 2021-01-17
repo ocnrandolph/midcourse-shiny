@@ -1,11 +1,11 @@
-# # Define server logic required to produce desired outputs
+# # Define server logic required to produce desired charts based on user selections
 
 shinyServer(function(input, output) {
   # Race/Ethnicity Comparison output
-  # plotly output for first location selection and year selection
+  # plotly output for first location selection and year selection (stacked bar chart)
   output$raceFirstLoc <- plotly::renderPlotly({
     # 1st filter by location choice
-    dataset %>%
+    cleanDataset %>%
       filter(county == input$firstCounty) %>%
       # 2nd filter by year
       filter(year == input$year) %>%
@@ -23,7 +23,7 @@ shinyServer(function(input, output) {
       theme(axis.text.x = element_text(angle = 45)) # Rotate x-axis text labels
   })
   
-  # plotly output for second location selection and year selection
+  # plotly output for second location selection and year selection (stacked bar chart)
   output$raceSecondLoc <- plotly::renderPlotly({
     # 1st filter by location choice
     cleanDataset %>%
@@ -45,10 +45,70 @@ shinyServer(function(input, output) {
   })
   
   # Economic Opportunity Comparison output
-  # plotly output for first location and year selection
-  output$emplFirstLoc <- plotly::renderPlotly({
+  # plotly output for first location and year selection (dumbbell plot)
+  output$emplyFirstLoc <- plotly::renderPlotly({
     cleanDataset %>% 
       filter(county == input$firstCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+  })
+  
+  # plotly output for second location and year selection (dumbbell plot)
+  output$emplySecondLoc <- plotly::renderPlotly({
+    cleanDataset %>% 
+      filter(county == input$secondCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+  })
+  
+  # Co-Ethnic Community Comparison output
+  # plotly output for first location and year selection (donut chart)
+  output$coethFirstLoc <- plotly::renderPlotly({
+    cleanDataset %>% 
+      filter(county == input$firstCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+  })
+  
+  # plotly output for second location and year selection (donut chart)
+  output$coethSecondLoc <- plotly::renderPlotly({
+    cleanDataset %>% 
+      filter(county == input$secondCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+  })
+  
+  # plotly output for first location and year selection (pie chart)
+  #NOTE: Change to africanFirstLoc if Somali population data are not available
+  output$somaliFirstLoc <- plotly::renderPlotly({
+    cleanDataset %>% 
+      filter(county == input$firstCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+  })
+  
+  # plotly output for second location and year selection (pie chart)
+  #NOTE: Change to africanSecondLoc if Somali population data are not available
+  output$somaliSecondLoc <- plotly::renderPlotly({
+    cleanDataset %>% 
+      filter(county == input$secondCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+  })
+  
+  # Incidences of Crime Comparison output
+  # plotly output for first location and year selection (grouped bar chart)
+  output$crimeFirstLoc <- plotly::renderPlotly({
+    cleanDataset %>% 
+      filter(county == input$firstCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+  })
+  
+  # plotly output for second location and year selection (grouped bar chart)
+  output$crimeSecondLoc <- plotly::renderPlotly({
+    cleanDataset %>% 
+      filter(county == input$secondCounty) %>% 
       filter(year == input$year) %>% 
       ggplot()
   })
