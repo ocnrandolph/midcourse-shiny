@@ -4,9 +4,9 @@ library(dplyr)
 library(plotly)
 library(stringr)
 
-# Installing the most recent GitHub version of tidycensus
-install.packages("remotes")
-remotes::install_github("walkerke/tidycensus")
+# Installing the most recent GitHub version of tidycensus (if needed)
+#install.packages("remotes")
+#remotes::install_github("walkerke/tidycensus")
 
 # Notes on retrieving variables of interest (VOI) from both ACS data sets
 
@@ -45,7 +45,7 @@ race_by_eth_acs3_2008_vars <- acs_08_3yr_vars %>%
 race_vars_2008 <- race_by_eth_acs3_2008_vars %>% 
   pull(name) # returns 'name' column as a vector
 
-# STEP 3: pull 2008 ACS data
+# STEP 3: pull 2008 ACS race data for variables specified in the vector above
 race_acs3_2008_data <- get_acs(
   geography = 'county',
   year = 2008,
