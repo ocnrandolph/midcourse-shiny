@@ -45,8 +45,8 @@ casePage <- tabPanel('A Case Study',
                                                    )
                                                  )
                                         ),
-                                        # Co-ethnic Community Comparison tab layout
-                                        tabPanel("Co-ethnic Community",
+                                        # Coethnic Community Comparison tab layout
+                                        tabPanel("Coethnic Community",
                                                  fluidRow(
                                                    column(6,
                                                           h5('Initial Resettlement Location', align = 'center'),
