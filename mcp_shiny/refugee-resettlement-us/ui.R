@@ -1,6 +1,6 @@
 # This code is to replicate the analyses and figures from my Jan 2021
 # R shiny application. Code developed by Oluchi Nwosu Randolph, from a 
-# shiny app template created by Maeva Ralafi
+# shiny app template created by Maeva Ralafiarindaza
 
 # All libraries are imported in global.R
 
@@ -18,7 +18,7 @@ source("mcp_pages/creditsPage.R") # -> creditsPage
 
 # Source codes that define the 'Key Players' Page
 # playersPage variable
-#source("mcp_pages/playersPage.R") # -> playersPage
+source("mcp_pages/playersPage.R") # -> playersPage
 
 # Source codes that define the 'A Case Study' Page
 # casePage variable
@@ -37,8 +37,7 @@ shinyUI(
                navbarMenu('Explore',
                           tabPanel('The Issue',
                                    'The Issue'),
-                          tabPanel('Key Players',
-                                   'Key Players'),
+                          playersPage,
                           casePage,
                           tabPanel('The Takeaway',
                                    'Conclusion')

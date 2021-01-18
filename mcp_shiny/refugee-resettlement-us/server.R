@@ -1,6 +1,15 @@
 # # Define server logic required to produce desired charts based on user selections
 
 shinyServer(function(input, output) {
+
+#playersPage Output
+  # output$playersPlots <- plotly::renderPlotly({
+  #   admissionsData <- switch(input$admissionsData,
+  #                            
+  #                            )
+  # })
+
+# casePage Output  
   # Race/Ethnicity Comparison output
   # plotly output for first location selection and year selection (stacked bar chart)
   output$raceFirstLoc <- plotly::renderPlotly({
