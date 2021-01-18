@@ -44,7 +44,7 @@ race_by_eth_2009_vars <- acs_09_vars %>%
 race_vars_2009 <- race_by_eth_2009_vars %>% 
   pull(name) # returns 'name' column as a vector
 
-# STEP 3: pull 2008 ACS race data for variables specified in the vector above
+# STEP 3: pull 2009 ACS race data for variables specified in the vector above
 race_2009_data <- get_acs(
   geography = 'county',
   year = 2009,
@@ -74,8 +74,9 @@ subset_2009_race_data <- states_2009_race_data %>%
            (county == 'Franklin County' & state == 'Ohio')) # Columbus, OH initial resettlement location
 
 #### Economic/employment opportunity data ####
+#### Specific employment variables of interest by race, for reference ####
   # [NON-HISPANIC WHITE]
-  # ACS3yr2008 Unemployment variables of interest: C23002H [NON-HISPANIC WHITE]
+  # ACS5yr2009 Unemployment variables of interest: C23002H [NON-HISPANIC WHITE]
     # Total civilian NON-HISPANIC WHITE male pop in labor force aged 16-64 yrs (C23002H_006)
     # Unemployed NON-HISPANIC WHITE civilian male pop in labor force aged 16-64 yrs (C23002H_008)
     # Total NON-HISPANIC WHITE male pop in labor force aged 65+ yrs (C23002H_011)
@@ -86,7 +87,7 @@ subset_2009_race_data <- states_2009_race_data %>%
     # Total NON-HISPANIC WHITE female pop in labor force aged 65+ yrs (C23002H_024)
     # Unemployed NON-HISPANIC WHITE female pop in labor force aged 65+ yrs (C23002H_026)
   
-  # Calculating ACS3yr2008 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
+  # Calculating ACS5yr2009 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
     # Unemployment rate for NON-HISPANIC WHITE men aged 16-64 yrs: (C23002H_008/C23002H_006) * 100
     # Unemployment rate for NON-HISPANIC WHITE women aged 16-64 yrs: (C23002H_021/C23002H_019) * 100
     # Overall unemployment rate for NON-HISPANIC WHITE labor force aged 16-64 yrs: (C23002H_008 + C23002H_021)/(C23002H_006 + C23002H_019) * 100
@@ -95,88 +96,89 @@ subset_2009_race_data <- states_2009_race_data %>%
     # Overall unemployment rate for NON-HISPANIC WHITE labor force aged 65+ yrs: (C23002H_013 + C23002H_026)/(C23002H_011 + C23002H_024) * 100
   
   # [BLACK]
-  # ACS3yr2008 Unemployment variables of interest: C23002B [BLACK]
-  # Total civilian BLACK male pop in labor force aged 16-64 yrs (C23002B_006)
-  # Unemployed BLACK civilian male pop in labor force aged 16-64 yrs (C23002B_008)
-  # Total BLACK male pop in labor force aged 65+ yrs (C23002B_011)
-  # Unemployed BLACK male pop in labor force aged 65+ yrs (C23002B_013)
+  # ACS5yr2009 Unemployment variables of interest: C23002B [BLACK]
+    # Total civilian BLACK male pop in labor force aged 16-64 yrs (C23002B_006)
+    # Unemployed BLACK civilian male pop in labor force aged 16-64 yrs (C23002B_008)
+    # Total BLACK male pop in labor force aged 65+ yrs (C23002B_011)
+    # Unemployed BLACK male pop in labor force aged 65+ yrs (C23002B_013)
+    
+    # Total civilian BLACK female pop in labor force aged 16-64 yrs (C23002B_019)
+    # Unemployed civilian BLACK female pop in labor force aged 16-64 yrs (C23002B_021)
+    # Total BLACK female pop in labor force aged 65+ yrs (C23002B_024)
+    # Unemployed BLACK female pop in labor force aged 65+ yrs (C23002B_026)
   
-  # Total civilian BLACK female pop in labor force aged 16-64 yrs (C23002B_019)
-  # Unemployed civilian BLACK female pop in labor force aged 16-64 yrs (C23002B_021)
-  # Total BLACK female pop in labor force aged 65+ yrs (C23002B_024)
-  # Unemployed BLACK female pop in labor force aged 65+ yrs (C23002B_026)
-  
-  # Calculating ACS3yr2008 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
-  # Unemployment rate for BLACK men aged 16-64 yrs: (C23002B_008/C23002B_006) * 100
-  # Unemployment rate for BLACK women aged 16-64 yrs: (C23002B_021/C23002B_019) * 100
-  # Overall unemployment rate for BLACK labor force aged 16-64 yrs: (C23002B_008 + C23002B_021)/(C23002B_006 + C23002B_019) * 100
-  # Unemployment rate for BLACK men aged 65+ yrs: (C23002B_013/C23002B_011) * 100
-  # Unemployment rate for BLACK women aged 65+ yrs: (C23002B_026/C23002B_024) * 100
-  # Overall unemployment rate for BLACK labor force aged 65+ yrs: (C23002B_013 + C23002B_026)/(C23002B_011 + C23002B_024) * 100
+  # Calculating ACS5yr2009 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
+    # Unemployment rate for BLACK men aged 16-64 yrs: (C23002B_008/C23002B_006) * 100
+    # Unemployment rate for BLACK women aged 16-64 yrs: (C23002B_021/C23002B_019) * 100
+    # Overall unemployment rate for BLACK labor force aged 16-64 yrs: (C23002B_008 + C23002B_021)/(C23002B_006 + C23002B_019) * 100
+    # Unemployment rate for BLACK men aged 65+ yrs: (C23002B_013/C23002B_011) * 100
+    # Unemployment rate for BLACK women aged 65+ yrs: (C23002B_026/C23002B_024) * 100
+    # Overall unemployment rate for BLACK labor force aged 65+ yrs: (C23002B_013 + C23002B_026)/(C23002B_011 + C23002B_024) * 100
   
   # [NATIVE AMERICAN]
-  # ACS3yr2008 Unemployment variables of interest: C23002C [NATIVE AMERICAN]
-  # Total civilian NATIVE AMERICAN male pop in labor force aged 16-64 yrs (C23002C_006)
-  # Unemployed NATIVE AMERICAN civilian male pop in labor force aged 16-64 yrs (C23002C_008)
-  # Total NATIVE AMERICAN male pop in labor force aged 65+ yrs (C23002C_011)
-  # Unemployed NATIVE AMERICAN male pop in labor force aged 65+ yrs (C23002C_013)
+  # ACS5yr2009 Unemployment variables of interest: C23002C [NATIVE AMERICAN]
+    # Total civilian NATIVE AMERICAN male pop in labor force aged 16-64 yrs (C23002C_006)
+    # Unemployed NATIVE AMERICAN civilian male pop in labor force aged 16-64 yrs (C23002C_008)
+    # Total NATIVE AMERICAN male pop in labor force aged 65+ yrs (C23002C_011)
+    # Unemployed NATIVE AMERICAN male pop in labor force aged 65+ yrs (C23002C_013)
+    
+    # Total civilian NATIVE AMERICAN female pop in labor force aged 16-64 yrs (C23002C_019)
+    # Unemployed civilian NATIVE AMERICAN female pop in labor force aged 16-64 yrs (C23002C_021)
+    # Total NATIVE AMERICAN female pop in labor force aged 65+ yrs (C23002C_024)
+    # Unemployed NATIVE AMERICAN female pop in labor force aged 65+ yrs (C23002C_026)
   
-  # Total civilian NATIVE AMERICAN female pop in labor force aged 16-64 yrs (C23002C_019)
-  # Unemployed civilian NATIVE AMERICAN female pop in labor force aged 16-64 yrs (C23002C_021)
-  # Total NATIVE AMERICAN female pop in labor force aged 65+ yrs (C23002C_024)
-  # Unemployed NATIVE AMERICAN female pop in labor force aged 65+ yrs (C23002C_026)
-  
-  # Calculating ACS3yr2008 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
-  # Unemployment rate for NATIVE AMERICAN men aged 16-64 yrs: (C23002C_008/C23002C_006) * 100
-  # Unemployment rate for NATIVE AMERICAN women aged 16-64 yrs: (C23002C_021/C23002C_019) * 100
-  # Overall unemployment rate for NATIVE AMERICAN labor force aged 16-64 yrs: (C23002C_008 + C23002C_021)/(C23002C_006 + C23002C_019) * 100
-  # Unemployment rate for NATIVE AMERICAN men aged 65+ yrs: (C23002C_013/C23002C_011) * 100
-  # Unemployment rate for NATIVE AMERICAN women aged 65+ yrs: (C23002C_026/C23002C_024) * 100
-  # Overall unemployment rate for NATIVE AMERICAN labor force aged 65+ yrs: (C23002C_013 + C23002C_026)/(C23002C_011 + C23002C_024) * 100
+  # Calculating ACS5yr2009 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
+    # Unemployment rate for NATIVE AMERICAN men aged 16-64 yrs: (C23002C_008/C23002C_006) * 100
+    # Unemployment rate for NATIVE AMERICAN women aged 16-64 yrs: (C23002C_021/C23002C_019) * 100
+    # Overall unemployment rate for NATIVE AMERICAN labor force aged 16-64 yrs: (C23002C_008 + C23002C_021)/(C23002C_006 + C23002C_019) * 100
+    # Unemployment rate for NATIVE AMERICAN men aged 65+ yrs: (C23002C_013/C23002C_011) * 100
+    # Unemployment rate for NATIVE AMERICAN women aged 65+ yrs: (C23002C_026/C23002C_024) * 100
+    # Overall unemployment rate for NATIVE AMERICAN labor force aged 65+ yrs: (C23002C_013 + C23002C_026)/(C23002C_011 + C23002C_024) * 100
   
   # [ASIAN]
-  # ACS3yr2008 Unemployment variables of interest: C23002D [ASIAN]
-  # Total civilian ASIAN male pop in labor force aged 16-64 yrs (C23002D_006)
-  # Unemployed ASIAN civilian male pop in labor force aged 16-64 yrs (C23002D_008)
-  # Total ASIAN male pop in labor force aged 65+ yrs (C23002D_011)
-  # Unemployed ASIAN male pop in labor force aged 65+ yrs (C23002D_013)
+  # ACS5yr2009 Unemployment variables of interest: C23002D [ASIAN]
+    # Total civilian ASIAN male pop in labor force aged 16-64 yrs (C23002D_006)
+    # Unemployed ASIAN civilian male pop in labor force aged 16-64 yrs (C23002D_008)
+    # Total ASIAN male pop in labor force aged 65+ yrs (C23002D_011)
+    # Unemployed ASIAN male pop in labor force aged 65+ yrs (C23002D_013)
+    
+    # Total civilian ASIAN female pop in labor force aged 16-64 yrs (C23002D_019)
+    # Unemployed civilian ASIAN female pop in labor force aged 16-64 yrs (C23002D_021)
+    # Total ASIAN female pop in labor force aged 65+ yrs (C23002D_024)
+    # Unemployed ASIAN female pop in labor force aged 65+ yrs (C23002D_026)
   
-  # Total civilian ASIAN female pop in labor force aged 16-64 yrs (C23002D_019)
-  # Unemployed civilian ASIAN female pop in labor force aged 16-64 yrs (C23002D_021)
-  # Total ASIAN female pop in labor force aged 65+ yrs (C23002D_024)
-  # Unemployed ASIAN female pop in labor force aged 65+ yrs (C23002D_026)
-  
-  # Calculating ACS3yr2008 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
-  # Unemployment rate for ASIAN men aged 16-64 yrs: (C23002D_008/C23002D_006) * 100
-  # Unemployment rate for ASIAN women aged 16-64 yrs: (C23002D_021/C23002D_019) * 100
-  # Overall unemployment rate for ASIAN labor force aged 16-64 yrs: (C23002D_008 + C23002D_021)/(C23002D_006 + C23002D_019) * 100
-  # Unemployment rate for ASIAN men aged 65+ yrs: (C23002D_013/C23002D_011) * 100
-  # Unemployment rate for ASIAN women aged 65+ yrs: (C23002D_026/C23002D_024) * 100
-  # Overall unemployment rate for ASIAN labor force aged 65+ yrs: (C23002D_013 + C23002D_026)/(C23002D_011 + C23002D_024) * 100
+  # Calculating ACS5yr2009 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
+    # Unemployment rate for ASIAN men aged 16-64 yrs: (C23002D_008/C23002D_006) * 100
+    # Unemployment rate for ASIAN women aged 16-64 yrs: (C23002D_021/C23002D_019) * 100
+    # Overall unemployment rate for ASIAN labor force aged 16-64 yrs: (C23002D_008 + C23002D_021)/(C23002D_006 + C23002D_019) * 100
+    # Unemployment rate for ASIAN men aged 65+ yrs: (C23002D_013/C23002D_011) * 100
+    # Unemployment rate for ASIAN women aged 65+ yrs: (C23002D_026/C23002D_024) * 100
+    # Overall unemployment rate for ASIAN labor force aged 65+ yrs: (C23002D_013 + C23002D_026)/(C23002D_011 + C23002D_024) * 100
   
   # [HISPANIC OR LATINO (ANY RACE)]
-  # ACS3yr2008 Unemployment variables of interest: C23002I [HISPANIC]
-  # Total civilian HISPANIC male pop in labor force aged 16-64 yrs (C23002I_006)
-  # Unemployed HISPANIC civilian male pop in labor force aged 16-64 yrs (C23002I_008)
-  # Total HISPANIC male pop in labor force aged 65+ yrs (C23002I_011)
-  # Unemployed HISPANIC male pop in labor force aged 65+ yrs (C23002I_013)
+  # ACS5yr2009 Unemployment variables of interest: C23002I [HISPANIC]
+    # Total civilian HISPANIC male pop in labor force aged 16-64 yrs (C23002I_006)
+    # Unemployed HISPANIC civilian male pop in labor force aged 16-64 yrs (C23002I_008)
+    # Total HISPANIC male pop in labor force aged 65+ yrs (C23002I_011)
+    # Unemployed HISPANIC male pop in labor force aged 65+ yrs (C23002I_013)
+    
+    # Total civilian HISPANIC female pop in labor force aged 16-64 yrs (C23002I_019)
+    # Unemployed civilian HISPANIC female pop in labor force aged 16-64 yrs (C23002I_021)
+    # Total HISPANIC female pop in labor force aged 65+ yrs (C23002I_024)
+    # Unemployed HISPANIC female pop in labor force aged 65+ yrs (C23002I_026)
   
-  # Total civilian HISPANIC female pop in labor force aged 16-64 yrs (C23002I_019)
-  # Unemployed civilian HISPANIC female pop in labor force aged 16-64 yrs (C23002I_021)
-  # Total HISPANIC female pop in labor force aged 65+ yrs (C23002I_024)
-  # Unemployed HISPANIC female pop in labor force aged 65+ yrs (C23002I_026)
-  
-  # Calculating ACS3yr2008 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
-  # Unemployment rate for HISPANIC men aged 16-64 yrs: (C23002I_008/C23002I_006) * 100
-  # Unemployment rate for HISPANIC women aged 16-64 yrs: (C23002I_021/C23002I_019) * 100
-  # Overall unemployment rate for HISPANIC labor force aged 16-64 yrs: (C23002I_008 + C23002I_021)/(C23002I_006 + C23002I_019) * 100
-  # Unemployment rate for HISPANIC men aged 65+ yrs: (C23002I_013/C23002I_011) * 100
-  # Unemployment rate for HISPANIC women aged 65+ yrs: (C23002I_026/C23002I_024) * 100
-  # Overall unemployment rate for HISPANIC labor force aged 65+ yrs: (C23002I_013 + C23002I_026)/(C23002I_011 + C23002I_024) * 100
+  # Calculating ACS5yr2009 unemployment rate column for areas of interest; confirmed by info available at https://www.edd.ca.gov/pdf_pub_ctr/de8714aa.pdf
+    # Unemployment rate for HISPANIC men aged 16-64 yrs: (C23002I_008/C23002I_006) * 100
+    # Unemployment rate for HISPANIC women aged 16-64 yrs: (C23002I_021/C23002I_019) * 100
+    # Overall unemployment rate for HISPANIC labor force aged 16-64 yrs: (C23002I_008 + C23002I_021)/(C23002I_006 + C23002I_019) * 100
+    # Unemployment rate for HISPANIC men aged 65+ yrs: (C23002I_013/C23002I_011) * 100
+    # Unemployment rate for HISPANIC women aged 65+ yrs: (C23002I_026/C23002I_024) * 100
+    # Overall unemployment rate for HISPANIC labor force aged 65+ yrs: (C23002I_013 + C23002I_026)/(C23002I_011 + C23002I_024) * 100
 
+#### Employment variables data prep ####
 # Isolate employment variables of interest (C23002 B-D,H-I) programmatically
 # STEP 1: split label components into multiple columns 
-empl_by_race_acs3_2008_vars <- acs_08_3yr_vars %>% 
+empl_by_race_2009_vars <- acs_09_vars %>% 
   filter(str_detect(name, 'C23002[B-D, H-I]')) %>% # select employment variable of interest only
   mutate(race = str_match(name, 'C23002(\\D{1})')[,2]) %>% # put letters at the end of each variable in a separate column; translate into racial groups later
   separate(label, into = c('A', 'B', 'C', 'D', 'E', 'G', 'H'), sep = '!!') %>% # create columns A-H based on '!!' separators; skip 'F' since it typically means 'False'
@@ -186,46 +188,68 @@ empl_by_race_acs3_2008_vars <- acs_08_3yr_vars %>%
   filter(str_detect(name, 'C23002\\w_004', negate = TRUE)) %>% # drop all rows ending in 004 (total male labor force including armed forces) from each group  
   filter(str_detect(name, 'C23002\\w_017', negate = TRUE)) # drop all rows ending in 017 (total female labor force including armed forces) from each group
 
-str_match('This is a test C23002B_003', 'C23002(\\D{1})')[,2]
-
-# STEP 2: grab specific B03002 rows of interest based on the ones kept in the code above
-empl_vars_2008 <- empl_by_race_acs3_2008_vars %>% 
+# STEP 2: grab specific C23002 rows of interest based on the ones kept in the code above
+empl_vars_2009 <- empl_by_race_2009_vars %>% 
   pull(name) # returns 'name' column as a vector
 
-# STEP 3: pull 2008 ACS data
-empl_acs3_2008_data <- get_acs(
+# STEP 3: pull 2009 ACS data
+empl_2009_data <- get_acs(
   geography = 'county',
-  year = 2008,
-  survey = 'acs3',
-  state = c('ME', 'MN', 'OH', 'WA'),
-  variables = empl_vars_2008
+  year = 2009,
+  survey = 'acs5',
+  state = c('GA', 'ME', 'MN', 'OH', 'TX', 'WA'),
+  variables = empl_vars_2009
 )
 
 # STEP 4: Create a data frame containing race variables of interest for counties within each state
-# merge empl_acs3_2008_data with empl_by_race_acs3_2008_vars
-ME_MN_OH_WA_2008_empl <- empl_acs3_2008_data %>% 
-  full_join(empl_by_race_acs3_2008_vars, by = c('variable' = 'name')) %>% 
+# merge empl_2009_data with empl_by_race_2009_vars
+states_2009_empl_data <- empl_2009_data %>% 
+  full_join(empl_by_race_2009_vars, by = c('variable' = 'name')) %>% 
   select(NAME, race, C, D, H, G, estimate) %>%  # select columns of interest only, and in the order specified
   rename(sex = C, # rename columns so that they make more sense
          age_group = D,
-         empl_status_16_64 = H,
-         empl_status_65_up = G) %>% 
+         empl_stat16_64 = H,
+         empl_stat65_up = G) %>% 
   separate(NAME, into = c('county', 'state'), sep = ',')  # separate 'NAME' column into two parts
 
-# STEP 5: Consolidate employment status columns; source data in empl_status_65_up to replace NA columns in empl_status_16_64
-ME_MN_OH_WA_2008_empl <- within(ME_MN_OH_WA_2008_empl, {
-  empl_status_16_64 = as.character(empl_status_16_64) # column I want to keep with gaps in it
-  empl_status_65_up = as.character(empl_status_65_up) # reference column I'll use to complete the desired column
-  empl_status_16_64 = ifelse(is.na(empl_status_16_64), empl_status_65_up, empl_status_16_64) # fills gaps in desired column with specific values from reference column
+# STEP 5: Create a subset of data only containing counties and states of interest 
+subset_2009_empl_data <- states_2009_empl_data %>% 
+  mutate(state = str_trim(state)) %>% # remove white spaces that will otherwise cause filtering issues
+  filter(county == 'DeKalb County' | # Atlanta/Clarkston/Decatur, GA initial resettlement location
+           county == 'Androscoggin County' | # Lewiston, ME secondary migration location
+           county == 'Cumberland County' | # Portland, ME secondary migration location
+           county == 'Hennepin County' | # Minneapolis, MN initial resettlement and secondary migration location
+           county == 'Stearns County' | # St. Cloud, MN secondary migration location
+           county == 'Dallas County' | # Dallas, TX initial resettlement location
+           (county == 'King County' & state == 'Washington') | # Seattle, WA initial resettlement and secondary migration location
+           (county == 'Franklin County' & state == 'Ohio')) # Columbus, OH initial resettlement location
+
+# STEP 6: Consolidate employment status columns; source data in empl_stat65_up to replace NA columns in empl_stat16_64
+subset_2009_empl_data <- within(subset_2009_empl_data, {
+  empl_stat16_64 = as.character(empl_stat16_64) # column I want to keep, currently with gaps in it
+  empl_stat65_up = as.character(empl_stat65_up) # reference column I'll use to complete the desired column
+  empl_stat16_64 = ifelse(is.na(empl_stat16_64), empl_stat65_up, empl_stat16_64) # fills gaps in desired column with specific values from reference column
 })
 
-# Next, rename empl_status so that it's by itself; and then drop the extra empl_status column
+# STEP 7: Rename empl_stat16_64 so that it's by itself
+subset_2009_empl_data <- subset_2009_empl_data %>% 
+  select(county, state, race, sex, age_group, empl_stat16_64, estimate) %>% # drop empl_stat65_up
+  rename(empl_status = empl_stat16_64) %>% 
+  # recode race values; check against notes above
+  mutate(race = case_when(race == 'B' ~ 'Black', #C23002B
+                          race == 'C' ~ 'Native American', #C23002C
+                          race == 'D' ~ 'Asian', #C23002D
+                          race == 'H' ~ 'White', #C23002H
+                          race == 'I' ~ 'Hispanic or Latino')) #C23002I
 
-# STEP 5: (Optional) Filter so that only 6 counties within 4 states are included in the final product
-# Hennepin County, MN (Minneapolis); Stearns County, MN (St. Cloud)
-# Franklin County, OH (Columbus)
-# King County, WA (Seattle)
-# Cumberland County, ME (Portland); Androscoggin County, ME (Lewiston)
+# Recode employment status values so that employed, unemployed, and total categories are clear
+subset_2009_empl_data <- subset_2009_empl_data %>% 
+  mutate(empl_status = case_when(empl_status == 'Civilian' ~ 'Total Civilian Labor Force',
+                                 is.na(empl_status) ~ 'Total Civilian Labor Force',
+                                 empl_status == 'Employed' ~ 'Employed',
+                                 empl_status == 'Unemployed' ~ 'Unemployed'))
+
+# Next up, add a column for unemployment rates by gender, age, and race
 
 ################## 2019 ACS 5-YR VOIs ##################
 # Examine variables in 2019 5-year ACS data set
