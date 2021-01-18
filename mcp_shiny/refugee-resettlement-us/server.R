@@ -3,11 +3,22 @@
 shinyServer(function(input, output) {
 
 #playersPage Output
-  # output$playersPlots <- plotly::renderPlotly({
-  #   admissionsData <- switch(input$admissionsData,
-  #                            
-  #                            )
-  # })
+  output$playersPlots <- plotly::renderPlotly({
+    req(input$admissionsData)
+    
+    if (input$admissionsData == "allYear") {
+      p <- subset_2009_race_data %>% 
+        ggplot(aes(x = race, y = estimate, fill = ethnicity)) +
+        geom_col()
+    }
+    else if (input$admissionsData == "allRegion") {
+      p <- subset_2009_race_data %>% 
+        ggplot(aes(x = race, y = estimate)) +
+        geom_line()
+    }
+    
+    p
+  })
 
 # casePage Output  
   # Race/Ethnicity Comparison output

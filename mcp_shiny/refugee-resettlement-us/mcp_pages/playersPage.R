@@ -5,10 +5,10 @@ playersPage <- tabPanel('Key Players',
                         sidebarLayout(
                           sidebarPanel(
                             radioButtons('admissionsData',
-                                         label = "View Refugee Admissions Data:",
+                                         label = "View U.S. Refugee Admissions Data:",
                                          choices = c(
-                                           "By Year" = "allYear",
-                                           "By Region" = "allRegion",
+                                           "All Admissions by Year" = "allYear",
+                                           "All Admissions by Region" = "allRegion",
                                            "Admission Ceilings vs. Actual Admissions" = "comps",
                                            "Top 10 Countries of Origin (2008)" = "top2008",
                                            "Top 10 Countries of Origin (2018)" = "top2018"),
