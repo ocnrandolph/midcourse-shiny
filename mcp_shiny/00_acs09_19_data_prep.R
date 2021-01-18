@@ -73,13 +73,6 @@ subset_2009_race_data <- states_2009_race_data %>%
            (county == 'King County' & state == 'Washington') | # Seattle, WA initial resettlement and secondary migration location
            (county == 'Franklin County' & state == 'Ohio')) # Columbus, OH initial resettlement location
 
-# Problem: this still returns values for Franklin County, Ohio
-subset_2009_race_data %>% 
-  mutate(state = str_trim(state)) %>% 
-  filter(state == 'Ohio') %>% 
-  View()
-# drop rows that aren't needed, and then I'll be all set
-
 #### Economic/employment opportunity data ####
   # [NON-HISPANIC WHITE]
   # ACS3yr2008 Unemployment variables of interest: C23002H [NON-HISPANIC WHITE]
@@ -239,6 +232,7 @@ ME_MN_OH_WA_2008_empl <- within(ME_MN_OH_WA_2008_empl, {
 acs_19_vars <- load_variables(2019, "acs5", cache = TRUE)
 View(acs_19_vars)
 
+#### Racial composition data ####
 # Repeat procedure above (where appropriate) for 2019 ACS data
 # STEP 1: split label components into multiple columns 
 race_by_eth_2019_vars <- acs_19_vars %>% 
@@ -280,3 +274,4 @@ subset_2019_race_data <- states_2019_race_data %>%
            county == 'Dallas County' | # Dallas, TX initial resettlement location
            (county == 'King County' & state == 'Washington') | # Seattle, WA initial resettlement and secondary migration location
            (county == 'Franklin County' & state == 'Ohio')) # Columbus, OH initial resettlement location
+
