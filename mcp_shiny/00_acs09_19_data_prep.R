@@ -372,4 +372,3 @@ subset_2019_race_data <- states_2019_race_data %>%
            county == 'Dallas County' | # Dallas, TX initial resettlement location
            (county == 'King County' & state == 'Washington') | # Seattle, WA initial resettlement and secondary migration location
            (county == 'Franklin County' & state == 'Ohio')) # Columbus, OH initial resettlement location
-

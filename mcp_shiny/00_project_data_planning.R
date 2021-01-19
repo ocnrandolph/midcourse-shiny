@@ -223,7 +223,7 @@ ME_MN_OH_WA_2008_empl <- within(ME_MN_OH_WA_2008_empl, {
 # King County, WA (Seattle)
 # Cumberland County, ME (Portland); Androscoggin County, ME (Lewiston)
 
-#### Co-ethnic and immigrant community data ####
+#### Coethnic and immigrant community data ####
   # ACS3yr2008 Foreign-born Population Variable(s)
     # Somali population data
     # Variable of interest: People Reporting Ancestry (B04006)
