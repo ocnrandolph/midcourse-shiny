@@ -74,7 +74,7 @@ subset_2009_race_data <- states_2009_race_data %>%
            (county == 'Franklin County' & state == 'Ohio')) # Columbus, OH initial resettlement location
 
 #### Economic/employment opportunity data ####
-#### Specific employment variables of interest by race, for reference ####
+{# Specific employment variables of interest by race, for reference
   # [NON-HISPANIC WHITE]
   # ACS5yr2009 Unemployment variables of interest: C23002H [NON-HISPANIC WHITE]
     # Total civilian NON-HISPANIC WHITE male pop in labor force aged 16-64 yrs (C23002H_006)
@@ -174,8 +174,7 @@ subset_2009_race_data <- states_2009_race_data %>%
     # Unemployment rate for HISPANIC men aged 65+ yrs: (C23002I_013/C23002I_011) * 100
     # Unemployment rate for HISPANIC women aged 65+ yrs: (C23002I_026/C23002I_024) * 100
     # Overall unemployment rate for HISPANIC labor force aged 65+ yrs: (C23002I_013 + C23002I_026)/(C23002I_011 + C23002I_024) * 100
-
-#### Employment variables data prep ####
+}
 # Isolate employment variables of interest (C23002 B-D,H-I) programmatically
 # STEP 1: split label components into multiple columns 
 empl_by_race_2009_vars <- acs_09_vars %>% 
@@ -250,6 +249,81 @@ subset_2009_empl_data <- subset_2009_empl_data %>%
                                  empl_status == 'Unemployed' ~ 'Unemployed'))
 
 # Next up, add a column for unemployment rates by gender, age, and race
+
+#### Coethnics and immigrant community data ####
+# ACS5yr2009 Foreign-born Population Variable(s)
+  # Somali population data
+  # Variable of interest: People Reporting Ancestry (B04006)
+  # Total population reporting ancestry (B04006_001)
+  # Self-reported Somali Ancestry (B04006_082)
+  # Percent of total pop identifying as Somali = (B04006_082/B04006_001) * 100
+  # Percent of foreign-born pop identifying as Somali = (B04006_082/B05006_001) * 100
+
+# ACS5yr2009 Alternate if above data are missing for a community
+  # Place of Birth by Nativity and Citizenship Status: (NA)
+  # Total foreign-born population (B05006_001)
+  # Total foreign-born (citizen and non-citizen) and native-born population (B05002_001)
+  # Total foreign-born population who identify as African (B05006_091)
+  # Percent of total pop identifying as African = (B05006_091/B05002_001) * 100
+  # Percent of foreign-born pop identifying as African = (B05006_091/B05006_001) * 100
+
+# STEP 1: gather all foreign-born variables into one data set
+for_born_09_vars <- acs_09_vars %>% 
+  mutate(name = str_trim(name)) %>%
+  filter(str_detect(name, 'B04006|B05002|B05006')) %>% # select 3 foreign-born variables of interest only
+  filter(str_detect(name, '_001|_013|_014|_015|_082|_091')) %>%  # select potential rows of interest based on notes above
+  separate(label, into = c('A', 'B', 'C', 'D', 'E'), sep = '!!') %>% # create columns A-E based on '!!' separators
+  filter(is.na(C) | C == 'Subsaharan African'| C == 'Africa' | C == 'Foreign born') %>% # keep total foreign-born, Somali, and African pop variables only
+  select(name, C, D, concept) %>%   # drop unhelpful columns
+  slice(-1) %>%  # drop unnecessary ancestry total
+  slice(-6) # drop Total Foreign Born Population duplicate
+
+
+# recode values - clarify Somali, African, and foreign-born population data
+for_born_09_vars <- for_born_09_vars %>% 
+  mutate(D = case_when(#name == 'B04006_001' ~ 'Ancestry Total', 
+                       name == 'B04006_082' ~ 'Somali Ancestry', 
+                       name == 'B05002_001' ~ 'Total Population', 
+                       name == 'B05002_013' ~ 'Total Foreign Born Population',
+                       name == 'B05002_014' ~ 'Foreign Born - Naturalized Citizen',
+                       name == 'B05002_015' ~ 'Foreign Born - Not a U.S. Citizen',
+                       #name == 'B05006_001' ~ 'Total Foreign Born Population',
+                       name == 'B05006_091' ~ 'Foreign Born Population - African')
+  ) %>% 
+  select(name, D, concept)
+
+# STEP 2: obtain name vector
+fborn_2009_names <- for_born_09_vars %>% 
+  pull(name)
+
+# STEP 3: pull 2009 ACS data
+for_born_2009_data <- get_acs(
+  geography = 'county',
+  year = 2009,
+  survey = 'acs5',
+  state = c('GA', 'ME', 'MN', 'OH', 'TX', 'WA'),
+  variables = fborn_2009_names
+)
+
+# STEP 4: merge acs data with vars
+states_2009_fb_data <- for_born_2009_data %>% 
+  full_join(for_born_09_vars, by = c('variable' = 'name')) %>% 
+  select(NAME, D, estimate) %>% 
+  rename(fb_nationality = D) %>% 
+  separate(NAME, into = c('county', 'state'), sep = ',')  # separate 'NAME' column into two parts
+
+# STEP 5: Create a subset of data only containing counties and states of interest 
+states_2009_fb_data <- states_2009_fb_data %>% 
+  mutate(state = str_trim(state)) %>% # remove white spaces that will otherwise cause filtering issues
+  filter(county == 'DeKalb County' | # Atlanta/Clarkston/Decatur, GA initial resettlement location
+           county == 'Androscoggin County' | # Lewiston, ME secondary migration location
+           county == 'Cumberland County' | # Portland, ME secondary migration location
+           county == 'Hennepin County' | # Minneapolis, MN initial resettlement and secondary migration location
+           county == 'Stearns County' | # St. Cloud, MN secondary migration location
+           county == 'Dallas County' | # Dallas, TX initial resettlement location
+           (county == 'King County' & state == 'Washington') | # Seattle, WA initial resettlement and secondary migration location
+           (county == 'Franklin County' & state == 'Ohio')) # Columbus, OH initial resettlement location
+
 
 ################## 2019 ACS 5-YR VOIs ##################
 # Examine variables in 2019 5-year ACS data set
