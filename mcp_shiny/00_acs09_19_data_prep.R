@@ -293,7 +293,7 @@ for_born_09_vars <- for_born_09_vars %>%
   select(name, D, concept)
 
 # STEP 2: obtain name vector
-fborn_2009_names <- for_born_09_vars %>% 
+fborn_2009_vector <- for_born_09_vars %>% 
   pull(name)
 
 # STEP 3: pull 2009 ACS data
