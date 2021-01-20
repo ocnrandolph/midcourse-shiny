@@ -179,3 +179,10 @@ coethnic_2019 <- subset_2019_coeth_data %>%
 # Combine data sets on all columns
 coethnic_full <- coethnic_2009 %>% 
   full_join(coethnic_2019)
+
+# export to a csv file for easy shiny app access
+coethnic_full %>% 
+  write.csv(
+    file = "C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/coethnic_full.csv",
+    row.names = FALSE
+  )
