@@ -11,7 +11,7 @@ casePage <- tabPanel('A Case Study',
                                         choices = secondCountyLoc),
                             radioButtons('year',
                                          label = "Year",
-                                         choices = c("2008", "2018"))
+                                         choices = c("2009", "2019"))
                      ),
                      column(width = 10,
                             tabsetPanel(type = "tabs",
@@ -48,26 +48,36 @@ casePage <- tabPanel('A Case Study',
                                         # Coethnic Community Comparison tab layout
                                         tabPanel("Coethnic Community",
                                                  fluidRow(
-                                                   column(6,
+                                                   column(3,
                                                           h5('Initial Resettlement Location', align = 'center'),
                                                           h5('Foreign-Born Population', align = 'center'),
                                                           plotlyOutput('coethFirstLoc')
                                                    ),
-                                                   column(6,
+                                                   column(3,
+                                                          h5('Initial Resettlement Location', align = 'center'),
+                                                          h5('African Community', align = 'center'),
+                                                          plotlyOutput('africanFirstLoc')
+                                                   ),
+                                                   column(3,
+                                                          h5('Initial Resettlement Location', align = 'center'),
+                                                          h5('Somali Community', align = 'center'),
+                                                          plotlyOutput('somaliFirstLoc')
+                                                   )
+                                                 ),
+                                                 fluidRow(
+                                                   column(3,
                                                           h5('Secondary Migration Location', align = 'center'),
                                                           h5('Foreign-Born Population', align = 'center'),
                                                           plotlyOutput('coethSecondLoc')
                                                    ),
-                                                   column(6,
-                                                          h5('Initial Resettlement Location', align = 'center'),
-                                                          h5('Somali Community', align = 'center'),
-# change to africanFirstLoc if somali data are unavailable                                                          
-                                                          plotlyOutput('somaliFirstLoc')
+                                                   column(3,
+                                                          h5('Secondary Migration Location', align = 'center'),
+                                                          h5('African Community', align = 'center'),
+                                                          plotlyOutput('africanSecondLoc')
                                                    ),
-                                                   column(6,
+                                                   column(3,
                                                           h5('Secondary Migration Location', align = 'center'),
                                                           h5('Somali Community', align = 'center'),
-# change to africanSecondLoc if somali data are unavailable
                                                           plotlyOutput('somaliSecondLoc')
                                                    )
                                                  )

@@ -12,6 +12,9 @@ library(plotly)
 library(shiny)
 library(shinydashboard)
 
+# Import all needed data files
+coethnic_full <- read.csv("data_csv/coethnic_full.csv")
+
 # specifying initial resettlement location options for casePage selectInput
-firstCountyLoc <- c("County 1", "County 2")
-secondCountyLoc <- c("County 3", "County 4")
+firstCountyLoc <- c('DeKalb County', 'Hennepin County', 'Dallas County', 'King County', 'Franklin County')
+secondCountyLoc <- c('Androscoggin County', 'Cumberland County', 'Hennepin County', 'Stearns County', 'King County', 'Franklin County')

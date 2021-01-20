@@ -82,38 +82,90 @@ shinyServer(function(input, output) {
   })
   
   # Co-Ethnic Community Comparison output
+  # foreign born population vs total population
   # plotly output for first location and year selection (donut chart)
   output$coethFirstLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
+    fig1 <- coethnic_full %>% 
       filter(county == input$firstCounty) %>% 
-      filter(year == input$year) %>% 
-      ggplot()
-  })
-  
-  # plotly output for second location and year selection (donut chart)
-  output$coethSecondLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
-      filter(county == input$secondCounty) %>% 
-      filter(year == input$year) %>% 
-      ggplot()
+      filter(year == input$year) %>%
+      filter(coethnic == 'Total Foreign Born Population' | coethnic == 'Total Population') %>% 
+      plot_ly(labels = ~coethnic,
+              values = ~estimate) %>% 
+      add_pie(hole = 0.4)
+    
+    # generate plot
+    fig1
   })
   
   # plotly output for first location and year selection (pie chart)
-  #NOTE: Change to africanFirstLoc if Somali population data are not available
+  # African foreign-born population vs total foreign-born population
+  output$africanFirstLoc <- plotly::renderPlotly({
+    fig3 <- coethnic_full %>% 
+      filter(county == input$firstCounty) %>% 
+      filter(year == input$year) %>%
+      filter(coethnic == 'Foreign Born Population - African' | coethnic == 'Total Foreign Born Population') %>% 
+      plot_ly(labels = ~coethnic,
+              values = ~estimate,
+              type = 'pie')
+    
+    fig3
+  })
+  
+  # plotly output for first location and year selection (donut chart)
+  # Somali Ancestry vs Total Ancestry
   output$somaliFirstLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
+    fig5 <- coethnic_full %>% 
       filter(county == input$firstCounty) %>% 
       filter(year == input$year) %>% 
-      ggplot()
+      filter(coethnic == 'Somali Ancestry' | coethnic == 'Ancestry Total') %>% 
+      plot_ly(labels = ~coethnic,
+              values = ~estimate) %>% 
+      add_pie(hole = 0.4)
+    
+    fig5
+  })
+  
+  # plotly output for second location and year selection (donut chart)
+  # foreign born population vs total population
+  output$coethSecondLoc <- plotly::renderPlotly({
+    fig2 <- coethnic_full %>% 
+      filter(county == input$secondCounty) %>% 
+      filter(year == input$year) %>% 
+      filter(coethnic == 'Total Foreign Born Population' | coethnic == 'Total Population') %>% 
+      plot_ly(labels = ~coethnic,
+              values = ~estimate) %>% 
+      add_pie(hole = 0.4)
+    
+    # generate plot
+    fig2
   })
   
   # plotly output for second location and year selection (pie chart)
-  #NOTE: Change to africanSecondLoc if Somali population data are not available
-  output$somaliSecondLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
+  # African foreign-born population vs total foreign-born population
+  output$africanSecondLoc <- plotly::renderPlotly({
+    fig4 <- coethnic_full %>% 
       filter(county == input$secondCounty) %>% 
       filter(year == input$year) %>% 
-      ggplot()
+      filter(coethnic == 'Foreign Born Population - African' | coethnic == 'Total Foreign Born Population') %>% 
+      plot_ly(labels = ~coethnic,
+              values = ~estimate,
+              type = 'pie')
+    
+    fig4
+  })
+  
+  # plotly output for second location and year selection (donut chart)
+  # Somali Ancestry vs Total Ancestry
+  output$somaliSecondLoc <- plotly::renderPlotly({
+    fig6 <- coethnic_full %>% 
+      filter(county == input$secondCounty) %>% 
+      filter(year == input$year) %>% 
+      filter(coethnic == 'Somali Ancestry' | coethnic == 'Ancestry Total') %>% 
+      plot_ly(labels = ~coethnic,
+              values = ~estimate) %>% 
+      add_pie(hole = 0.4)
+    
+    fig6
   })
   
   # Incidences of Crime Comparison output
