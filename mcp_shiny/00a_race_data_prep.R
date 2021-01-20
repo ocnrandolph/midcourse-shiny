@@ -135,3 +135,10 @@ race_2019 <- subset_2019_race_data %>%
 # Combine data sets on all columns
 race_full <- race_2009 %>% 
   full_join(race_2019)
+
+# export to a csv file for easy shiny app access
+race_full %>% 
+  write.csv(
+    file = "C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/race_full.csv",
+    row.names = FALSE
+  )

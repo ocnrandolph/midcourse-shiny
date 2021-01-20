@@ -13,6 +13,7 @@ library(shiny)
 library(shinydashboard)
 
 # Import all needed data files
+race_full <- read.csv("data_csv/race_full.csv")
 coethnic_full <- read.csv("data_csv/coethnic_full.csv")
 
 # specifying initial resettlement location options for casePage selectInput
