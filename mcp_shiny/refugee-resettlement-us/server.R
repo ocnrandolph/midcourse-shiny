@@ -7,17 +7,21 @@ shinyServer(function(input, output) {
     req(input$admissionsData)
     
     if (input$admissionsData == "allYear") {
-      p <- subset_2009_race_data %>% 
-        ggplot(aes(x = race, y = estimate, fill = ethnicity)) +
-        geom_col()
+      ref_fig <- prm_hist_admit %>% 
+        filter(year != 'Total') %>% 
+        filter(region == 'Total') %>% 
+        ggplot(aes(x = year, y = population)) +
+        geom_col() +
+        theme_minimal() +
+        theme(axis.text.x = element_text(angle = 45)) # Rotate x-axis text labels
     }
     else if (input$admissionsData == "allRegion") {
-      p <- subset_2009_race_data %>% 
+      ref_fig <- prm_hist_admit %>% 
         ggplot(aes(x = race, y = estimate)) +
         geom_line()
     }
     
-    p
+    ref_fig
   })
 
 # casePage Output  
@@ -67,18 +71,25 @@ shinyServer(function(input, output) {
   # Economic Opportunity Comparison output
   # plotly output for first location and year selection (dumbbell plot)
   output$emplyFirstLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
+    fig3 <- employment_full %>% 
       filter(county == input$firstCounty) %>% 
       filter(year == input$year) %>% 
-      ggplot()
+      plot_ly(color = I("gray80")) %>%
+      add_segments(x = 0, xend = 80, y = ~race, yend = ~race, showlegend = F) 
+      # add_markers(x = ~sex, y = ~race, name = 'Sex', color = I("pink")) %>% 
+      # add_markers(x = ~age_group, y = ~race, name = 'Age Group', color = I("blue"))
+    
+    fig3
   })
   
   # plotly output for second location and year selection (dumbbell plot)
   output$emplySecondLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
+    fig4 <- employment_full %>% 
       filter(county == input$secondCounty) %>% 
       filter(year == input$year) %>% 
       ggplot()
+    
+    fig4
   })
   
   # Co-Ethnic Community Comparison output
