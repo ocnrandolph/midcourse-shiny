@@ -296,3 +296,21 @@ employment_2019[, 9] <- round(employment_2019[, 9], digits = 2)
 # Combine data sets on all columns
 employment_full <- employment_2009 %>% 
   full_join(employment_2019)
+
+# export to a csv file for easy shiny app access
+employment_full %>% 
+  write.csv(
+    file = "C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/employment_full.csv",
+    row.names = FALSE
+  )
+
+employment_full_wide <- employment_full %>% 
+  select(-c(`Total Civilian Labor Force`, Employed, Unemployed)) %>% 
+  pivot_wider(names_from = sex,
+              values_from = `Unemployment Rate`)
+
+employment_full_wide %>% 
+  write.csv(
+    file = "C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/employment_full_wide.csv",
+    row.names = FALSE
+  )
