@@ -19,19 +19,17 @@ casePage <- tabPanel('A Case Study',
                          
                        ),
                        mainPanel(
-                         width = 9,
+                         width = 8,
                          tabsetPanel(type = "tabs",
                                      # Race/Ethnicity Comparison tab layout
                                      tabPanel("Race/Ethnicity",
                                               fluidRow(
                                                 column(6,
-                                                       h5('Initial Resettlement Location', align = 'center'),
-                                                       h5('Race and Ethnicity', align = 'center'),
+                                                       htmlOutput('raceFirstTitle'), # for plot title based on user input
                                                        plotlyOutput('raceFirstLoc')
                                                 ),
                                                 column(6,
-                                                       h5('Secondary Migration Location', align = 'center'),
-                                                       h5('Race and Ethnicity', align = 'center'),
+                                                       htmlOutput('raceSecondTitle'), # for plot title based on user input
                                                        plotlyOutput('raceSecondLoc')
                                                 )
                                               )
@@ -40,14 +38,22 @@ casePage <- tabPanel('A Case Study',
                                      tabPanel("Employment Opportunities",
                                               fluidRow(
                                                 column(6,
-                                                       h5('Initial Resettlement Location', align = 'center'),
-                                                       h5('Unemployment Rate', align = 'center'),
-                                                       plotlyOutput('emplyFirstLoc')
+                                                       htmlOutput('emply16FirstTitle'), # for plot title based on user input
+                                                       plotlyOutput('emply16FirstLoc')
                                                 ),
                                                 column(6,
-                                                       h5('Secondary Migration Location', align = 'center'),
-                                                       h5('Unemployment Rate', align = 'center'),
-                                                       plotlyOutput('emplySecondLoc')
+                                                       htmlOutput('emply16SecondTitle'), # for plot title based on user input
+                                                       plotlyOutput('emply16SecondLoc')
+                                                )
+                                              ),
+                                              fluidRow(
+                                                column(6,
+                                                       htmlOutput('emply65FirstTitle'), # for plot title based on user input
+                                                       plotlyOutput('emply65FirstLoc')
+                                                ),
+                                                column(6,
+                                                       htmlOutput('emply65SecondTitle'), # for plot title based on user input
+                                                       plotlyOutput('emply65SecondLoc')
                                                 )
                                               )
                                      ),
@@ -55,35 +61,29 @@ casePage <- tabPanel('A Case Study',
                                      tabPanel("Coethnic Community",
                                               fluidRow(
                                                 column(3,
-                                                       h5('Initial Resettlement Location', align = 'center'),
-                                                       h5('Foreign-Born Population', align = 'center'),
+                                                       htmlOutput('coethFirstTitle'),
                                                        plotlyOutput('coethFirstLoc')
                                                 ),
                                                 column(3,
-                                                       h5('Initial Resettlement Location', align = 'center'),
-                                                       h5('African Community', align = 'center'),
+                                                       htmlOutput('africanFirstTitle'),
                                                        plotlyOutput('africanFirstLoc')
                                                 ),
                                                 column(3,
-                                                       h5('Initial Resettlement Location', align = 'center'),
-                                                       h5('Somali Community', align = 'center'),
+                                                       htmlOutput('somaliFirstTitle'),
                                                        plotlyOutput('somaliFirstLoc')
                                                 )
                                               ),
                                               fluidRow(
                                                 column(3,
-                                                       h5('Secondary Migration Location', align = 'center'),
-                                                       h5('Foreign-Born Population', align = 'center'),
+                                                       htmlOutput('coethSecondTitle'),
                                                        plotlyOutput('coethSecondLoc')
                                                 ),
                                                 column(3,
-                                                       h5('Secondary Migration Location', align = 'center'),
-                                                       h5('African Community', align = 'center'),
+                                                       htmlOutput('africanSecondTitle'),
                                                        plotlyOutput('africanSecondLoc')
                                                 ),
                                                 column(3,
-                                                       h5('Secondary Migration Location', align = 'center'),
-                                                       h5('Somali Community', align = 'center'),
+                                                       htmlOutput('somaliSecondTitle'),
                                                        plotlyOutput('somaliSecondLoc')
                                                 )
                                               )

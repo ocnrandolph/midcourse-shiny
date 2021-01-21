@@ -26,6 +26,18 @@ shinyServer(function(input, output) {
 
 # casePage Output  
   # Race/Ethnicity Comparison output
+  # Plot title based on user input
+  output$raceFirstTitle <- renderUI({
+    state <- race_full %>% 
+      filter(county == input$firstCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$firstCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Racial Composition by Ethnicity (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
+  })
+  
   # plotly output for first location selection and year selection (stacked bar chart)
   output$raceFirstLoc <- plotly::renderPlotly({
     # 1st filter by location choice
@@ -37,14 +49,31 @@ shinyServer(function(input, output) {
       geom_col() +
       #scale_fill_manual(values = c('Hisp' = '#DCC5A8',
       #                           'nonHisp' = '#C2B5AE')) +
-      labs(title = 'Race by Ethnicity', x = NULL, y = 'Population', fill = NULL) +
-      # scale_y_continuous(limits=c(0, 450000),
-      #                    breaks=c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000),
-      #                    labels=c("0", "50K", "100K", "150K", "200K", "250K", "300K", "350K", "400K", "450K")) +
+      labs(title = NULL, x = NULL, y = 'Population', fill = NULL) +
+      scale_y_continuous(labels = label_comma()) +
+      scale_x_discrete(labels = c('Native American',
+                                  'Asian',
+                                  'Black',
+                                  'Pacific Islander',
+                                  'Other',
+                                  'Multiracial',
+                                  'White')) +
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 45)) # Rotate x-axis text labels
     
     fig1
+  })
+  
+  # Plot title based on user input
+  output$raceSecondTitle <- renderUI({
+    state <- race_full %>% 
+      filter(county == input$secondCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$secondCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Racial Composition by Ethnicity (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
   })
   
   # plotly output for second location selection and year selection (stacked bar chart)
@@ -58,10 +87,15 @@ shinyServer(function(input, output) {
       geom_col() +
       #scale_fill_manual(values = c('Hisp' = '#DCC5A8',
       #                           'nonHisp' = '#C2B5AE')) +
-      labs(title = 'Race by Ethnicity', x = NULL, y = 'Population', fill = NULL) +
-      # scale_y_continuous(limits=c(0, 450000),
-      #                     breaks=c(0, 50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000),
-      #                     labels=c("0", "50K", "100K", "150K", "200K", "250K", "300K", "350K", "400K", "450K")) +
+      labs(title = NULL, x = NULL, y = 'Population', fill = NULL) +
+      scale_y_continuous(labels = label_comma()) +
+      scale_x_discrete(labels = c('Native American',
+                                  'Asian',
+                                  'Black',
+                                  'Pacific Islander',
+                                  'Other',
+                                  'Multiracial',
+                                  'White')) +
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 45)) # Rotate x-axis text labels
     
@@ -70,31 +104,122 @@ shinyServer(function(input, output) {
   
   # Economic Opportunity Comparison output
   # plotly output for first location and year selection (dumbbell plot)
-  output$emplyFirstLoc <- plotly::renderPlotly({
-    fig3 <- employment_full %>% 
+  output$emply16FirstTitle <- renderUI({
+    state <- employment_full_wide %>% 
       filter(county == input$firstCounty) %>% 
-      filter(year == input$year) %>% 
-      plot_ly(color = I("gray80")) %>%
-      add_segments(x = 0, xend = 80, y = ~race, yend = ~race, showlegend = F) 
-      # add_markers(x = ~sex, y = ~race, name = 'Sex', color = I("pink")) %>% 
-      # add_markers(x = ~age_group, y = ~race, name = 'Age Group', color = I("blue"))
+      pull(state)
     
-    fig3
+    str1 <- as.character(h5(strong(paste0(input$firstCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Unemployment Rate by Race (", input$year, ")")), align = 'center'))
+    str3 <- as.character(h5("Ages 16-64", align = 'center'))
+    HTML(paste(str1, str2, str3))
+    
+  })
+  
+  output$emply16FirstLoc <- plotly::renderPlotly({
+    fig3a <- employment_full_wide %>% 
+      filter(age_group == '16 to 64 years') %>%
+      filter(county == input$firstCounty) %>% 
+      filter(year == input$year) %>%
+      plot_ly(color = I("gray80")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
+    
+    fig3a
   })
   
   # plotly output for second location and year selection (dumbbell plot)
-  output$emplySecondLoc <- plotly::renderPlotly({
-    fig4 <- employment_full %>% 
+  output$emply16SecondTitle <- renderUI({
+    state <- employment_full_wide %>% 
+      filter(county == input$secondCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$secondCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Unemployment Rate by Race (", input$year, ")")), align = 'center'))
+    str3 <- as.character(h5("Ages 16-64", align = 'center'))
+    HTML(paste(str1, str2, str3))
+    
+  })
+  
+  output$emply16SecondLoc <- plotly::renderPlotly({
+    fig4a <- employment_full_wide %>% 
+      filter(age_group == '16 to 64 years') %>%
       filter(county == input$secondCounty) %>% 
       filter(year == input$year) %>% 
-      ggplot()
+      plot_ly(color = I("gray80")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
     
-    fig4
+    fig4a
+  })
+  
+  output$emply65FirstTitle <- renderUI({
+    state <- employment_full_wide %>% 
+      filter(county == input$firstCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$firstCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Unemployment Rate by Race (", input$year, ")")), align = 'center'))
+    str3 <- as.character(h5("Ages 65 and up", align = 'center'))
+    HTML(paste(str1, str2, str3))
+    
+  })
+  
+  output$emply65FirstLoc <- plotly::renderPlotly({
+    fig3b <- employment_full_wide %>% 
+      filter(county == input$firstCounty) %>% 
+      filter(year == input$year) %>% 
+      filter(age_group == '65 years and over') %>%
+      plot_ly(color = I("gray80")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
+    
+    fig3b
+  })
+  
+  # plotly output for second location and year selection (dumbbell plot)
+  output$emply65SecondTitle <- renderUI({
+    state <- employment_full_wide %>% 
+      filter(county == input$secondCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$secondCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Unemployment Rate by Race (", input$year, ")")), align = 'center'))
+    str3 <- as.character(h5("Ages 65 and up", align = 'center'))
+    HTML(paste(str1, str2, str3))
+    
+  })
+  
+  output$emply65SecondLoc <- plotly::renderPlotly({
+    fig4b <- employment_full_wide %>% 
+      filter(county == input$secondCounty) %>% 
+      filter(year == input$year) %>% 
+      filter(age_group == '65 years and over') %>%
+      plot_ly(color = I("gray80")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
+    
+    fig4b
   })
   
   # Co-Ethnic Community Comparison output
   # foreign born population vs total population
   # plotly output for first location and year selection (donut chart)
+  output$coethFirstTitle <- renderUI({
+    state <- coethnic_full %>% 
+      filter(county == input$firstCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$firstCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Foreign Born Population (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
+  })
+  
   output$coethFirstLoc <- plotly::renderPlotly({
     fig5 <- coethnic_full %>% 
       filter(county == input$firstCounty) %>% 
@@ -110,6 +235,17 @@ shinyServer(function(input, output) {
   
   # plotly output for first location and year selection (pie chart)
   # African foreign-born population vs total foreign-born population
+  output$africanFirstTitle <- renderUI({
+    state <- coethnic_full %>% 
+      filter(county == input$firstCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$firstCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Foreign Born African Population (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
+  })
+  
   output$africanFirstLoc <- plotly::renderPlotly({
     fig6 <- coethnic_full %>% 
       filter(county == input$firstCounty) %>% 
@@ -124,6 +260,17 @@ shinyServer(function(input, output) {
   
   # plotly output for first location and year selection (donut chart)
   # Somali Ancestry vs Total Ancestry
+  output$somaliFirstTitle <- renderUI({
+    state <- coethnic_full %>% 
+      filter(county == input$firstCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$firstCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Somali Population (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
+  })
+  
   output$somaliFirstLoc <- plotly::renderPlotly({
     fig7 <- coethnic_full %>% 
       filter(county == input$firstCounty) %>% 
@@ -138,6 +285,17 @@ shinyServer(function(input, output) {
   
   # plotly output for second location and year selection (donut chart)
   # foreign born population vs total population
+  output$coethSecondTitle <- renderUI({
+    state <- coethnic_full %>% 
+      filter(county == input$secondCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$secondCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Foreign Born Population (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
+  })
+  
   output$coethSecondLoc <- plotly::renderPlotly({
     fig8 <- coethnic_full %>% 
       filter(county == input$secondCounty) %>% 
@@ -153,6 +311,17 @@ shinyServer(function(input, output) {
   
   # plotly output for second location and year selection (pie chart)
   # African foreign-born population vs total foreign-born population
+  output$africanSecondTitle <- renderUI({
+    state <- coethnic_full %>% 
+      filter(county == input$secondCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$secondCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Foreign Born African Population (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
+  })
+  
   output$africanSecondLoc <- plotly::renderPlotly({
     fig9 <- coethnic_full %>% 
       filter(county == input$secondCounty) %>% 
@@ -167,6 +336,17 @@ shinyServer(function(input, output) {
   
   # plotly output for second location and year selection (donut chart)
   # Somali Ancestry vs Total Ancestry
+  output$somaliSecondTitle <- renderUI({
+    state <- coethnic_full %>% 
+      filter(county == input$secondCounty) %>% 
+      pull(state)
+    
+    str1 <- as.character(h5(strong(paste0(input$secondCounty, ", ", state[1])), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Somali Population (", input$year, ")")), align = 'center'))
+    HTML(paste(str1, str2))
+    
+  })
+  
   output$somaliSecondLoc <- plotly::renderPlotly({
     fig10 <- coethnic_full %>% 
       filter(county == input$secondCounty) %>% 

@@ -4,6 +4,7 @@ playersPage <- tabPanel('Key Players',
                         h4(strong('An Overview of Refugee Resettlement in the United States'), align = 'center'),
                         sidebarLayout(
                           sidebarPanel(
+                            width = 3,
                             radioButtons('admissionsData',
                                          label = "View U.S. Refugee Admissions Data:",
                                          choices = c(
@@ -15,6 +16,7 @@ playersPage <- tabPanel('Key Players',
                                          selected = "")
                           ),
                           mainPanel(
+                            width = 8,
                             fluidRow(h5('Admissions Data Visualizations', align = 'center'),
                                      plotlyOutput('playersPlots')
                             )
