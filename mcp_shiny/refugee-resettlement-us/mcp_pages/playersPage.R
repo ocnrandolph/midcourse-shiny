@@ -1,25 +1,25 @@
 # This is the secondary interactive analysis page
 
 playersPage <- tabPanel('Key Players',
-                        h4(strong('An Overview of Refugee Resettlement in the United States'), align = 'center'),
                         sidebarLayout(
                           sidebarPanel(
                             width = 3,
                             radioButtons('admissionsData',
                                          label = "View U.S. Refugee Admissions Data:",
                                          choices = c(
-                                           "All Admissions by Year" = "allYear",
-                                           "All Admissions by Region" = "allRegion",
+                                           "Annual Admissions by Region" = "alladmit",
                                            "Admission Ceilings vs. Actual Admissions" = "comps",
-                                           "Top 10 Countries of Origin (2008)" = "top2008",
-                                           "Top 10 Countries of Origin (2018)" = "top2018"),
+                                           "Top 15 Countries of Origin (2009)" = "top2009",
+                                           "Top 15 Countries of Origin (2019)" = "top2019"),
                                          selected = "")
                           ),
                           mainPanel(
                             width = 8,
-                            fluidRow(h5('Admissions Data Visualizations', align = 'center'),
-                                     plotlyOutput('playersPlots')
-                            )
+                            h4(strong('An Overview of Refugee Resettlement in the United States'), align = 'center'),
+                            fluidRow(plotlyOutput('playersPlots')),
+                            fluidRow(br(),
+                                     h4(strong('The Nine Voluntary Agencies (VolAgs) Involved in Refugee Resettlement'), align = 'center'),
+                                     HTML('<center><img src="PRM-RPP-Affiliate-Sites-2019.png"></center>'))
                           )
                         )
 )
