@@ -22,7 +22,7 @@ admissions_2019 <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-p
 race_full <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/race_full.csv")
 coethnic_full <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/coethnic_full.csv")
 employment_full_wide <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/employment_full_wide.csv")
-
+crime_full <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/crime_full.csv")
 
 # specifying initial resettlement location options for casePage selectInput
 firstCountyLoc <- c('DeKalb County', 'Hennepin County', 'Dallas County', 'King County', 'Franklin County')

@@ -1,4 +1,4 @@
-# This is the main interactive analysis page
+# This is the second interactive analysis page
 
 casePage <- tabPanel('A Case Study',
                      h4(strong('Somali Refugees and the Communities in Which They Live'), align = 'center'),
@@ -90,6 +90,11 @@ casePage <- tabPanel('A Case Study',
                                      ),
                                      # Crime Comparison tab layout
                                      tabPanel("Crime",
+                                              fluidRow(
+                                                column(12,
+                                                       plotlyOutput('crimeComp')
+                                                       )
+                                              ),
                                               fluidRow(
                                                 column(6,
                                                        h5('Initial Resettlement Location', align = 'center'),

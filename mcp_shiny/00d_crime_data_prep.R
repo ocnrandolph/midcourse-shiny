@@ -93,3 +93,17 @@ full_crime_data <- full_crime_data %>%
     names_to = 'crime',
     values_to = 'rate_per_100K',
     values_drop_na = FALSE)
+
+# link county and state names in this data set to facilitate data visualization
+county_state <- race_full %>% 
+  select(county, state)
+
+full_crime_data %>% 
+  left_join(county_state, by = c("location" = "state")) %>% 
+  View()
+
+crime_full <- full_crime_data %>% 
+  write.csv(
+    file = "C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/crime_full.csv",
+    row.names = FALSE
+  )

@@ -12,13 +12,13 @@ source("mcp_pages/homePage.R") # -> homePage
 # creditsPage variable
 source("mcp_pages/creditsPage.R") # -> creditsPage
 
-# Source codes that define the 'The Issue' Page
-# issuePage variable
-#source("mcp_pages/issuePage.R") # -> issuePage
+# Source codes that define the 'The Process' Page
+# processPage variable
+#source("mcp_pages/issuePage.R") # -> processPage
 
-# Source codes that define the 'Key Players' Page
-# playersPage variable
-source("mcp_pages/playersPage.R") # -> playersPage
+# Source codes that define the 'An Overview' Page
+# overviewPage variable
+source("mcp_pages/overviewPage.R") # -> overviewPage
 
 # Source codes that define the 'A Case Study' Page
 # casePage variable
@@ -35,12 +35,12 @@ shinyUI(
                homePage,
                creditsPage,
                navbarMenu('Explore',
-                          tabPanel('The Issue',
-                                   'The Issue'),
-                          playersPage,
+                          tabPanel('The Process',
+                                   'The Process'),
+                          overviewPage,
                           casePage,
                           tabPanel('The Takeaway',
-                                   'Conclusion')
+                                   'The Takeaway')
                )
                
     )

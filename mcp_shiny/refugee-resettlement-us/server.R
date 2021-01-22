@@ -400,19 +400,36 @@ shinyServer(function(input, output) {
   })
   
   # Incidences of Crime Comparison output
+  # plotly output for both locations and US + year selection (line plot)
+  output$crimeComp <- plotly::renderPlotly({
+    fig11 <- crime_full %>% 
+      filter(location == 'United States' | 
+               location == input$firstCounty |
+               location == input$secondCounty) %>% 
+      filter(year == input$year) %>% 
+      ggplot()
+    
+    fig11
+  })
+  
   # plotly output for first location and year selection (grouped bar chart)
   output$crimeFirstLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
+    fig12 <- crime_full %>% 
       filter(county == input$firstCounty) %>% 
       filter(year == input$year) %>% 
       ggplot()
+    
+    fig12
   })
   
   # plotly output for second location and year selection (grouped bar chart)
   output$crimeSecondLoc <- plotly::renderPlotly({
-    cleanDataset %>% 
+    fig12 <- crime_full %>% 
       filter(county == input$secondCounty) %>% 
       filter(year == input$year) %>% 
       ggplot()
+    
+    fig12
   })
+  
 })
