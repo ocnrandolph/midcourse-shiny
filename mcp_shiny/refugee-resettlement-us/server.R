@@ -3,22 +3,58 @@
 shinyServer(function(input, output) {
 
 #playersPage Output
+  
   output$playersPlots <- plotly::renderPlotly({
     req(input$admissionsData)
     
-    if (input$admissionsData == "allYear") {
+    if (input$admissionsData == "alladmit") {
       ref_fig <- prm_hist_admit %>% 
-        filter(year != 'Total') %>% 
-        filter(region == 'Total') %>% 
-        ggplot(aes(x = year, y = population)) +
+        filter(Year != 'Total') %>% 
+        filter(Region != 'Total') %>% 
+        ggplot(aes(x = Year, y = Population, fill = Region)) +
         geom_col() +
         theme_minimal() +
-        theme(axis.text.x = element_text(angle = 45)) # Rotate x-axis text labels
+        theme(axis.text.x = element_text(angle = 45)) + # Rotate x-axis text labels
+        scale_y_continuous(labels = label_comma()) +
+        scale_color_viridis()
     }
-    else if (input$admissionsData == "allRegion") {
-      ref_fig <- prm_hist_admit %>% 
-        ggplot(aes(x = race, y = estimate)) +
-        geom_line()
+    else if (input$admissionsData == "comps") {
+      ref_fig <- admit_vs_ceiling %>% 
+        plot_ly(x = ~Year, 
+                y = ~Admissions,
+                name = 'Actual Admissions',
+                type = 'scatter',
+                mode = 'lines',
+                line = list(color = '#29AF7FFF', width = 4)) %>%
+        add_trace(y = ~Ceiling,
+                  name = 'Admission Ceiling',
+                  line = list(color = '#440154FF', width = 4, dash = 'dash')) %>% 
+        layout(xaxis = list(tickmode = 'linear', tickangle = 45),
+               yaxis = list(title = 'Refugee Admissions'))
+    }
+    else if (input$admissionsData == "top2009") {
+      ref_fig <- admissions_2009 %>%
+        filter(str_detect(Country, 'Total', negate = TRUE)) %>% # filter out country and region totals
+        arrange(desc(Admitted)) %>% 
+        head(15) %>% # grab top 15 values and countries
+        ggplot(aes(x = reorder(Country, Admitted), y = Admitted)) +
+        geom_col() +
+        theme_minimal() +
+        labs(x = NULL, y = 'Refugees Admitted in 2009') +
+        scale_y_continuous(labels = label_comma()) +
+        coord_flip()
+    }
+    else if (input$admissionsData == "top2019") {
+      ref_fig <- admissions_2019 %>%
+        filter(str_detect(Country, 'Total', negate = TRUE)) %>% # filter out country and region totals
+        arrange(desc(Admitted)) %>% 
+        head(15) %>% # grab top 15 values and countries
+        ggplot(aes(x = reorder(Country, Admitted), y = Admitted)) +
+        geom_col() +
+        theme_minimal() +
+        labs(x = NULL, y = 'Refugees Admitted in 2019') +
+        scale_y_continuous(labels = label_comma()) +
+        coord_flip()
     }
     
     ref_fig
@@ -124,7 +160,8 @@ shinyServer(function(input, output) {
       plot_ly(color = I("gray80")) %>%
       add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
       add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
+      layout(xaxis = list(title = '% Unemployed'))
     
     fig3a
   })
@@ -150,7 +187,8 @@ shinyServer(function(input, output) {
       plot_ly(color = I("gray80")) %>%
       add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
       add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
+      layout(xaxis = list(title = '% Unemployed'))
     
     fig4a
   })
@@ -175,7 +213,8 @@ shinyServer(function(input, output) {
       plot_ly(color = I("gray80")) %>%
       add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
       add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
+      layout(xaxis = list(title = '% Unemployed'))
     
     fig3b
   })
@@ -201,7 +240,8 @@ shinyServer(function(input, output) {
       plot_ly(color = I("gray80")) %>%
       add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
       add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue"))
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
+      layout(xaxis = list(title = '% Unemployed'))
     
     fig4b
   })
@@ -241,7 +281,7 @@ shinyServer(function(input, output) {
       pull(state)
     
     str1 <- as.character(h5(strong(paste0(input$firstCounty, ", ", state[1])), align = 'center'))
-    str2 <- as.character(h5(strong(paste0("Foreign Born African Population (", input$year, ")")), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Foreign Born Africans (", input$year, ")")), align = 'center'))
     HTML(paste(str1, str2))
     
   })
@@ -317,7 +357,7 @@ shinyServer(function(input, output) {
       pull(state)
     
     str1 <- as.character(h5(strong(paste0(input$secondCounty, ", ", state[1])), align = 'center'))
-    str2 <- as.character(h5(strong(paste0("Foreign Born African Population (", input$year, ")")), align = 'center'))
+    str2 <- as.character(h5(strong(paste0("Foreign Born Africans (", input$year, ")")), align = 'center'))
     HTML(paste(str1, str2))
     
   })

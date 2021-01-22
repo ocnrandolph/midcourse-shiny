@@ -1,7 +1,7 @@
 # This is the main interactive analysis page
 
 casePage <- tabPanel('A Case Study',
-                     h4(strong('Somali Refugees Resettled in the United States'), align = 'center'),
+                     h4(strong('Somali Refugees and the Communities in Which They Live'), align = 'center'),
                      sidebarLayout(
                        sidebarPanel(
                          width=3,
