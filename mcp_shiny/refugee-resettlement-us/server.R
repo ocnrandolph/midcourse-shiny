@@ -16,7 +16,8 @@ shinyServer(function(input, output) {
         theme_minimal() +
         theme(axis.text.x = element_text(angle = 45)) + # Rotate x-axis text labels
         scale_y_continuous(labels = label_comma()) +
-        scale_color_viridis()
+        scale_fill_manual(values = alladmit_Palette)
+        #scale_fill_viridis(discrete = TRUE, option = 'D')
     }
     else if (input$admissionsData == "comps") {
       ref_fig <- admit_vs_ceiling %>% 
@@ -37,11 +38,12 @@ shinyServer(function(input, output) {
         filter(str_detect(Country, 'Total', negate = TRUE)) %>% # filter out country and region totals
         arrange(desc(Admitted)) %>% 
         head(15) %>% # grab top 15 values and countries
-        ggplot(aes(x = reorder(Country, Admitted), y = Admitted)) +
-        geom_col() +
+        ggplot() +
+        geom_col(aes(x = reorder(Country, Admitted), y = Admitted, fill = Country)) +
+        scale_color_viridis() +
         theme_minimal() +
         labs(x = NULL, y = 'Refugees Admitted in 2009') +
-        scale_y_continuous(labels = label_comma()) +
+        scale_fill_manual(values = top09_Palette) +
         coord_flip()
     }
     else if (input$admissionsData == "top2019") {
@@ -49,11 +51,12 @@ shinyServer(function(input, output) {
         filter(str_detect(Country, 'Total', negate = TRUE)) %>% # filter out country and region totals
         arrange(desc(Admitted)) %>% 
         head(15) %>% # grab top 15 values and countries
-        ggplot(aes(x = reorder(Country, Admitted), y = Admitted)) +
-        geom_col() +
+        ggplot() +
+        geom_col(aes(x = reorder(Country, Admitted), y = Admitted, fill = Country)) +
+        scale_color_viridis() +
         theme_minimal() +
         labs(x = NULL, y = 'Refugees Admitted in 2019') +
-        scale_y_continuous(labels = label_comma()) +
+        scale_fill_manual(values = top19_Palette) +
         coord_flip()
     }
     
@@ -404,10 +407,14 @@ shinyServer(function(input, output) {
   output$crimeComp <- plotly::renderPlotly({
     fig11 <- crime_full %>% 
       filter(location == 'United States' | 
-               location == input$firstCounty |
-               location == input$secondCounty) %>% 
-      filter(year == input$year) %>% 
-      ggplot()
+               county == input$firstCounty |
+               county == input$secondCounty) %>% 
+      filter(crime == 'Violent Crime' | 
+               crime == 'Property Crime') %>% 
+      ggplot(aes(x = year, y = rate_per_100K, group = location)) +
+      geom_line(aes(color = location)) +
+      scale_x_continuous(breaks = c(2009:2019)) +
+      facet_grid(rows = 'crime', scales = 'free')
     
     fig11
   })
