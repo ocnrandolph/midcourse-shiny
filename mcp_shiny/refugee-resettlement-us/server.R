@@ -160,11 +160,13 @@ shinyServer(function(input, output) {
       filter(age_group == '16 to 64 years') %>%
       filter(county == input$firstCounty) %>% 
       filter(year == input$year) %>%
-      plot_ly(color = I("gray80")) %>%
-      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
-      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
-      layout(xaxis = list(title = '% Unemployed'))
+      plot_ly(color = I("black")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>%
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I(teal), size = 3) %>%
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I(cocoa), size = 3) %>%
+      layout(xaxis = list(title = '% Unemployed'),
+             yaxis = list(title = ' '),
+             margin = list(b = 90))
     
     fig3a
   })
@@ -187,11 +189,13 @@ shinyServer(function(input, output) {
       filter(age_group == '16 to 64 years') %>%
       filter(county == input$secondCounty) %>% 
       filter(year == input$year) %>% 
-      plot_ly(color = I("gray80")) %>%
-      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
-      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
-      layout(xaxis = list(title = '% Unemployed'))
+      plot_ly(color = I("black")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>%
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I(teal), size = 3) %>%
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I(cocoa), size = 3) %>% 
+      layout(xaxis = list(title = '% Unemployed'),
+             yaxis = list(title = ' '),
+             margin = list(b = 90))
     
     fig4a
   })
@@ -213,11 +217,13 @@ shinyServer(function(input, output) {
       filter(county == input$firstCounty) %>% 
       filter(year == input$year) %>% 
       filter(age_group == '65 years and over') %>%
-      plot_ly(color = I("gray80")) %>%
-      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
-      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
-      layout(xaxis = list(title = '% Unemployed'))
+      plot_ly(color = I("black")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>%
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I(teal), size = 3) %>%
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I(cocoa), size = 3) %>% 
+      layout(xaxis = list(title = '% Unemployed'),
+             yaxis = list(title = ' '),
+             margin = list(b = 90))
     
     fig3b
   })
@@ -240,11 +246,13 @@ shinyServer(function(input, output) {
       filter(county == input$secondCounty) %>% 
       filter(year == input$year) %>% 
       filter(age_group == '65 years and over') %>%
-      plot_ly(color = I("gray80")) %>%
-      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>% 
-      add_markers(x = ~Female, y = ~race, name = 'Women', color = I("pink")) %>% 
-      add_markers(x = ~Male, y = ~race, name = 'Men', color = I("blue")) %>% 
-      layout(xaxis = list(title = '% Unemployed'))
+      plot_ly(color = I("black")) %>%
+      add_segments(x = ~Female, xend = ~Male, y = ~race, yend = ~race, showlegend = F) %>%
+      add_markers(x = ~Female, y = ~race, name = 'Women', color = I(teal), size = 3) %>%
+      add_markers(x = ~Male, y = ~race, name = 'Men', color = I(cocoa), size = 3) %>%
+      layout(xaxis = list(title = '% Unemployed'),
+             yaxis = list(title = ' '),
+             margin = list(b = 90))
     
     fig4b
   })

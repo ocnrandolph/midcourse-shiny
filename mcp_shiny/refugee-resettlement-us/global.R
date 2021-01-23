@@ -13,6 +13,7 @@ library(shiny)
 library(shinydashboard)
 library(scales)
 library(viridis)
+library(colorspace)
 
 # Import all needed data files
 prm_hist_admit <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/prm_hist_admit.csv")
@@ -35,4 +36,8 @@ alladmit_Palette <- c("#A7226E", "#453781FF", "#33638DFF", "#238A8DFF", "#839B97
 top09_Palette <- c("#453781FF", "#482677FF", "#29AF7FFF", "#39568CFF", "#20A387FF", "#238A8DFF", "#404788FF", "#440154FF", "#FDE725FF",
                "#DCE319FF", "#95D840FF", "#2D708EFF", "#3CBB75FF", "#73D055FF", "#1F968BFF")
 top19_Palette <- c("#39568CFF", "#453781FF", "#B8DE29FF", "#3CBB75FF", "#440154FF", "#29AF7FFF", "#404788FF", "#95D840FF", 
-                   "#FDE725FF", "#1F968BFF", "#73D055FF", "#DCE319FF", "#20A387FF", "#2D708EFF", "#482677FF") 
+                   "#FDE725FF", "#1F968BFF", "#73D055FF", "#DCE319FF", "#20A387FF", "#2D708EFF", "#482677FF")
+eggplant <- '#440154FF'
+teal <- '#287D8EFF'
+lemon <- '#FDE725FF'
+cocoa <- '#8F5728'
