@@ -40,7 +40,7 @@ shinyServer(function(input, output) {
         head(15) %>% # grab top 15 values and countries
         ggplot() +
         geom_col(aes(x = reorder(Country, Admitted), y = Admitted, fill = Country)) +
-        scale_color_viridis() +
+        scale_y_continuous(labels = label_comma()) +
         theme_minimal() +
         labs(x = NULL, y = 'Refugees Admitted in 2009') +
         scale_fill_manual(values = top09_Palette) +
@@ -53,7 +53,7 @@ shinyServer(function(input, output) {
         head(15) %>% # grab top 15 values and countries
         ggplot() +
         geom_col(aes(x = reorder(Country, Admitted), y = Admitted, fill = Country)) +
-        scale_color_viridis() +
+        scale_y_continuous(labels = label_comma()) +
         theme_minimal() +
         labs(x = NULL, y = 'Refugees Admitted in 2019') +
         scale_fill_manual(values = top19_Palette) +

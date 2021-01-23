@@ -14,7 +14,7 @@ source("mcp_pages/creditsPage.R") # -> creditsPage
 
 # Source codes that define the 'The Process' Page
 # processPage variable
-#source("mcp_pages/issuePage.R") # -> processPage
+source("mcp_pages/processPage.R") # -> processPage
 
 # Source codes that define the 'An Overview' Page
 # overviewPage variable
@@ -26,7 +26,7 @@ source("mcp_pages/casePage.R") # -> casePage
 
 # Source codes that define the 'The Takeaway' Page
 # takeawayPage variable
-#source("mcp_pages/takeawayPage.R") # -> takeawayPage
+source("mcp_pages/takeawayPage.R") # -> takeawayPage
 
 # Putting the UI Together
 shinyUI(
@@ -35,12 +35,10 @@ shinyUI(
                homePage,
                creditsPage,
                navbarMenu('Explore',
-                          tabPanel('The Process',
-                                   'The Process'),
+                          processPage,
                           overviewPage,
                           casePage,
-                          tabPanel('The Takeaway',
-                                   'The Takeaway')
+                          takeawayPage
                )
                
     )

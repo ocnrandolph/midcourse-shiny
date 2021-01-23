@@ -16,10 +16,7 @@ overviewPage <- tabPanel('An Overview',
                           mainPanel(
                             width = 8,
                             h4(strong('An Overview of Refugee Resettlement in the United States'), align = 'center'),
-                            fluidRow(plotlyOutput('playersPlots')),
-                            fluidRow(br(),
-                                     h4(strong('The Nine Voluntary Agencies (VolAgs) Involved in Refugee Resettlement'), align = 'center'),
-                                     HTML('<center><img src="PRM-RPP-Affiliate-Sites-2019.png"></center>'))
+                            fluidRow(plotlyOutput('playersPlots'))
                           )
                         )
 )

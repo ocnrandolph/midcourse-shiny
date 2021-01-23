@@ -24,7 +24,14 @@ homePage <- tabPanel('Home',
                               br(),
                               em("1. What are the origins of people who are admitted to the U.S. as refugees?"),
                               br(),
-                              em("2. How do characteristics of resettlement communities differ in ways that could influence adjustment to life in the U.S. for refugees?")
+                              em("2. How do characteristics of resettlement communities differ in ways that could influence adjustment to life in the U.S. for refugees?"),
+                              br(),
+                              p(),
+                              strong('Project Goals'),
+                              br(),
+                              p("This shiny app will answer these initial questions. More than that though, I hope to pique your interest in issues",
+                                "related to refugee resettlement, immigration, and community-building that leave you wondering how these processes that we",
+                                "often take for granted actually work. And I hope to leave you wondering how we can improve on them. Enjoy!")
                        ),
                        column(4,
                               img(src = 'home-collage-edit.png', # add image

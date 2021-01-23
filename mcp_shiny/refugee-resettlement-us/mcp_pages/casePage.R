@@ -15,8 +15,17 @@ casePage <- tabPanel('A Case Study',
                                      choices = secondCountyLoc),
                          radioButtons('year',
                                       label = "Year",
-                                      choices = c("2009", "2019"))
-                         
+                                      choices = c("2009", "2019")),
+                         hr(),
+                         p(strong("County | City")),
+                         p("Androscoggin County | Lewiston, Maine"),
+                         p("Cumberland County | Portland, Maine"),
+                         p("Dallas County | Dallas, Texas"),
+                         p("DeKalb County | Atlanta, Georgia"),
+                         p("Franklin County | Columbus, Ohio"),
+                         p("Hennepin County | Minneapolis, Minnesota"),
+                         p("King County | Seattle, Washington"),
+                         p("Stearns County | St. Cloud, Minnesota")
                        ),
                        mainPanel(
                          width = 8,
@@ -32,7 +41,7 @@ casePage <- tabPanel('A Case Study',
                                                        htmlOutput('raceSecondTitle'), # for plot title based on user input
                                                        plotlyOutput('raceSecondLoc')
                                                 )
-                                              )
+                                              ),
                                      ),
                                      # Employment Comparison tab layout
                                      tabPanel("Employment Opportunities",
