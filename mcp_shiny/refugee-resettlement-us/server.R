@@ -85,9 +85,9 @@ shinyServer(function(input, output) {
       # 2nd filter by year
       filter(year == input$year) %>%
       ggplot(aes(x = race, y = estimate, fill = ethnicity)) +
-      geom_col() +
-      #scale_fill_manual(values = c('Hisp' = '#DCC5A8',
-      #                           'nonHisp' = '#C2B5AE')) +
+      geom_col(color = "black") +
+      scale_fill_manual(values = c('Hispanic or Latino' = '#55C39E',
+                                 'Not Hispanic or Latino' = '#387CA3')) +
       labs(title = NULL, x = NULL, y = 'Population', fill = NULL) +
       scale_y_continuous(labels = label_comma()) +
       scale_x_discrete(labels = c('Native American',
@@ -123,9 +123,9 @@ shinyServer(function(input, output) {
       # 2nd filter by year
       filter(year == input$year) %>%
       ggplot(aes(x = race, y = estimate, fill = ethnicity)) +
-      geom_col() +
-      #scale_fill_manual(values = c('Hisp' = '#DCC5A8',
-      #                           'nonHisp' = '#C2B5AE')) +
+      geom_col(color = "black") +
+      scale_fill_manual(values = c('Hispanic or Latino' = '#55C39E',
+                                   'Not Hispanic or Latino' = '#387CA3')) +
       labs(title = NULL, x = NULL, y = 'Population', fill = NULL) +
       scale_y_continuous(labels = label_comma()) +
       scale_x_discrete(labels = c('Native American',
@@ -270,7 +270,9 @@ shinyServer(function(input, output) {
       filter(coethnic == 'Total Foreign Born Population' | coethnic == 'Total Population') %>% 
       plot_ly(labels = ~coethnic,
               values = ~estimate,
-              type = 'pie')
+              type = 'pie',
+              marker = list(colors = c('#387CA3', '#FF994C'),
+                            line = list(color = '#FFFFFF', width = 3))) 
     
     # generate plot
     fig5
@@ -296,7 +298,9 @@ shinyServer(function(input, output) {
       filter(coethnic == 'Foreign Born Population - African' | coethnic == 'Total Foreign Born Population') %>% 
       plot_ly(labels = ~coethnic,
               values = ~estimate,
-              type = 'pie')
+              type = 'pie',
+              marker = list(colors = c('#387CA3', '#FF994C'),
+                            line = list(color = '#FFFFFF', width = 3)))
     
     fig6
   })
@@ -321,7 +325,9 @@ shinyServer(function(input, output) {
       filter(coethnic == 'Somali Ancestry' | coethnic == 'Ancestry Total') %>% 
       plot_ly(labels = ~coethnic,
               values = ~estimate,
-              type = 'pie')
+              type = 'pie',
+              marker = list(colors = c('#387CA3', '#FF994C'),
+                            line = list(color = '#FFFFFF', width = 3)))
     
     fig7
   })
@@ -346,7 +352,9 @@ shinyServer(function(input, output) {
       filter(coethnic == 'Total Foreign Born Population' | coethnic == 'Total Population') %>% 
       plot_ly(labels = ~coethnic,
               values = ~estimate,
-              type = 'pie')
+              type = 'pie',
+              marker = list(colors = c('#387CA3', '#FF994C'),
+                            line = list(color = '#FFFFFF', width = 3)))
     
     # generate plot
     fig8
@@ -372,7 +380,9 @@ shinyServer(function(input, output) {
       filter(coethnic == 'Foreign Born Population - African' | coethnic == 'Total Foreign Born Population') %>% 
       plot_ly(labels = ~coethnic,
               values = ~estimate,
-              type = 'pie')
+              type = 'pie',
+              marker = list(colors = c('#387CA3', '#FF994C'),
+                            line = list(color = '#FFFFFF', width = 3)))
     
     fig9
   })
@@ -397,7 +407,9 @@ shinyServer(function(input, output) {
       filter(coethnic == 'Somali Ancestry' | coethnic == 'Ancestry Total') %>% 
       plot_ly(labels = ~coethnic,
               values = ~estimate,
-              type = 'pie')
+              type = 'pie',
+              marker = list(colors = c('#387CA3', '#FF994C'),
+                            line = list(color = '#FFFFFF', width = 3)))
     
     fig10
   })
@@ -412,11 +424,20 @@ shinyServer(function(input, output) {
       filter(crime == 'Violent Crime' | 
                crime == 'Property Crime') %>% 
       ggplot(aes(x = year, y = rate_per_100K, group = location)) +
-      geom_line(aes(color = location)) +
+      geom_line(aes(color = location), size = 1) +
+      geom_point(aes(color = location), size = 1.5) +
       scale_x_continuous(breaks = c(2009:2019)) +
       scale_y_continuous(labels = label_comma()) +
       facet_grid(rows = 'crime', scales = 'free') +
-      theme_minimal()
+      scale_color_manual(values = c('United States' = '#440154FF',
+                                   'Texas' = '#387CA3',
+                                   'Georgia' = '#387CA3',
+                                   'Maine' = '#FF994C',
+                                   'Minnesota' = '#20A387FF',
+                                   'Washington' = '#CFBB4C',
+                                   'Ohio' = '#98506D')) +
+      theme(strip.background = element_rect(color = "gray", fill = NULL)) +
+      labs(x = NULL, y = "Rate per 100,000 People", color = NULL)
     
     fig11
   })
@@ -431,7 +452,17 @@ shinyServer(function(input, output) {
       filter(crime != 'Property Crime') %>% 
       filter(year == input$year) %>% 
       ggplot(aes(x = crime, y = rate_per_100K, fill = location)) +
-      geom_bar(position = "dodge", stat = "identity")
+      geom_bar(position = "dodge", stat = "identity", color = "black") +
+      scale_fill_manual(values = c('United States' = '#440154FF',
+                                   'Texas' = '#387CA3',
+                                   'Georgia' = '#387CA3',
+                                   'Maine' = '#FF994C',
+                                   'Minnesota' = '#20A387FF',
+                                   'Washington' = '#CFBB4C',
+                                   'Ohio' = '#98506D')) +
+      scale_y_continuous(labels = label_comma()) +
+      labs(x = NULL, y = "Rate per 100,000 People", fill = NULL) +
+      theme_minimal()
     
     fig12
   })

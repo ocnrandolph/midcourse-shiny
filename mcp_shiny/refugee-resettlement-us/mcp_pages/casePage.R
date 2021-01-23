@@ -74,7 +74,6 @@ casePage <- tabPanel('A Case Study',
                                                        plotlyOutput('somaliFirstLoc')
                                                 )
                                               ),
-                                              hr(),
                                               fluidRow(
                                                 h5(em('Secondary Migration Location'), align = 'left'),
                                                 column(3,
@@ -94,17 +93,27 @@ casePage <- tabPanel('A Case Study',
                                      # Crime Comparison tab layout
                                      tabPanel("Crime",
                                               fluidRow(
+                                                h5(strong('Overall Property Crime and Violent Crimes'), align = 'center'),
+                                                h5('Comparison of Selected Locations Based on State and National Crime Rates', align = 'center'),
                                                 column(12,
                                                        plotlyOutput('crimeComp')
                                                 )
                                               ),
                                               fluidRow(
+                                                h5(strong('Detailed Violent Crime Comparison'), align = 'center'),
                                                 column(12,
-                                                       h5('Initial Resettlement Location', align = 'center'),
-                                                       h5('Incidences of Crime', align = 'center'),
                                                        plotlyOutput('crimeFirstLoc'),
                                                 ),
-                                                p()
+                                                p(
+                                                  br(),
+                                                  'Note: Prior to 2012, the Department of Justice relied on the following outdated (legacy) definition of rape: "the carnal',
+                                                  'knowledge of a female, forcibly and against her will". Modernization of this (revised) defintion now includes',
+                                                  'perpetrators and victims of any gender, and include situations where the victim cannot give consent due to',
+                                                  'temporary or permanent incapacity. Keep in mind that observed increases in incidents of rape may have more to',
+                                                  'do with this expanded definition, not necessarily an actual increase in offenses. For more information,',
+                                                  a(href='https://www.justice.gov/archives/opa/blog/updated-definition-rape', 'follow this link'),
+                                                  'to the DOJ archives.'
+                                                )
                                               )
                                      )
                          )
