@@ -98,9 +98,8 @@ full_crime_data <- full_crime_data %>%
 county_state <- race_full %>% 
   select(county, state)
 
-full_crime_data %>% 
-  left_join(county_state, by = c("location" = "state")) %>% 
-  View()
+full_crime_data <- full_crime_data %>% 
+  left_join(unique(county_state), by = c("location" = "state"))
 
 crime_full <- full_crime_data %>% 
   write.csv(
