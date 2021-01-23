@@ -251,7 +251,7 @@ shinyServer(function(input, output) {
   
   # Co-Ethnic Community Comparison output
   # foreign born population vs total population
-  # plotly output for first location and year selection (donut chart)
+  # plotly output for first location and year selection (pie chart)
   output$coethFirstTitle <- renderUI({
     state <- coethnic_full %>% 
       filter(county == input$firstCounty) %>% 
@@ -269,8 +269,8 @@ shinyServer(function(input, output) {
       filter(year == input$year) %>%
       filter(coethnic == 'Total Foreign Born Population' | coethnic == 'Total Population') %>% 
       plot_ly(labels = ~coethnic,
-              values = ~estimate) %>% 
-      add_pie(hole = 0.4)
+              values = ~estimate,
+              type = 'pie')
     
     # generate plot
     fig5
@@ -301,7 +301,7 @@ shinyServer(function(input, output) {
     fig6
   })
   
-  # plotly output for first location and year selection (donut chart)
+  # plotly output for first location and year selection (pie chart)
   # Somali Ancestry vs Total Ancestry
   output$somaliFirstTitle <- renderUI({
     state <- coethnic_full %>% 
@@ -320,13 +320,13 @@ shinyServer(function(input, output) {
       filter(year == input$year) %>% 
       filter(coethnic == 'Somali Ancestry' | coethnic == 'Ancestry Total') %>% 
       plot_ly(labels = ~coethnic,
-              values = ~estimate) %>% 
-      add_pie(hole = 0.4)
+              values = ~estimate,
+              type = 'pie')
     
     fig7
   })
   
-  # plotly output for second location and year selection (donut chart)
+  # plotly output for second location and year selection (pie chart)
   # foreign born population vs total population
   output$coethSecondTitle <- renderUI({
     state <- coethnic_full %>% 
@@ -345,8 +345,8 @@ shinyServer(function(input, output) {
       filter(year == input$year) %>% 
       filter(coethnic == 'Total Foreign Born Population' | coethnic == 'Total Population') %>% 
       plot_ly(labels = ~coethnic,
-              values = ~estimate) %>% 
-      add_pie(hole = 0.4)
+              values = ~estimate,
+              type = 'pie')
     
     # generate plot
     fig8
@@ -396,14 +396,14 @@ shinyServer(function(input, output) {
       filter(year == input$year) %>% 
       filter(coethnic == 'Somali Ancestry' | coethnic == 'Ancestry Total') %>% 
       plot_ly(labels = ~coethnic,
-              values = ~estimate) %>% 
-      add_pie(hole = 0.4)
+              values = ~estimate,
+              type = 'pie')
     
     fig10
   })
   
   # Incidences of Crime Comparison output
-  # plotly output for both locations and US + year selection (line plot)
+  # plotly output for general property and violent crime in both locations and US + year selection (line plot)
   output$crimeComp <- plotly::renderPlotly({
     fig11 <- crime_full %>% 
       filter(location == 'United States' | 
@@ -414,27 +414,24 @@ shinyServer(function(input, output) {
       ggplot(aes(x = year, y = rate_per_100K, group = location)) +
       geom_line(aes(color = location)) +
       scale_x_continuous(breaks = c(2009:2019)) +
-      facet_grid(rows = 'crime', scales = 'free')
+      scale_y_continuous(labels = label_comma()) +
+      facet_grid(rows = 'crime', scales = 'free') +
+      theme_minimal()
     
     fig11
   })
   
-  # plotly output for first location and year selection (grouped bar chart)
+  # plotly output for comparing detailed violent crime in both locations by year selection (grouped bar chart)
   output$crimeFirstLoc <- plotly::renderPlotly({
     fig12 <- crime_full %>% 
-      filter(county == input$firstCounty) %>% 
+      filter(location == 'United States' | 
+               county == input$firstCounty |
+               county == input$secondCounty) %>% 
+      filter(crime != 'Violent Crime') %>% 
+      filter(crime != 'Property Crime') %>% 
       filter(year == input$year) %>% 
-      ggplot()
-    
-    fig12
-  })
-  
-  # plotly output for second location and year selection (grouped bar chart)
-  output$crimeSecondLoc <- plotly::renderPlotly({
-    fig12 <- crime_full %>% 
-      filter(county == input$secondCounty) %>% 
-      filter(year == input$year) %>% 
-      ggplot()
+      ggplot(aes(x = crime, y = rate_per_100K, fill = location)) +
+      geom_bar(position = "dodge", stat = "identity")
     
     fig12
   })

@@ -60,6 +60,7 @@ casePage <- tabPanel('A Case Study',
                                      # Coethnic Community Comparison tab layout
                                      tabPanel("Coethnic Community",
                                               fluidRow(
+                                                h5(em('Initial Resettlement Location'), align = 'left'),
                                                 column(3,
                                                        htmlOutput('coethFirstTitle'),
                                                        plotlyOutput('coethFirstLoc')
@@ -73,7 +74,9 @@ casePage <- tabPanel('A Case Study',
                                                        plotlyOutput('somaliFirstLoc')
                                                 )
                                               ),
+                                              hr(),
                                               fluidRow(
+                                                h5(em('Secondary Migration Location'), align = 'left'),
                                                 column(3,
                                                        htmlOutput('coethSecondTitle'),
                                                        plotlyOutput('coethSecondLoc')
@@ -93,19 +96,15 @@ casePage <- tabPanel('A Case Study',
                                               fluidRow(
                                                 column(12,
                                                        plotlyOutput('crimeComp')
-                                                       )
+                                                )
                                               ),
                                               fluidRow(
-                                                column(6,
+                                                column(12,
                                                        h5('Initial Resettlement Location', align = 'center'),
                                                        h5('Incidences of Crime', align = 'center'),
-                                                       plotlyOutput('crimeFirstLoc')
+                                                       plotlyOutput('crimeFirstLoc'),
                                                 ),
-                                                column(6,
-                                                       h5('Secondary Migration Location', align = 'center'),
-                                                       h5('Incidences of Crime', align = 'center'),
-                                                       plotlyOutput('crimeSecondLoc')
-                                                )
+                                                p()
                                               )
                                      )
                          )
