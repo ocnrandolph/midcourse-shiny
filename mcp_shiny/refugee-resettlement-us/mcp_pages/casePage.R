@@ -1,7 +1,6 @@
 # This is the second interactive analysis page
 
 casePage <- tabPanel('A Case Study',
-                     h4(strong('Somali Refugees and the Communities in Which They Live'), align = 'center'),
                      sidebarLayout(
                        sidebarPanel(
                          width=3,
@@ -17,7 +16,7 @@ casePage <- tabPanel('A Case Study',
                                       label = "Year",
                                       choices = c("2009", "2019")),
                          hr(),
-                         p(strong("County | City")),
+                         p(strong("County & City Legend")),
                          p("Androscoggin County | Lewiston, Maine"),
                          p("Cumberland County | Portland, Maine"),
                          p("Dallas County | Dallas, Texas"),
@@ -29,9 +28,15 @@ casePage <- tabPanel('A Case Study',
                        ),
                        mainPanel(
                          width = 8,
+                         h4(strong('Somali Refugees and the Communities in Which They Live'), align = 'center'),
+                         br(),
+                         p(em('How do characteristics of communities differ in ways that could influence adjustment to life in the U.S. for resettled refugees?'),
+                           align = 'center'),
+                         br(),
+                         p(),
                          tabsetPanel(type = "tabs",
                                      # Race/Ethnicity Comparison tab layout
-                                     tabPanel("Race/Ethnicity",
+                                     tabPanel("Race/Ethnicity", align = 'center',
                                               fluidRow(
                                                 column(6,
                                                        htmlOutput('raceFirstTitle'), # for plot title based on user input

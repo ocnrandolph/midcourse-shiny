@@ -14,7 +14,7 @@ shinyServer(function(input, output) {
         ggplot(aes(x = Year, y = Population, fill = Region)) +
         geom_col() +
         theme_minimal() +
-        theme(axis.text.x = element_text(angle = 45)) + # Rotate x-axis text labels
+        theme(axis.text.x = element_text(angle = -45)) + # Rotate x-axis text labels
         scale_y_continuous(labels = label_comma()) +
         scale_fill_manual(values = alladmit_Palette)
         #scale_fill_viridis(discrete = TRUE, option = 'D')
