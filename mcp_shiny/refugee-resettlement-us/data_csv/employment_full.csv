@@ -1,0 +1,321 @@
+"county","state","race","sex","age_group","Total Civilian Labor Force","Employed","Unemployed","Unemployment Rate","year"
+"DeKalb County","Georgia","Black","Male","16 to 64 years",99081,84428,14653,14.79,2009
+"DeKalb County","Georgia","Black","Male","65 years and over",1862,1636,226,12.14,2009
+"DeKalb County","Georgia","Black","Female","16 to 64 years",118164,101140,17024,14.41,2009
+"DeKalb County","Georgia","Black","Female","65 years and over",1423,1310,113,7.94,2009
+"DeKalb County","Georgia","Native American","Male","16 to 64 years",806,743,63,7.82,2009
+"DeKalb County","Georgia","Native American","Male","65 years and over",0,0,0,NA,2009
+"DeKalb County","Georgia","Native American","Female","16 to 64 years",369,357,12,3.25,2009
+"DeKalb County","Georgia","Native American","Female","65 years and over",0,0,0,NA,2009
+"DeKalb County","Georgia","Asian","Male","16 to 64 years",8701,8323,378,4.34,2009
+"DeKalb County","Georgia","Asian","Male","65 years and over",412,403,9,2.18,2009
+"DeKalb County","Georgia","Asian","Female","16 to 64 years",6445,6093,352,5.46,2009
+"DeKalb County","Georgia","Asian","Female","65 years and over",82,82,0,0,2009
+"DeKalb County","Georgia","White","Male","16 to 64 years",63783,60393,3390,5.31,2009
+"DeKalb County","Georgia","White","Male","65 years and over",3234,3123,111,3.43,2009
+"DeKalb County","Georgia","White","Female","16 to 64 years",58990,56175,2815,4.77,2009
+"DeKalb County","Georgia","White","Female","65 years and over",3142,3121,21,0.67,2009
+"DeKalb County","Georgia","Hispanic or Latino","Male","16 to 64 years",29743,27707,2036,6.85,2009
+"DeKalb County","Georgia","Hispanic or Latino","Male","65 years and over",152,137,15,9.87,2009
+"DeKalb County","Georgia","Hispanic or Latino","Female","16 to 64 years",11662,10491,1171,10.04,2009
+"DeKalb County","Georgia","Hispanic or Latino","Female","65 years and over",105,105,0,0,2009
+"Androscoggin County","Maine","Black","Male","16 to 64 years",690,578,112,16.23,2009
+"Androscoggin County","Maine","Black","Male","65 years and over",0,0,0,NA,2009
+"Androscoggin County","Maine","Black","Female","16 to 64 years",431,278,153,35.5,2009
+"Androscoggin County","Maine","Black","Female","65 years and over",0,0,0,NA,2009
+"Androscoggin County","Maine","Native American","Male","16 to 64 years",140,130,10,7.14,2009
+"Androscoggin County","Maine","Native American","Male","65 years and over",0,0,0,NA,2009
+"Androscoggin County","Maine","Native American","Female","16 to 64 years",112,95,17,15.18,2009
+"Androscoggin County","Maine","Native American","Female","65 years and over",0,0,0,NA,2009
+"Androscoggin County","Maine","Asian","Male","16 to 64 years",117,111,6,5.13,2009
+"Androscoggin County","Maine","Asian","Male","65 years and over",0,0,0,NA,2009
+"Androscoggin County","Maine","Asian","Female","16 to 64 years",173,173,0,0,2009
+"Androscoggin County","Maine","Asian","Female","65 years and over",8,8,0,0,2009
+"Androscoggin County","Maine","White","Male","16 to 64 years",24156,22299,1857,7.69,2009
+"Androscoggin County","Maine","White","Male","65 years and over",1165,1127,38,3.26,2009
+"Androscoggin County","Maine","White","Female","16 to 64 years",24445,22929,1516,6.2,2009
+"Androscoggin County","Maine","White","Female","65 years and over",799,773,26,3.25,2009
+"Androscoggin County","Maine","Hispanic or Latino","Male","16 to 64 years",379,325,54,14.25,2009
+"Androscoggin County","Maine","Hispanic or Latino","Male","65 years and over",0,0,0,NA,2009
+"Androscoggin County","Maine","Hispanic or Latino","Female","16 to 64 years",423,398,25,5.91,2009
+"Androscoggin County","Maine","Hispanic or Latino","Female","65 years and over",0,0,0,NA,2009
+"Cumberland County","Maine","Black","Male","16 to 64 years",1468,1367,101,6.88,2009
+"Cumberland County","Maine","Black","Male","65 years and over",0,0,0,NA,2009
+"Cumberland County","Maine","Black","Female","16 to 64 years",1145,951,194,16.94,2009
+"Cumberland County","Maine","Black","Female","65 years and over",0,0,0,NA,2009
+"Cumberland County","Maine","Native American","Male","16 to 64 years",149,123,26,17.45,2009
+"Cumberland County","Maine","Native American","Male","65 years and over",0,0,0,NA,2009
+"Cumberland County","Maine","Native American","Female","16 to 64 years",44,29,15,34.09,2009
+"Cumberland County","Maine","Native American","Female","65 years and over",0,0,0,NA,2009
+"Cumberland County","Maine","Asian","Male","16 to 64 years",1084,1035,49,4.52,2009
+"Cumberland County","Maine","Asian","Male","65 years and over",9,9,0,0,2009
+"Cumberland County","Maine","Asian","Female","16 to 64 years",1131,1048,83,7.34,2009
+"Cumberland County","Maine","Asian","Female","65 years and over",14,14,0,0,2009
+"Cumberland County","Maine","White","Male","16 to 64 years",71085,67189,3896,5.48,2009
+"Cumberland County","Maine","White","Male","65 years and over",3423,3346,77,2.25,2009
+"Cumberland County","Maine","White","Female","16 to 64 years",68323,65749,2574,3.77,2009
+"Cumberland County","Maine","White","Female","65 years and over",2513,2483,30,1.19,2009
+"Cumberland County","Maine","Hispanic or Latino","Male","16 to 64 years",1490,1316,174,11.68,2009
+"Cumberland County","Maine","Hispanic or Latino","Male","65 years and over",34,34,0,0,2009
+"Cumberland County","Maine","Hispanic or Latino","Female","16 to 64 years",1073,1034,39,3.63,2009
+"Cumberland County","Maine","Hispanic or Latino","Female","65 years and over",0,0,0,NA,2009
+"Hennepin County","Minnesota","Black","Male","16 to 64 years",29604,24209,5395,18.22,2009
+"Hennepin County","Minnesota","Black","Male","65 years and over",507,429,78,15.38,2009
+"Hennepin County","Minnesota","Black","Female","16 to 64 years",26573,22175,4398,16.55,2009
+"Hennepin County","Minnesota","Black","Female","65 years and over",414,347,67,16.18,2009
+"Hennepin County","Minnesota","Native American","Male","16 to 64 years",1940,1440,500,25.77,2009
+"Hennepin County","Minnesota","Native American","Male","65 years and over",43,43,0,0,2009
+"Hennepin County","Minnesota","Native American","Female","16 to 64 years",2271,1942,329,14.49,2009
+"Hennepin County","Minnesota","Native American","Female","65 years and over",107,107,0,0,2009
+"Hennepin County","Minnesota","Asian","Male","16 to 64 years",17523,16528,995,5.68,2009
+"Hennepin County","Minnesota","Asian","Male","65 years and over",324,293,31,9.57,2009
+"Hennepin County","Minnesota","Asian","Female","16 to 64 years",15092,14028,1064,7.05,2009
+"Hennepin County","Minnesota","Asian","Female","65 years and over",263,263,0,0,2009
+"Hennepin County","Minnesota","White","Male","16 to 64 years",260399,246399,14000,5.38,2009
+"Hennepin County","Minnesota","White","Male","65 years and over",11882,11428,454,3.82,2009
+"Hennepin County","Minnesota","White","Female","16 to 64 years",241402,231753,9649,4,2009
+"Hennepin County","Minnesota","White","Female","65 years and over",8916,8666,250,2.8,2009
+"Hennepin County","Minnesota","Hispanic or Latino","Male","16 to 64 years",22321,20908,1413,6.33,2009
+"Hennepin County","Minnesota","Hispanic or Latino","Male","65 years and over",201,164,37,18.41,2009
+"Hennepin County","Minnesota","Hispanic or Latino","Female","16 to 64 years",12084,11055,1029,8.52,2009
+"Hennepin County","Minnesota","Hispanic or Latino","Female","65 years and over",99,99,0,0,2009
+"Stearns County","Minnesota","Black","Male","16 to 64 years",601,488,113,18.8,2009
+"Stearns County","Minnesota","Black","Male","65 years and over",14,14,0,0,2009
+"Stearns County","Minnesota","Black","Female","16 to 64 years",421,249,172,40.86,2009
+"Stearns County","Minnesota","Black","Female","65 years and over",4,4,0,0,2009
+"Stearns County","Minnesota","Native American","Male","16 to 64 years",64,50,14,21.88,2009
+"Stearns County","Minnesota","Native American","Male","65 years and over",0,0,0,NA,2009
+"Stearns County","Minnesota","Native American","Female","16 to 64 years",58,53,5,8.62,2009
+"Stearns County","Minnesota","Native American","Female","65 years and over",2,2,0,0,2009
+"Stearns County","Minnesota","Asian","Male","16 to 64 years",609,609,0,0,2009
+"Stearns County","Minnesota","Asian","Male","65 years and over",21,21,0,0,2009
+"Stearns County","Minnesota","Asian","Female","16 to 64 years",559,517,42,7.51,2009
+"Stearns County","Minnesota","Asian","Female","65 years and over",0,0,0,NA,2009
+"Stearns County","Minnesota","White","Male","16 to 64 years",39612,37316,2296,5.8,2009
+"Stearns County","Minnesota","White","Male","65 years and over",1636,1593,43,2.63,2009
+"Stearns County","Minnesota","White","Female","16 to 64 years",36240,34878,1362,3.76,2009
+"Stearns County","Minnesota","White","Female","65 years and over",1110,1071,39,3.51,2009
+"Stearns County","Minnesota","Hispanic or Latino","Male","16 to 64 years",735,681,54,7.35,2009
+"Stearns County","Minnesota","Hispanic or Latino","Male","65 years and over",0,0,0,NA,2009
+"Stearns County","Minnesota","Hispanic or Latino","Female","16 to 64 years",530,397,133,25.09,2009
+"Stearns County","Minnesota","Hispanic or Latino","Female","65 years and over",0,0,0,NA,2009
+"Franklin County","Ohio","Black","Male","16 to 64 years",49044,41535,7509,15.31,2009
+"Franklin County","Ohio","Black","Male","65 years and over",1261,1209,52,4.12,2009
+"Franklin County","Ohio","Black","Female","16 to 64 years",54167,46933,7234,13.35,2009
+"Franklin County","Ohio","Black","Female","65 years and over",1234,1096,138,11.18,2009
+"Franklin County","Ohio","Native American","Male","16 to 64 years",397,352,45,11.34,2009
+"Franklin County","Ohio","Native American","Male","65 years and over",0,0,0,NA,2009
+"Franklin County","Ohio","Native American","Female","16 to 64 years",554,504,50,9.03,2009
+"Franklin County","Ohio","Native American","Female","65 years and over",12,12,0,0,2009
+"Franklin County","Ohio","Asian","Male","16 to 64 years",12640,12161,479,3.79,2009
+"Franklin County","Ohio","Asian","Male","65 years and over",246,246,0,0,2009
+"Franklin County","Ohio","Asian","Female","16 to 64 years",9134,8554,580,6.35,2009
+"Franklin County","Ohio","Asian","Female","65 years and over",67,67,0,0,2009
+"Franklin County","Ohio","White","Male","16 to 64 years",227782,214512,13270,5.83,2009
+"Franklin County","Ohio","White","Male","65 years and over",8541,8221,320,3.75,2009
+"Franklin County","Ohio","White","Female","16 to 64 years",211970,200509,11461,5.41,2009
+"Franklin County","Ohio","White","Female","65 years and over",6845,6610,235,3.43,2009
+"Franklin County","Ohio","Hispanic or Latino","Male","16 to 64 years",14729,14039,690,4.68,2009
+"Franklin County","Ohio","Hispanic or Latino","Male","65 years and over",191,191,0,0,2009
+"Franklin County","Ohio","Hispanic or Latino","Female","16 to 64 years",7199,6450,749,10.4,2009
+"Franklin County","Ohio","Hispanic or Latino","Female","65 years and over",130,130,0,0,2009
+"Dallas County","Texas","Black","Male","16 to 64 years",104938,90109,14829,14.13,2009
+"Dallas County","Texas","Black","Male","65 years and over",2413,2272,141,5.84,2009
+"Dallas County","Texas","Black","Female","16 to 64 years",129274,113341,15933,12.32,2009
+"Dallas County","Texas","Black","Female","65 years and over",2598,2318,280,10.78,2009
+"Dallas County","Texas","Native American","Male","16 to 64 years",3224,2967,257,7.97,2009
+"Dallas County","Texas","Native American","Male","65 years and over",69,63,6,8.7,2009
+"Dallas County","Texas","Native American","Female","16 to 64 years",2992,2822,170,5.68,2009
+"Dallas County","Texas","Native American","Female","65 years and over",93,93,0,0,2009
+"Dallas County","Texas","Asian","Male","16 to 64 years",30732,28748,1984,6.46,2009
+"Dallas County","Texas","Asian","Male","65 years and over",887,809,78,8.79,2009
+"Dallas County","Texas","Asian","Female","16 to 64 years",23658,22020,1638,6.92,2009
+"Dallas County","Texas","Asian","Female","65 years and over",462,435,27,5.84,2009
+"Dallas County","Texas","White","Male","16 to 64 years",244324,230288,14036,5.74,2009
+"Dallas County","Texas","White","Male","65 years and over",15422,14974,448,2.9,2009
+"Dallas County","Texas","White","Female","16 to 64 years",210302,198738,11564,5.5,2009
+"Dallas County","Texas","White","Female","65 years and over",11612,11143,469,4.04,2009
+"Dallas County","Texas","Hispanic or Latino","Male","16 to 64 years",287161,271521,15640,5.45,2009
+"Dallas County","Texas","Hispanic or Latino","Male","65 years and over",2756,2482,274,9.94,2009
+"Dallas County","Texas","Hispanic or Latino","Female","16 to 64 years",147431,132674,14757,10.01,2009
+"Dallas County","Texas","Hispanic or Latino","Female","65 years and over",1745,1685,60,3.44,2009
+"King County","Washington","Black","Male","16 to 64 years",29137,25705,3432,11.78,2009
+"King County","Washington","Black","Male","65 years and over",731,690,41,5.61,2009
+"King County","Washington","Black","Female","16 to 64 years",25596,22650,2946,11.51,2009
+"King County","Washington","Black","Female","65 years and over",424,396,28,6.6,2009
+"King County","Washington","Native American","Male","16 to 64 years",3879,3487,392,10.11,2009
+"King County","Washington","Native American","Male","65 years and over",88,88,0,0,2009
+"King County","Washington","Native American","Female","16 to 64 years",3400,2978,422,12.41,2009
+"King County","Washington","Native American","Female","65 years and over",101,101,0,0,2009
+"King County","Washington","Asian","Male","16 to 64 years",69302,66322,2980,4.3,2009
+"King County","Washington","Asian","Male","65 years and over",1915,1863,52,2.72,2009
+"King County","Washington","Asian","Female","16 to 64 years",62645,59015,3630,5.79,2009
+"King County","Washington","Asian","Female","65 years and over",1160,1160,0,0,2009
+"King County","Washington","White","Male","16 to 64 years",391340,370200,21140,5.4,2009
+"King County","Washington","White","Male","65 years and over",14059,13519,540,3.84,2009
+"King County","Washington","White","Female","16 to 64 years",339389,322895,16494,4.86,2009
+"King County","Washington","White","Female","65 years and over",9668,9248,420,4.34,2009
+"King County","Washington","Hispanic or Latino","Male","16 to 64 years",44802,42292,2510,5.6,2009
+"King County","Washington","Hispanic or Latino","Male","65 years and over",487,454,33,6.78,2009
+"King County","Washington","Hispanic or Latino","Female","16 to 64 years",27039,24832,2207,8.16,2009
+"King County","Washington","Hispanic or Latino","Female","65 years and over",291,237,54,18.56,2009
+"DeKalb County","Georgia","Black","Male","16 to 64 years",94401,84887,9514,10.08,2019
+"DeKalb County","Georgia","Black","Male","65 years and over",3654,3471,183,5.01,2019
+"DeKalb County","Georgia","Black","Female","16 to 64 years",115973,106536,9437,8.14,2019
+"DeKalb County","Georgia","Black","Female","65 years and over",4114,3795,319,7.75,2019
+"DeKalb County","Georgia","Native American","Male","16 to 64 years",2038,1965,73,3.58,2019
+"DeKalb County","Georgia","Native American","Male","65 years and over",15,15,0,0,2019
+"DeKalb County","Georgia","Native American","Female","16 to 64 years",1224,1190,34,2.78,2019
+"DeKalb County","Georgia","Native American","Female","65 years and over",0,0,0,NA,2019
+"DeKalb County","Georgia","Asian","Male","16 to 64 years",12566,12094,472,3.76,2019
+"DeKalb County","Georgia","Asian","Male","65 years and over",297,263,34,11.45,2019
+"DeKalb County","Georgia","Asian","Female","16 to 64 years",10045,9619,426,4.24,2019
+"DeKalb County","Georgia","Asian","Female","65 years and over",402,395,7,1.74,2019
+"DeKalb County","Georgia","White","Male","16 to 64 years",62756,60849,1907,3.04,2019
+"DeKalb County","Georgia","White","Male","65 years and over",4740,4660,80,1.69,2019
+"DeKalb County","Georgia","White","Female","16 to 64 years",57990,56249,1741,3,2019
+"DeKalb County","Georgia","White","Female","65 years and over",3972,3863,109,2.74,2019
+"DeKalb County","Georgia","Hispanic or Latino","Male","16 to 64 years",18213,17670,543,2.98,2019
+"DeKalb County","Georgia","Hispanic or Latino","Male","65 years and over",419,343,76,18.14,2019
+"DeKalb County","Georgia","Hispanic or Latino","Female","16 to 64 years",12299,11394,905,7.36,2019
+"DeKalb County","Georgia","Hispanic or Latino","Female","65 years and over",338,301,37,10.95,2019
+"Androscoggin County","Maine","Black","Male","16 to 64 years",581,500,81,13.94,2019
+"Androscoggin County","Maine","Black","Male","65 years and over",34,34,0,0,2019
+"Androscoggin County","Maine","Black","Female","16 to 64 years",426,365,61,14.32,2019
+"Androscoggin County","Maine","Black","Female","65 years and over",1,1,0,0,2019
+"Androscoggin County","Maine","Native American","Male","16 to 64 years",16,16,0,0,2019
+"Androscoggin County","Maine","Native American","Male","65 years and over",0,0,0,NA,2019
+"Androscoggin County","Maine","Native American","Female","16 to 64 years",37,37,0,0,2019
+"Androscoggin County","Maine","Native American","Female","65 years and over",0,0,0,NA,2019
+"Androscoggin County","Maine","Asian","Male","16 to 64 years",197,193,4,2.03,2019
+"Androscoggin County","Maine","Asian","Male","65 years and over",0,0,0,NA,2019
+"Androscoggin County","Maine","Asian","Female","16 to 64 years",224,214,10,4.46,2019
+"Androscoggin County","Maine","Asian","Female","65 years and over",0,0,0,NA,2019
+"Androscoggin County","Maine","White","Male","16 to 64 years",24804,23882,922,3.72,2019
+"Androscoggin County","Maine","White","Male","65 years and over",2052,1950,102,4.97,2019
+"Androscoggin County","Maine","White","Female","16 to 64 years",24560,23744,816,3.32,2019
+"Androscoggin County","Maine","White","Female","65 years and over",1443,1368,75,5.2,2019
+"Androscoggin County","Maine","Hispanic or Latino","Male","16 to 64 years",429,423,6,1.4,2019
+"Androscoggin County","Maine","Hispanic or Latino","Male","65 years and over",0,0,0,NA,2019
+"Androscoggin County","Maine","Hispanic or Latino","Female","16 to 64 years",446,433,13,2.91,2019
+"Androscoggin County","Maine","Hispanic or Latino","Female","65 years and over",22,22,0,0,2019
+"Cumberland County","Maine","Black","Male","16 to 64 years",2343,2267,76,3.24,2019
+"Cumberland County","Maine","Black","Male","65 years and over",48,48,0,0,2019
+"Cumberland County","Maine","Black","Female","16 to 64 years",1876,1868,8,0.43,2019
+"Cumberland County","Maine","Black","Female","65 years and over",82,82,0,0,2019
+"Cumberland County","Maine","Native American","Male","16 to 64 years",234,213,21,8.97,2019
+"Cumberland County","Maine","Native American","Male","65 years and over",18,18,0,0,2019
+"Cumberland County","Maine","Native American","Female","16 to 64 years",163,163,0,0,2019
+"Cumberland County","Maine","Native American","Female","65 years and over",0,0,0,NA,2019
+"Cumberland County","Maine","Asian","Male","16 to 64 years",1711,1651,60,3.51,2019
+"Cumberland County","Maine","Asian","Male","65 years and over",102,102,0,0,2019
+"Cumberland County","Maine","Asian","Female","16 to 64 years",1762,1711,51,2.89,2019
+"Cumberland County","Maine","Asian","Female","65 years and over",44,44,0,0,2019
+"Cumberland County","Maine","White","Male","16 to 64 years",71197,68980,2217,3.11,2019
+"Cumberland County","Maine","White","Male","65 years and over",6354,6144,210,3.31,2019
+"Cumberland County","Maine","White","Female","16 to 64 years",70890,68713,2177,3.07,2019
+"Cumberland County","Maine","White","Female","65 years and over",5257,5224,33,0.63,2019
+"Cumberland County","Maine","Hispanic or Latino","Male","16 to 64 years",1605,1563,42,2.62,2019
+"Cumberland County","Maine","Hispanic or Latino","Male","65 years and over",35,35,0,0,2019
+"Cumberland County","Maine","Hispanic or Latino","Female","16 to 64 years",1604,1565,39,2.43,2019
+"Cumberland County","Maine","Hispanic or Latino","Female","65 years and over",11,11,0,0,2019
+"Hennepin County","Minnesota","Black","Male","16 to 64 years",38815,34892,3923,10.11,2019
+"Hennepin County","Minnesota","Black","Male","65 years and over",910,858,52,5.71,2019
+"Hennepin County","Minnesota","Black","Female","16 to 64 years",39859,37034,2825,7.09,2019
+"Hennepin County","Minnesota","Black","Female","65 years and over",867,841,26,3,2019
+"Hennepin County","Minnesota","Native American","Male","16 to 64 years",1766,1582,184,10.42,2019
+"Hennepin County","Minnesota","Native American","Male","65 years and over",40,40,0,0,2019
+"Hennepin County","Minnesota","Native American","Female","16 to 64 years",2286,2079,207,9.06,2019
+"Hennepin County","Minnesota","Native American","Female","65 years and over",62,62,0,0,2019
+"Hennepin County","Minnesota","Asian","Male","16 to 64 years",27310,26349,961,3.52,2019
+"Hennepin County","Minnesota","Asian","Male","65 years and over",640,613,27,4.22,2019
+"Hennepin County","Minnesota","Asian","Female","16 to 64 years",23032,22233,799,3.47,2019
+"Hennepin County","Minnesota","Asian","Female","65 years and over",315,315,0,0,2019
+"Hennepin County","Minnesota","White","Male","16 to 64 years",254229,245877,8352,3.29,2019
+"Hennepin County","Minnesota","White","Male","65 years and over",18273,17775,498,2.73,2019
+"Hennepin County","Minnesota","White","Female","16 to 64 years",238620,232463,6157,2.58,2019
+"Hennepin County","Minnesota","White","Female","65 years and over",15800,15462,338,2.14,2019
+"Hennepin County","Minnesota","Hispanic or Latino","Male","16 to 64 years",25269,23988,1281,5.07,2019
+"Hennepin County","Minnesota","Hispanic or Latino","Male","65 years and over",167,167,0,0,2019
+"Hennepin County","Minnesota","Hispanic or Latino","Female","16 to 64 years",18751,17772,979,5.22,2019
+"Hennepin County","Minnesota","Hispanic or Latino","Female","65 years and over",341,341,0,0,2019
+"Stearns County","Minnesota","Black","Male","16 to 64 years",2941,2494,447,15.2,2019
+"Stearns County","Minnesota","Black","Male","65 years and over",0,0,0,NA,2019
+"Stearns County","Minnesota","Black","Female","16 to 64 years",1932,1405,527,27.28,2019
+"Stearns County","Minnesota","Black","Female","65 years and over",0,0,0,NA,2019
+"Stearns County","Minnesota","Native American","Male","16 to 64 years",23,20,3,13.04,2019
+"Stearns County","Minnesota","Native American","Male","65 years and over",0,0,0,NA,2019
+"Stearns County","Minnesota","Native American","Female","16 to 64 years",80,80,0,0,2019
+"Stearns County","Minnesota","Native American","Female","65 years and over",7,7,0,0,2019
+"Stearns County","Minnesota","Asian","Male","16 to 64 years",1148,926,222,19.34,2019
+"Stearns County","Minnesota","Asian","Male","65 years and over",53,53,0,0,2019
+"Stearns County","Minnesota","Asian","Female","16 to 64 years",957,908,49,5.12,2019
+"Stearns County","Minnesota","Asian","Female","65 years and over",0,0,0,NA,2019
+"Stearns County","Minnesota","White","Male","16 to 64 years",39086,37705,1381,3.53,2019
+"Stearns County","Minnesota","White","Male","65 years and over",2215,2170,45,2.03,2019
+"Stearns County","Minnesota","White","Female","16 to 64 years",36418,35256,1162,3.19,2019
+"Stearns County","Minnesota","White","Female","65 years and over",1856,1831,25,1.35,2019
+"Stearns County","Minnesota","Hispanic or Latino","Male","16 to 64 years",1442,1364,78,5.41,2019
+"Stearns County","Minnesota","Hispanic or Latino","Male","65 years and over",28,28,0,0,2019
+"Stearns County","Minnesota","Hispanic or Latino","Female","16 to 64 years",1074,1007,67,6.24,2019
+"Stearns County","Minnesota","Hispanic or Latino","Female","65 years and over",2,2,0,0,2019
+"Franklin County","Ohio","Black","Male","16 to 64 years",69205,62214,6991,10.1,2019
+"Franklin County","Ohio","Black","Male","65 years and over",2233,2035,198,8.87,2019
+"Franklin County","Ohio","Black","Female","16 to 64 years",73686,67078,6608,8.97,2019
+"Franklin County","Ohio","Black","Female","65 years and over",2523,2350,173,6.86,2019
+"Franklin County","Ohio","Native American","Male","16 to 64 years",880,718,162,18.41,2019
+"Franklin County","Ohio","Native American","Male","65 years and over",60,60,0,0,2019
+"Franklin County","Ohio","Native American","Female","16 to 64 years",756,732,24,3.17,2019
+"Franklin County","Ohio","Native American","Female","65 years and over",55,12,43,78.18,2019
+"Franklin County","Ohio","Asian","Male","16 to 64 years",20165,19660,505,2.5,2019
+"Franklin County","Ohio","Asian","Male","65 years and over",441,427,14,3.17,2019
+"Franklin County","Ohio","Asian","Female","16 to 64 years",15838,15008,830,5.24,2019
+"Franklin County","Ohio","Asian","Female","65 years and over",467,458,9,1.93,2019
+"Franklin County","Ohio","White","Male","16 to 64 years",232278,223829,8449,3.64,2019
+"Franklin County","Ohio","White","Male","65 years and over",13189,12962,227,1.72,2019
+"Franklin County","Ohio","White","Female","16 to 64 years",218161,210715,7446,3.41,2019
+"Franklin County","Ohio","White","Female","65 years and over",11504,11221,283,2.46,2019
+"Franklin County","Ohio","Hispanic or Latino","Male","16 to 64 years",19214,18623,591,3.08,2019
+"Franklin County","Ohio","Hispanic or Latino","Male","65 years and over",259,243,16,6.18,2019
+"Franklin County","Ohio","Hispanic or Latino","Female","16 to 64 years",13815,12865,950,6.88,2019
+"Franklin County","Ohio","Hispanic or Latino","Female","65 years and over",256,256,0,0,2019
+"Dallas County","Texas","Black","Male","16 to 64 years",133983,123143,10840,8.09,2019
+"Dallas County","Texas","Black","Male","65 years and over",5125,4949,176,3.43,2019
+"Dallas County","Texas","Black","Female","16 to 64 years",160701,148500,12201,7.59,2019
+"Dallas County","Texas","Black","Female","65 years and over",6634,6259,375,5.65,2019
+"Dallas County","Texas","Native American","Male","16 to 64 years",2733,2537,196,7.17,2019
+"Dallas County","Texas","Native American","Male","65 years and over",99,77,22,22.22,2019
+"Dallas County","Texas","Native American","Female","16 to 64 years",2361,2264,97,4.11,2019
+"Dallas County","Texas","Native American","Female","65 years and over",114,114,0,0,2019
+"Dallas County","Texas","Asian","Male","16 to 64 years",49078,47558,1520,3.1,2019
+"Dallas County","Texas","Asian","Male","65 years and over",2161,2161,0,0,2019
+"Dallas County","Texas","Asian","Female","16 to 64 years",36597,34996,1601,4.37,2019
+"Dallas County","Texas","Asian","Female","65 years and over",1266,1230,36,2.84,2019
+"Dallas County","Texas","White","Male","16 to 64 years",216895,208779,8116,3.74,2019
+"Dallas County","Texas","White","Male","65 years and over",20494,19976,518,2.53,2019
+"Dallas County","Texas","White","Female","16 to 64 years",187116,180724,6392,3.42,2019
+"Dallas County","Texas","White","Female","65 years and over",17213,16778,435,2.53,2019
+"Dallas County","Texas","Hispanic or Latino","Male","16 to 64 years",297955,288474,9481,3.18,2019
+"Dallas County","Texas","Hispanic or Latino","Male","65 years and over",6894,6656,238,3.45,2019
+"Dallas County","Texas","Hispanic or Latino","Female","16 to 64 years",200806,188574,12232,6.09,2019
+"Dallas County","Texas","Hispanic or Latino","Female","65 years and over",4292,4064,228,5.31,2019
+"King County","Washington","Black","Male","16 to 64 years",39535,36029,3506,8.87,2019
+"King County","Washington","Black","Male","65 years and over",1646,1577,69,4.19,2019
+"King County","Washington","Black","Female","16 to 64 years",33569,30951,2618,7.8,2019
+"King County","Washington","Black","Female","65 years and over",1420,1402,18,1.27,2019
+"King County","Washington","Native American","Male","16 to 64 years",2961,2587,374,12.63,2019
+"King County","Washington","Native American","Male","65 years and over",136,136,0,0,2019
+"King County","Washington","Native American","Female","16 to 64 years",3211,2908,303,9.44,2019
+"King County","Washington","Native American","Female","65 years and over",106,106,0,0,2019
+"King County","Washington","Asian","Male","16 to 64 years",115688,112172,3516,3.04,2019
+"King County","Washington","Asian","Male","65 years and over",4236,4141,95,2.24,2019
+"King County","Washington","Asian","Female","16 to 64 years",101848,97208,4640,4.56,2019
+"King County","Washington","Asian","Female","65 years and over",3432,3315,117,3.41,2019
+"King County","Washington","White","Male","16 to 64 years",396829,381933,14896,3.75,2019
+"King County","Washington","White","Male","65 years and over",24464,23912,552,2.26,2019
+"King County","Washington","White","Female","16 to 64 years",335753,322793,12960,3.86,2019
+"King County","Washington","White","Female","65 years and over",19885,19594,291,1.46,2019
+"King County","Washington","Hispanic or Latino","Male","16 to 64 years",64793,61925,2868,4.43,2019
+"King County","Washington","Hispanic or Latino","Male","65 years and over",891,872,19,2.13,2019
+"King County","Washington","Hispanic or Latino","Female","16 to 64 years",47977,45435,2542,5.3,2019
+"King County","Washington","Hispanic or Latino","Female","65 years and over",869,750,119,13.69,2019

@@ -1,0 +1,81 @@
+"Region","Country","Ceiling","Admitted"
+"Africa",NA,12000,NA
+NA,"Angola",NA,8
+NA,"Burundi",NA,762
+NA,"Cameroon",NA,4
+NA,"Central African Republic",NA,59
+NA,"Chad",NA,6
+NA,"Congo",NA,293
+NA,"Dem. Rep. Congo",NA,1135
+NA,"Djibouti",NA,3
+NA,"Equatorial Guinea",NA,9
+NA,"Eritrea",NA,1571
+NA,"Ethiopia",NA,321
+NA,"Gabon",NA,1
+NA,"Gambia",NA,10
+NA,"Ghana",NA,1
+NA,"Guinea",NA,3
+NA,"Ivory Coast",NA,9
+NA,"Kenya",NA,1
+NA,"Liberia",NA,385
+NA,"Madagascar (Malagasy Republic)",NA,3
+NA,"Mauritania",NA,16
+NA,"Nigeria",NA,3
+NA,"Rwanda",NA,111
+NA,"Sierra Leone",NA,51
+NA,"Somalia",NA,4189
+NA,"Sudan",NA,683
+NA,"Togo",NA,14
+NA,"Uganda",NA,8
+NA,"Zambia",NA,1
+NA,"Zimbabwe",NA,10
+NA,"Total Africa",12000,9670
+"East Asia",NA,20500,NA
+NA,"Burma",NA,18202
+NA,"Cambodia",NA,15
+NA,"China",NA,54
+NA,"Korea, North",NA,25
+NA,"Laos",NA,14
+NA,"Thailand",NA,2
+NA,"Vietnam",NA,1538
+NA,"Total East Asia",20500,19850
+"Europe",NA,2500,NA
+NA,"Albania",NA,2
+NA,"Armenia",NA,4
+NA,"Azerbaijan",NA,38
+NA,"Belarus",NA,146
+NA,"Estonia",NA,2
+NA,"Georgia",NA,4
+NA,"Kazakhstan",NA,52
+NA,"Kyrgyzstan",NA,46
+NA,"Latvia",NA,2
+NA,"Moldova",NA,445
+NA,"Russia",NA,495
+NA,"Turkmenistan",NA,8
+NA,"Ukraine",NA,601
+NA,"Uzbekistan",NA,152
+NA,"Total Europe",2500,1997
+"Latin America/Caribbean",NA,5500,NA
+NA,"Colombia",NA,57
+NA,"Cuba",NA,4800
+NA,"Total Latin America/Caribbean",5500,4857
+"Near East/South Asia",NA,39500,NA
+NA,"Afghanistan",NA,349
+NA,"Bhutan",NA,13452
+NA,"Egypt",NA,7
+NA,"Iran",NA,5381
+NA,"Iraq",NA,18838
+NA,"Kuwait",NA,7
+NA,"Lebanon",NA,1
+NA,"Morocco",NA,1
+NA,"Nepal",NA,7
+NA,"Pakistan",NA,67
+NA,"Palestine",NA,65
+NA,"Sri Lanka (Ceylon)",NA,33
+NA,"Syria",NA,25
+NA,"Yemen",NA,47
+NA,"Total Near East/South Asia",39500,38280
+"Unallocated Reserve Region",NA,0,NA
+NA,NA,NA,NA
+NA,"Total Unallocated Reserve Region",0,NA
+NA,"Grand Totals",80000,74654

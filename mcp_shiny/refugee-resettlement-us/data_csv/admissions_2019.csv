@@ -1,0 +1,78 @@
+"Region","Country","Ceiling","Admitted"
+"Africa",NA,11000,NA
+NA,"Benin",NA,3
+NA,"Burundi",NA,196
+NA,"Cameroon",NA,28
+NA,"Central African Republic",NA,244
+NA,"Chad",NA,8
+NA,"Congo",NA,3
+NA,"Dem. Rep. Congo",NA,12958
+NA,"Eritrea",NA,1757
+NA,"Ethiopia",NA,247
+NA,"Gambia",NA,1
+NA,"Ghana",NA,2
+NA,"Guinea",NA,10
+NA,"Ivory Coast",NA,62
+NA,"Kenya",NA,17
+NA,"Liberia",NA,37
+NA,"Malawi",NA,1
+NA,"Mali",NA,3
+NA,"Republic of South Sudan",NA,42
+NA,"Rwanda",NA,91
+NA,"Senegal",NA,14
+NA,"Sierra Leone",NA,2
+NA,"Somalia",NA,231
+NA,"Sudan",NA,382
+NA,"Togo",NA,1
+NA,"Uganda",NA,24
+NA,"Zimbabwe",NA,2
+NA,"Total Africa",11000,16366
+"East Asia",NA,4000,NA
+NA,"Burma",NA,4932
+NA,"Cambodia",NA,1
+NA,"China",NA,1
+NA,"Indonesia",NA,1
+NA,"Korea, North",NA,1
+NA,"Vietnam",NA,94
+NA,"Total East Asia",4000,5030
+"Europe",NA,3000,NA
+NA,"Armenia",NA,33
+NA,"Belarus",NA,96
+NA,"Georgia",NA,26
+NA,"Kazakhstan",NA,8
+NA,"Kyrgyzstan",NA,46
+NA,"Moldova",NA,120
+NA,"Russia",NA,184
+NA,"Turkmenistan",NA,18
+NA,"Ukraine",NA,4451
+NA,"Uzbekistan",NA,12
+NA,"Total Europe",3000,4994
+"Latin America/Caribbean",NA,3000,NA
+NA,"Colombia",NA,298
+NA,"Cuba",NA,2
+NA,"El Salvador",NA,311
+NA,"Guatemala",NA,118
+NA,"Honduras",NA,74
+NA,"Jamaica",NA,6
+NA,"Total Latin America/Caribbean",3000,809
+"Near East/South Asia",NA,9000,NA
+NA,"Afghanistan",NA,1198
+NA,"Bangladesh",NA,3
+NA,"Bhutan",NA,32
+NA,"Egypt",NA,4
+NA,"Iran",NA,199
+NA,"Iraq",NA,465
+NA,"Israel",NA,1
+NA,"Jordan",NA,5
+NA,"Kuwait",NA,1
+NA,"Lebanon",NA,1
+NA,"Nepal",NA,13
+NA,"Pakistan",NA,264
+NA,"Palestine",NA,30
+NA,"Sri Lanka (Ceylon)",NA,17
+NA,"Syria",NA,563
+NA,"Turkey",NA,1
+NA,"United Arab Emirates",NA,1
+NA,"Yemen",NA,3
+NA,"Total Near East/South Asia",9000,2801
+NA,"Grand Totals",30000,30000

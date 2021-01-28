@@ -1,0 +1,424 @@
+"Year","Region","Population"
+"1975","Africa",0
+"1975","Asia",135000
+"1975","Europe",1947
+"1975","Former Soviet Union",6211
+"1975","Kosovo",0
+"1975","Latin America/Caribbean",3000
+"1975","Near East/South Asia",0
+"1975","Private Sector Initiative",0
+"1975","Total",146158
+"1976","Africa",0
+"1976","Asia",15000
+"1976","Europe",1756
+"1976","Former Soviet Union",7450
+"1976","Kosovo",0
+"1976","Latin America/Caribbean",3000
+"1976","Near East/South Asia",0
+"1976","Private Sector Initiative",0
+"1976","Total",27206
+"1977","Africa",0
+"1977","Asia",7000
+"1977","Europe",1755
+"1977","Former Soviet Union",8191
+"1977","Kosovo",0
+"1977","Latin America/Caribbean",3000
+"1977","Near East/South Asia",0
+"1977","Private Sector Initiative",0
+"1977","Total",19946
+"1978","Africa",0
+"1978","Asia",20574
+"1978","Europe",2245
+"1978","Former Soviet Union",10688
+"1978","Kosovo",0
+"1978","Latin America/Caribbean",3000
+"1978","Near East/South Asia",0
+"1978","Private Sector Initiative",0
+"1978","Total",36507
+"1979","Africa",0
+"1979","Asia",76521
+"1979","Europe",3393
+"1979","Former Soviet Union",24449
+"1979","Kosovo",0
+"1979","Latin America/Caribbean",7000
+"1979","Near East/South Asia",0
+"1979","Private Sector Initiative",0
+"1979","Total",111363
+"1980","Africa",955
+"1980","Asia",163799
+"1980","Europe",5025
+"1980","Former Soviet Union",28444
+"1980","Kosovo",0
+"1980","Latin America/Caribbean",6662
+"1980","Near East/South Asia",2231
+"1980","Private Sector Initiative",0
+"1980","Total",207116
+"1981","Africa",2119
+"1981","Asia",131139
+"1981","Europe",6704
+"1981","Former Soviet Union",13444
+"1981","Kosovo",0
+"1981","Latin America/Caribbean",2017
+"1981","Near East/South Asia",3829
+"1981","Private Sector Initiative",0
+"1981","Total",159252
+"1982","Africa",3412
+"1982","Asia",73755
+"1982","Europe",11109
+"1982","Former Soviet Union",2760
+"1982","Kosovo",0
+"1982","Latin America/Caribbean",580
+"1982","Near East/South Asia",6480
+"1982","Private Sector Initiative",0
+"1982","Total",98096
+"1983","Africa",2645
+"1983","Asia",39245
+"1983","Europe",11867
+"1983","Former Soviet Union",1342
+"1983","Kosovo",0
+"1983","Latin America/Caribbean",691
+"1983","Near East/South Asia",5428
+"1983","Private Sector Initiative",0
+"1983","Total",61218
+"1984","Africa",2749
+"1984","Asia",51978
+"1984","Europe",10096
+"1984","Former Soviet Union",721
+"1984","Kosovo",0
+"1984","Latin America/Caribbean",150
+"1984","Near East/South Asia",4699
+"1984","Private Sector Initiative",0
+"1984","Total",70393
+"1985","Africa",1951
+"1985","Asia",49962
+"1985","Europe",9233
+"1985","Former Soviet Union",623
+"1985","Kosovo",0
+"1985","Latin America/Caribbean",151
+"1985","Near East/South Asia",5784
+"1985","Private Sector Initiative",0
+"1985","Total",67704
+"1986","Africa",1322
+"1986","Asia",45482
+"1986","Europe",8503
+"1986","Former Soviet Union",799
+"1986","Kosovo",0
+"1986","Latin America/Caribbean",131
+"1986","Near East/South Asia",5909
+"1986","Private Sector Initiative",0
+"1986","Total",62146
+"1987","Africa",1990
+"1987","Asia",40099
+"1987","Europe",8396
+"1987","Former Soviet Union",3699
+"1987","Kosovo",0
+"1987","Latin America/Caribbean",323
+"1987","Near East/South Asia",10021
+"1987","Private Sector Initiative",0
+"1987","Total",64528
+"1988","Africa",1593
+"1988","Asia",35371
+"1988","Europe",7510
+"1988","Former Soviet Union",20411
+"1988","Kosovo",0
+"1988","Latin America/Caribbean",2497
+"1988","Near East/South Asia",8368
+"1988","Private Sector Initiative",733
+"1988","Total",76483
+"1989","Africa",1902
+"1989","Asia",45722
+"1989","Europe",8752
+"1989","Former Soviet Union",39602
+"1989","Kosovo",0
+"1989","Latin America/Caribbean",2604
+"1989","Near East/South Asia",6938
+"1989","Private Sector Initiative",1550
+"1989","Total",107070
+"1990","Africa",3453
+"1990","Asia",51598
+"1990","Europe",6094
+"1990","Former Soviet Union",50628
+"1990","Kosovo",0
+"1990","Latin America/Caribbean",2305
+"1990","Near East/South Asia",4979
+"1990","Private Sector Initiative",3009
+"1990","Total",122066
+"1991","Africa",4420
+"1991","Asia",53522
+"1991","Europe",6837
+"1991","Former Soviet Union",39226
+"1991","Kosovo",0
+"1991","Latin America/Caribbean",2253
+"1991","Near East/South Asia",5342
+"1991","Private Sector Initiative",1789
+"1991","Total",113389
+"1992","Africa",5470
+"1992","Asia",51899
+"1992","Europe",2915
+"1992","Former Soviet Union",61397
+"1992","Kosovo",0
+"1992","Latin America/Caribbean",3065
+"1992","Near East/South Asia",6903
+"1992","Private Sector Initiative",882
+"1992","Total",132531
+"1993","Africa",6967
+"1993","Asia",49817
+"1993","Europe",2582
+"1993","Former Soviet Union",48773
+"1993","Kosovo",0
+"1993","Latin America/Caribbean",4071
+"1993","Near East/South Asia",6987
+"1993","Private Sector Initiative",251
+"1993","Total",119448
+"1994","Africa",5860
+"1994","Asia",43564
+"1994","Europe",7707
+"1994","Former Soviet Union",43854
+"1994","Kosovo",0
+"1994","Latin America/Caribbean",6156
+"1994","Near East/South Asia",5840
+"1994","Private Sector Initiative",0
+"1994","Total",112981
+"1995","Africa",4827
+"1995","Asia",36987
+"1995","Europe",10070
+"1995","Former Soviet Union",35951
+"1995","Kosovo",0
+"1995","Latin America/Caribbean",7629
+"1995","Near East/South Asia",4510
+"1995","Private Sector Initiative",0
+"1995","Total",99974
+"1996","Africa",7604
+"1996","Asia",19321
+"1996","Europe",12145
+"1996","Former Soviet Union",29816
+"1996","Kosovo",0
+"1996","Latin America/Caribbean",3550
+"1996","Near East/South Asia",3967
+"1996","Private Sector Initiative",0
+"1996","Total",76403
+"1997","Africa",6065
+"1997","Asia",8594
+"1997","Europe",21401
+"1997","Former Soviet Union",27331
+"1997","Kosovo",0
+"1997","Latin America/Caribbean",2996
+"1997","Near East/South Asia",4101
+"1997","Private Sector Initiative",0
+"1997","Total",70488
+"1998","Africa",6887
+"1998","Asia",10854
+"1998","Europe",30842
+"1998","Former Soviet Union",23557
+"1998","Kosovo",0
+"1998","Latin America/Caribbean",1627
+"1998","Near East/South Asia",3313
+"1998","Private Sector Initiative",0
+"1998","Total",77080
+"1999","Africa",13043
+"1999","Asia",10206
+"1999","Europe",24497
+"1999","Former Soviet Union",17410
+"1999","Kosovo",14161
+"1999","Latin America/Caribbean",2110
+"1999","Near East/South Asia",4098
+"1999","Private Sector Initiative",0
+"1999","Total",85525
+"2000","Africa",17561
+"2000","Asia",4561
+"2000","Europe",22561
+"2000","Former Soviet Union",15103
+"2000","Kosovo",0
+"2000","Latin America/Caribbean",3232
+"2000","Near East/South Asia",10129
+"2000","Private Sector Initiative",0
+"2000","Total",73147
+"2001","Africa",19020
+"2001","Asia",4163
+"2001","Europe",15794
+"2001","Former Soviet Union",15978
+"2001","Kosovo",0
+"2001","Latin America/Caribbean",2975
+"2001","Near East/South Asia",11956
+"2001","Private Sector Initiative",0
+"2001","Total",69886
+"2002","Africa",2551
+"2002","Asia",3512
+"2002","Europe",5459
+"2002","Former Soviet Union",9969
+"2002","Kosovo",0
+"2002","Latin America/Caribbean",1934
+"2002","Near East/South Asia",3706
+"2002","Private Sector Initiative",0
+"2002","Total",27131
+"2003","Africa",10714
+"2003","Asia",1724
+"2003","Europe",2506
+"2003","Former Soviet Union",8744
+"2003","Kosovo",0
+"2003","Latin America/Caribbean",455
+"2003","Near East/South Asia",4260
+"2003","Private Sector Initiative",0
+"2003","Total",28403
+"2004","Africa",29104
+"2004","Asia",8084
+"2004","Europe",9254
+"2004","Former Soviet Union",0
+"2004","Kosovo",0
+"2004","Latin America/Caribbean",3577
+"2004","Near East/South Asia",2854
+"2004","Private Sector Initiative",0
+"2004","Total",52873
+"2005","Africa",20745
+"2005","Asia",12076
+"2005","Europe",11316
+"2005","Former Soviet Union",0
+"2005","Kosovo",0
+"2005","Latin America/Caribbean",6699
+"2005","Near East/South Asia",2977
+"2005","Private Sector Initiative",0
+"2005","Total",53813
+"2006","Africa",18126
+"2006","Asia",5659
+"2006","Europe",10456
+"2006","Former Soviet Union",0
+"2006","Kosovo",0
+"2006","Latin America/Caribbean",3264
+"2006","Near East/South Asia",3718
+"2006","Private Sector Initiative",0
+"2006","Total",41223
+"2007","Africa",17483
+"2007","Asia",15643
+"2007","Europe",4560
+"2007","Former Soviet Union",0
+"2007","Kosovo",0
+"2007","Latin America/Caribbean",2976
+"2007","Near East/South Asia",7620
+"2007","Private Sector Initiative",0
+"2007","Total",48282
+"2008","Africa",8935
+"2008","Asia",19489
+"2008","Europe",2343
+"2008","Former Soviet Union",0
+"2008","Kosovo",0
+"2008","Latin America/Caribbean",4277
+"2008","Near East/South Asia",25147
+"2008","Private Sector Initiative",0
+"2008","Total",60191
+"2009","Africa",9670
+"2009","Asia",19850
+"2009","Europe",1997
+"2009","Former Soviet Union",0
+"2009","Kosovo",0
+"2009","Latin America/Caribbean",4857
+"2009","Near East/South Asia",38280
+"2009","Private Sector Initiative",0
+"2009","Total",74654
+"2010","Africa",13305
+"2010","Asia",17716
+"2010","Europe",1526
+"2010","Former Soviet Union",0
+"2010","Kosovo",0
+"2010","Latin America/Caribbean",4982
+"2010","Near East/South Asia",35782
+"2010","Private Sector Initiative",0
+"2010","Total",73311
+"2011","Africa",7685
+"2011","Asia",17367
+"2011","Europe",1228
+"2011","Former Soviet Union",0
+"2011","Kosovo",0
+"2011","Latin America/Caribbean",2976
+"2011","Near East/South Asia",27168
+"2011","Private Sector Initiative",0
+"2011","Total",56424
+"2012","Africa",10608
+"2012","Asia",14366
+"2012","Europe",1129
+"2012","Former Soviet Union",0
+"2012","Kosovo",0
+"2012","Latin America/Caribbean",2078
+"2012","Near East/South Asia",30057
+"2012","Private Sector Initiative",0
+"2012","Total",58238
+"2013","Africa",15980
+"2013","Asia",16537
+"2013","Europe",580
+"2013","Former Soviet Union",0
+"2013","Kosovo",0
+"2013","Latin America/Caribbean",4439
+"2013","Near East/South Asia",32390
+"2013","Private Sector Initiative",0
+"2013","Total",69926
+"2014","Africa",17476
+"2014","Asia",14784
+"2014","Europe",959
+"2014","Former Soviet Union",0
+"2014","Kosovo",0
+"2014","Latin America/Caribbean",4318
+"2014","Near East/South Asia",32450
+"2014","Private Sector Initiative",0
+"2014","Total",69987
+"2015","Africa",22472
+"2015","Asia",18469
+"2015","Europe",2363
+"2015","Former Soviet Union",0
+"2015","Kosovo",0
+"2015","Latin America/Caribbean",2050
+"2015","Near East/South Asia",24579
+"2015","Private Sector Initiative",0
+"2015","Total",69933
+"2016","Africa",31624
+"2016","Asia",12518
+"2016","Europe",3957
+"2016","Former Soviet Union",0
+"2016","Kosovo",0
+"2016","Latin America/Caribbean",1340
+"2016","Near East/South Asia",35555
+"2016","Private Sector Initiative",0
+"2016","Total",84994
+"2017","Africa",20232
+"2017","Asia",5173
+"2017","Europe",5205
+"2017","Former Soviet Union",0
+"2017","Kosovo",0
+"2017","Latin America/Caribbean",1688
+"2017","Near East/South Asia",21418
+"2017","Private Sector Initiative",0
+"2017","Total",53716
+"2018","Africa",10470
+"2018","Asia",3670
+"2018","Europe",3612
+"2018","Former Soviet Union",0
+"2018","Kosovo",0
+"2018","Latin America/Caribbean",955
+"2018","Near East/South Asia",3810
+"2018","Private Sector Initiative",0
+"2018","Total",22517
+"2019","Africa",16366
+"2019","Asia",5030
+"2019","Europe",4994
+"2019","Former Soviet Union",0
+"2019","Kosovo",0
+"2019","Latin America/Caribbean",809
+"2019","Near East/South Asia",2801
+"2019","Private Sector Initiative",0
+"2019","Total",30000
+"2020","Africa",4160
+"2020","Asia",2129
+"2020","Europe",2578
+"2020","Former Soviet Union",0
+"2020","Kosovo",0
+"2020","Latin America/Caribbean",948
+"2020","Near East/South Asia",1999
+"2020","Private Sector Initiative",0
+"2020","Total",11814
+"Total","Africa",409608
+"Total","Asia",1489562
+"Total","Europe",337895
+"Total","Former Soviet Union",596571
+"Total","Kosovo",14161
+"Total","Latin America/Caribbean",131454
+"Total","Near East/South Asia",468469
+"Total","Private Sector Initiative",8214
+"Total","Total",3455934
