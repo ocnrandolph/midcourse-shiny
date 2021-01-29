@@ -18,16 +18,16 @@ This shiny app will answer these initial questions. More than that though, I hop
 #### Key Findings (and Consequent Questions)
 When comparing major initial resettlement locations to secondary migration locations on a handful of characteristics (racial composition, unemployment rate, immigrant and African population, and crime rate), we see that there are some interesting differences that spur additional questions:
 
-1:
-
+1: **Differences in Racial Composition**
+<img src="https://user-images.githubusercontent.com/70925823/106226401-b8f0f380-61ac-11eb-9f9f-763ef0b4f35e.png" width="100%"></img>  
 Atlanta, GA (DeKalb County), an initial resettlement location, has a higher proportion of people who racially identify as Black than any of the secondary migration locations listed. Qualitative and quantitative research findings and analyses from other sources show an outflow of Somali refugees from Atlanta, GA to cities with higher proportions of people who racially identify as White (e.g., Minneapolis in Hennepin County, MN and Lewiston in Androscoggin County, ME). Does race meaningfully impact the ways in which resettled Somali refugees socially and economically integrate in a community? If so, how?
 
-2: 
-
+2: **Differences in State Crime Rates**
+<img src="https://user-images.githubusercontent.com/70925823/106226403-b8f0f380-61ac-11eb-90a4-8e8012d7f1e1.png" width="100%"></img>  
 Qualitative studies have shown that some Somali refugees have moved to Lewiston, ME (Androscoggin County) from Clarkston, GA (DeKalb County) because it is safer. When comparing incidences of crime in Maine and Georgia, this appears to be the case in every area except reports of rape. Whether looking at 2009 or 2019 data, Maine reports higher occurrences of this specific indicator of crime and safety. Are the differences we observe here statistically significant? And might perceptions of safety differ based on an individual's gender or family composition? Would additional county or city-level crime data paint a different picture?
 
-3: 
-
+3: **St. Cloud, MN as a Desired Location**
+<img src="https://user-images.githubusercontent.com/70925823/106226404-b9898a00-61ac-11eb-9ec5-325f669b7194.png" width="100%"></img>  
 Population migration data show resettled Somali refugees moving from larger cities like Dallas, TX (Dallas County) and Seattle, WA (King County) to St. Cloud, MN (Stearns County). Given that Minneapolis is categorized as a more established gateway city for immigrants and refugees, what could be driving Somalis to St. Cloud? Compared to Dallas and Seattle, St. Cloud was less racially diverse, had higher unemployment rates for people racialized as Black, but a higher proportion of foreign born Africans within it's immigrant population in 2019. What other community and state-level factors could play a role in this observed trend?
 
 #### Final Thoughts & Future Directions
