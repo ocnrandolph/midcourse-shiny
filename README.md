@@ -1,9 +1,11 @@
 ## Integration and Pathways to Belonging: Exploring How Location Matters for Refugee Resettlement in the U.S.    
     
-#### Overview
+https://ocnrandolph.shinyapps.io/refugee-resettlement-integration/    
+    
+### Overview
 Human migration is a common, yet often controversial phenomenon. Even when a newcomers' legal status is not a point of contention, their presence can challenge a range of views on identity, place, and belonging. America has been described as a cultural "melting pot", but what exactly does this mean? And how do we meaningfully examine how individuals and communities experience, promote, and challenge this "melting" as it happens? Countless books, documentaries, and dissertations have not exhausted all that there is to explore on this topic. Therefore, it is unlikely that a single shiny app can do it justice either. What this app can do, however, is function as a resource for others who care about these types of questions. 
 
-#### Research Questions
+### Research Questions
 This project reflects one starting point for understanding this phenomenon. I focus on the experiences of a specific group of newcomers, refugee arrivals, to explore two general questions:    
   
 _1. What are the origins of people who are admitted to the U.S. as refugees?_    
@@ -12,10 +14,15 @@ This directs our attention to data on who is entering the melting pot, so to spe
 _2. How might characteristics of refugee arrivals and the communities in which they live influence how well they adjust to life in the U.S.?_  
 The melting pot metaphor has often been used to describe the social and economic integration of European voluntary immigrants to the U.S. in the early 20th century. But how relevant is this imagery for newcomers from Asia, Latin America, and Africa who are likely to face a different set of challenges? Here, I concentrate on _Somali_ refugees for a few reasons. First, the history of slavery and ongoing marginalization of people racialized as "Black" in the U.S. are two realities likely to create additional challenges to social integration for African refugees that European immigrants in the early 20th century did not have to face in the same way. Second, anti-Muslim sentiment that has grown and been emboldened by the September 11, 2001 terrorist attacks are more likely to effect the interpersonal experiences of Somali refugees who are largely Muslim. Overall, Somali refugees are more likely to racially, religiously, culturally, and linguistically differ from the people in the communities where they settle. 
 
-#### Project Goals
+### Project Goals
 This shiny app will answer these initial questions. More than that though, I hope to pique your interest in issues related to refugee resettlement, immigration, and community-building that leave you wondering how these processes that we often take for granted actually work. And I hope to leave you wondering how we can improve on them. Enjoy!
 
-#### Key Findings (and Consequent Questions)
+### Data Sources
+<a href="https://www.census.gov/programs-surveys/acs">ACS 5-year 2009 and 2019 data</a>    
+<a href="https://www.wrapsnet.org/admissions-and-arrivals/">Refugee Processing Center Admissions Data</a>    
+<a href="https://crime-data-explorer.fr.cloud.gov/">FBI Crime Data</a>    
+
+### Key Findings (and Consequent Questions)
 When comparing major initial resettlement locations to secondary migration locations on a handful of characteristics (racial composition, unemployment rate, immigrant and African population, and crime rate), we see that there are some interesting differences that spur additional questions:
 
 1: **Differences in Racial Composition**
@@ -30,7 +37,7 @@ Qualitative studies have shown that some Somali refugees have moved to Lewiston,
 <img src="https://user-images.githubusercontent.com/70925823/106226404-b9898a00-61ac-11eb-9ec5-325f669b7194.png" width="100%"></img>  
 Population migration data show resettled Somali refugees moving from larger cities like Dallas, TX (Dallas County) and Seattle, WA (King County) to St. Cloud, MN (Stearns County). Given that Minneapolis is categorized as a more established gateway city for immigrants and refugees, what could be driving Somalis to St. Cloud? Compared to Dallas and Seattle, St. Cloud was less racially diverse, had higher unemployment rates for people racialized as Black, but a higher proportion of foreign born Africans within it's immigrant population in 2019. What other community and state-level factors could play a role in this observed trend?
 
-#### Final Thoughts & Future Directions
+### Final Thoughts & Future Directions
 Valuable research is being done on algorithms that can be used to resettle refugees in locations that are more likely to lead to faster economic integration. What other community characteristics matter as resettled refugees pursue integration and belonging in a new country? The preliminary analyses explored in this app address and spark questions that move us toward a larger line of inquiry: _are the differences in locations meaningfully different in ways that influence resettled refugees' decisions to move in pursuit of economic opportunity, social integration, and belonging?_ The types of questions prompted by the quick comparisons here should be addressed in order to holistically improve the effectiveness of refugee resettlement processes for individuals and communities alike.
 
 Additional research in this area can be both more in-depth (focusing on Somali refugees in particular and the different ethnic groups within this community), and more broad (exploring how navigating resettlement differs for refugees from other countries of origin). Moreover, energy should also be dedicated to people within resettlement communities, the other side of the resettlement relationship. For cities and towns concerned about newcomers leaving, what (if anything) can be done to better help them retain refugee and immigrant populations? For places that are unhappy about the influxes of newcomers that they are receiving, what (if anything) can be done to address their concerns? Overall, the integration process is a group effort. My hope is that our research, policies, and efforts operate with this reality in mind.
