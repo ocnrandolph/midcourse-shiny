@@ -1,0 +1,13 @@
+name: refugee-resettlement-integration
+title: refugee-resettlement-integration
+username:
+account: ocnrandolph
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3544581
+bundleId: 4156160
+url: https://ocnrandolph.shinyapps.io/refugee-resettlement-integration/
+when: 1611891525.05937
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: test.R

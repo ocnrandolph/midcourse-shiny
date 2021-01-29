@@ -16,14 +16,15 @@ library(viridis)
 library(colorspace)
 
 # Import all needed data files
-prm_hist_admit <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/prm_hist_admit.csv")
-admit_vs_ceiling <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/admit_vs_ceiling.csv")
-admissions_2009 <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/admissions_2009.csv")
-admissions_2019 <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/admissions_2019.csv")
-race_full <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/race_full.csv")
-coethnic_full <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/coethnic_full.csv")
-employment_full_wide <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/employment_full_wide.csv")
-crime_full <- read.csv("C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/data_csv/crime_full.csv")
+#C:/Users/ocnra/Documents/NSS_Projects/r-midcourse-project/midcourse-shiny/mcp_shiny/refugee-resettlement-us/
+prm_hist_admit <- read.csv("data_csv/prm_hist_admit.csv")
+admit_vs_ceiling <- read.csv("data_csv/admit_vs_ceiling.csv")
+admissions_2009 <- read.csv("data_csv/admissions_2009.csv")
+admissions_2019 <- read.csv("data_csv/admissions_2019.csv")
+race_full <- read.csv("data_csv/race_full.csv")
+coethnic_full <- read.csv("data_csv/coethnic_full.csv")
+employment_full_wide <- read.csv("data_csv/employment_full_wide.csv")
+crime_full <- read.csv("data_csv/crime_full.csv")
 
 # specifying initial resettlement location options for casePage selectInput
 firstCountyLoc <- c('DeKalb County', 'Hennepin County', 'Dallas County', 'King County', 'Franklin County')
