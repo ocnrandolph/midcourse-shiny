@@ -26,15 +26,18 @@ creditsPage <- tabPanel("About",
                                  tags$h5(strong("Data Sources"), style = "font-size:16px;"),
                                  tags$p(a(href='https://www.wrapsnet.org/admissions-and-arrivals/', 'Historical U.S. Refugee Admissions Data')),
                                  tags$p(a(href='https://www.migrationpolicy.org/programs/data-hub/charts/us-annual-refugee-resettlement-ceilings-and-number-refugees-admitted-united', 'Refugee Admission Ceiling and Arrival Data')),
-                                 tags$p(a(href='https://www.census.gov/programs-surveys/acs', '2008 ACS 3-year estimates'), 'via the R package', a(href='https://walker-data.com/tidycensus/', 'tidycensus')),
-                                 tags$p(a(href='https://www.census.gov/programs-surveys/acs', '2018 ACS 5-year estimates'), 'via tidycensus'),
+                                 tags$p(a(href='https://www.census.gov/programs-surveys/acs', '2009 ACS 3-year estimates'), 'via the R package', a(href='https://walker-data.com/tidycensus/', 'tidycensus')),
+                                 tags$p(a(href='https://www.census.gov/programs-surveys/acs', '2019 ACS 5-year estimates'), 'via tidycensus'),
                                  tags$p(a(href='https://crime-data-explorer.fr.cloud.gov/', 'FBI Crime Data Explorer')),
                                  hr(),
                                  tags$h5(strong("Additional Resources"), style = "font-size:16px;"),
                                  tags$p(a(href='https://immigrationlab.org/project/harnessing-big-data-to-improve-refugee-resettlement/', "Machine Learning to Improve Refugee Resettlement"), '- a research article'),
                                  tags$p(a(href='https://data.newamericaneconomy.org/en/refugee-resettlement-us/', 'New American Economy Data Interactive - Refugee Resettlement in U.S. Cities'), '- more data exploration'),
-                                 tags$p(a(href='http://www.tnrefugees.org/index.php/faqs/#what-is-the-difference-between-a-refugee-and-an-asylee', 'FAQs - TN Office for Refugees'), '- answers to a range of questions'),
-                                 tags$p(a(href='https://immigrationforum.org/article/fact-sheet-u-s-refugee-resettlement/', 'U.S. Refugee Resettlement Fact Sheet - National Immigration Forum'), '- details on the resettlement process'),
-                                 br()
-                        )
+                                 tags$p(a(href='http://www.tnrefugees.org/index.php/faqs/', 'FAQs - TN Office for Refugees'), '- answers to a range of questions'),
+                                 tags$p(a(href='https://immigrationforum.org/article/fact-sheet-u-s-refugee-resettlement/', 'U.S. Refugee Resettlement Fact Sheet - National Immigration Forum'), '- details on the resettlement process')
+                        ),
+                        hr(),
+                        tags$h5(strong("Disclaimer"), style = "font-size:16px;"),
+                        p("This shiny app is not endorsed by NSS, UNHCR, DHS, the FBI, or any of the organizations/sources that appear in it.",
+                          "All of the views presented here reflect the author's perspective.")
 )
